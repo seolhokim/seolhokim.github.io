@@ -7,65 +7,58 @@ order: 10
 
 ## 소개
 
-안녕하세요. Deep Reinforcement Learning Engineer 김설호입니다.
+안녕하세요, 저는 박민입니다. 재밌는 것과 디자인, 개발을 좋아하는 개발자입니다.
 
-비트코인으로 대박 나보고 싶어 Auto Trading Bot 개발을 위해 머신러닝에 뛰어들게 되었지만,
+다른 사람들에게 영감과 영향을 주고 싶어서 개발자가 되었습니다. 전세계 사람들의 여행을 바꾼 에어비엔비, 일상을 바꾼 페이스북등을 존경합니다.
 
-1~2 년간 그저 머신러닝이 좋아 빅데이터관련 솔루션을 내는 일을 닥치는대로 맡아서 진행하였습니다.
+예쁘고 단순한 것을 좋아합니다. React를 주로 사용하며 최근엔 프론트엔드를 위주로 공부하고 있습니다.
 
-현재는 인공지능으로 보여주기식 개발을 하는 이 상황에 염증을 느껴 이론과 구현에 많은 집중을 하고 있습니다.
+사람들을 만나는 걸 좋아하고, 그들과 함께 웃는 것을 좋아합니다. 혼자 어디 박혀서 코딩한다거나 뒹굴거리는 시간도 좋아합니다. 좋아하는게 많은 타입인 것 같아요.
 
-그 중 저에게 가장 흥미롭게 느껴지고 어려웠던 강화학습에 꽂혀 기본기부터 단단하게 연구를 진행중이고,
+시스템을 상당히 좋아합니다. 서비스의 체계뿐만 아니라, 조직 체계, 운영 체계등 올바르게 돌아갈 수 있도록 뒷받침해주는 시스템적인 요소를 좋아합니다.
 
-현재, minimalrl repo에 참여하며, 여러 알고리즘을 구현하고 있습니다. 
+CTO가 되는게 가장 큰 직업적 목표입니다.
 
-졸업 후엔 imitation learning과 meta learning에 대해 연구할 생각입니다.
-
-건강한 피드백 및 질문 언제나 환영합니다.
+반갑습니다.
 
 ## 약력
 
-- 2014.03 ~ 2020.02 인하대학교 산업경영공학과 & 소프트웨어융합공학과 수석 졸업 예정
-- 2018.08 ~ 2018.12 스타트업 (주)투미유 에서 챗봇 및 추천시스템 개발
-- 2019.01 ~ 2019.04 스타트업 (주)위팝 에서 SNS 관련 빅데이터 솔루션 제공
+- 위즈돔에서 Spring기반의 굿모닝미리(경기도 좌석예약버스)앱 개발
 
+- 위즈돔에서 React로 SK/Kakao 통근 버스 예약 앱 개발
 
-## 프로젝트
-- 2018.03 ~ 2018.11 버스노선 Genetic Algorithm과 machine learning 이론을 적용한 개선
-- 2018.06 ~ 2018.09 뉴스를 통한 종목 별 주가예측 프로그램 개발
-- 2018.09 ~ 2018.10 실리콘밸리에서 Global Accelerating 프로그램 참여
-- 2018.08 ~ 2018.12 retrival-based chatbot 개발
-- 2018.08 ~ 2018.12 추천시스템 개발
-- 2018.09 ~ 2019.04 Distributed processing cluster system for bigdata processing 관리
-- 2019.01 ~ 2019.04 SNS 허수계정 판별 프로세스 개발
+- 이해라이프스타일에서 ReactNative로 홈퍼니싱 하이브리드 앱 개발
+
+- 숭실대학교 IT대학 컴퓨터학부 전공
+
+- 숭실대학교 IT대학 학생회장
+
+- 계남초/계남중/계남고 졸업
+
+- 경기도 부천 출생
 
 ## 사이드프로젝트
 
-- 2017.06 ~ 2017.12 비트코인 오토 트레이딩 봇 개발
-- 2018.01 ~ 2018.03 모바일 게임 Reinforcement learning을 이용한 매크로 개발
-- 2019.04 ~         tech blog를 운영하며 논문 리뷰, 논문 구현을 주로 진행
-- 2019.08 ~ 2019.10 Elevator performance를 높이기 위한 강화학습 적용
-- 2019.10 ~ 2019.11 PPO + RND 등을 통한 supermario agent 개발
-- 2019.11 ~         minimalRL에 minimal한 RL Algorithm code pull request중
+- [react-redux-material-meteor](https://github.com/isme2n/react-redux-material-meteor) - 보일러 플레이트
 
+- [48Wedding](http://48wedding.com) - 웨딩카드 만들기 서비스
 
-## 관심 분야
-- Reinforcement Learning, Attention Mechanism, Network Architecture Search, Information Encoding
+- [secretary](https://chrome.google.com/webstore/detail/secretary/bijcgcgbhmeemlnidoigdcnokggknikb?hl=ko) - 기사요약 크롬 확장서비스
 
-## 보유 기술
-- Python, Pytorch, Keras, tensorflow, Scikit learn
+- [이미지필터](https://github.com/isme2n/react-image-filter-app) - 캔버스 이미지 필터를 공부하며 만든 샘플 앱
 
-- Docker, ubuntu, centos
+- [유튜브 함께보기](https://youtu.be/7IFEO9D6G4Y) - 유튜브 동영상을 다른사람들과 함께 보며 대화를 나누는 앱
 
-- git, github, Bitbucket, slack, trello 
+## 발표
 
-- hadoop, spark, hive, hue, oozie, zookeeper, cloudera, sqoop, flume, kafka
+- [GDG Summer Party 테크니컬 세션 - 자바스크립트 제대로 알기](https://www.slideshare.net/MinPark48/ss-79004233)
 
-- Unity
+## 강의
 
-- AWS(EC2, S3, RDS, Dynamo DB, Lambda), openCV, fireStore
+- [React로 라이브 컴파일러 만들기](https://www.youtube.com/playlist?list=PLBrx45N7b6tkdisu8ZhKs02tEf5wDuk2W)
 
-- R, Java, C++
+## 하고싶은 말
 
+다양한 사이드 프로젝트 제안, 친구 제안, 번개 제안 등등 해주시면 좋아합니다.
 
-
+행복하세요 오늘도.
