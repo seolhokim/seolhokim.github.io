@@ -1,12 +1,12 @@
-# -----------------------------------------------------------------------------
+﻿# -----------------------------------------------------------------------------
 #  User configuration
 # -----------------------------------------------------------------------------
 
 title:               Aiden
 
 # The unique resource location of your page.
-# Set to `https://<username>.github.io` when hosting on GitHub Pages
-url:                 https://isme2n.github.io
+# Set to `https://seolhokim.github.io` when hosting on GitHub Pages
+url:                 https://seolhokim.github.io
 
 # Set to '' when hosting a blog on GitHub Pages, ie on `//<username>.github.io`
 # Set to '/<reponame>' when using the `gh-pages` branch of a repository
