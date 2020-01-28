@@ -96,14 +96,14 @@ tags: reinforcementlearning
 
 ## a. Model is Learned
 - [59]	Imagination-Augmented Agents for Deep Reinforcement Learning, Weber et al, 2017. Algorithm: I2A.
-- [60]	Neural Network Dynamics for Model-Based Deep Reinforcement Learning with Model-Free Fine-Tuning, Nagabandi et al, 2017. Algorithm: MBMF.
+- ~~[60]	Neural Network Dynamics for Model-Based Deep Reinforcement Learning with Model-Free Fine-Tuning, Nagabandi et al, 2017. Algorithm: MBMF.~~
 - [61]	Model-Based Value Expansion for Efficient Model-Free Reinforcement Learning, Feinberg et al, 2018. Algorithm: MVE.
 - [62]	Sample-Efficient Reinforcement Learning with Stochastic Ensemble Value Expansion, Buckman et al, 2018. Algorithm: STEVE.
 - [63]	Model-Ensemble Trust-Region Policy Optimization, Kurutach et al, 2018. Algorithm: ME-TRPO.
 - [64]	Model-Based Reinforcement Learning via Meta-Policy Optimization, Clavera et al, 2018. Algorithm: MB-MPO.
-- [65]	Recurrent World Models Facilitate Policy Evolution, Ha and Schmidhuber, 2018.
+- ~~[65]	Recurrent World Models Facilitate Policy Evolution, Ha and Schmidhuber, 2018.~~
 ## b. Model is Given
-- [66]	Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm, Silver et al, 2017. Algorithm: AlphaZero.
+- [66]	~~Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm, Silver et al, 2017. Algorithm: AlphaZero.~~
 - [67]	Thinking Fast and Slow with Deep Learning and Tree Search, Anthony et al, 2017. Algorithm: ExIt.
 
 # 7. Meta-RL
