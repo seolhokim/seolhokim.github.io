@@ -8,8 +8,8 @@ tags: pytorch
 
 windows 10 에서 pytorch를 사용하려면 third-party의 package를 다운로드받아야한다.
 ~~~
-conda create (이름) python=3.6
-conda activate (이름)
+conda create -n (이름) python=3.6
+activate (이름)
 ~~~
 으로 환경을 만들고, 환경을 activate 한다.
 ~~~
