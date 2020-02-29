@@ -44,20 +44,20 @@ Controller model은 Expected Cumulative reward를 maximize하기 위한 역할�
 C model은 z와 h(V와 M의 output)을 각각받는 single linear layer로 구성되었습니다.
 #### 2.4 Putting V,M, and C Together
 ![world model](/assets/img/world_model_3.PNG)
-![world model](/assets/img/world_model_4.PNG)
+
 Vision model과 Memory RNN은 Neural Network를 이용하고, Controller는 parameter를 최소화하고, z,h를 이용해 최대의 성능만 내면 되므로(이전엔 visual vector나, 여러가지 encoding해야하는 정보량이 많았지만 아예 분리되었으므로) Controller를 train하기 위해선 꼭 Neural Network를 사용하지 않아도됩니다.
  여기서 Controller는 Covariance-Matrix Adaptation Evolution Strategy(CMA-ES)라는 Algorithm을 사용해 학습하였는데, 이 알고리즘은 몇 천개의 파라미터에서 최적의 solution을 잘 찾아낸다고 알려져있습니다. 이를 이용해 C를 학습할 때엔, CPU를 이용하게 되었습니다.
 의문 1:그렇다면, well-trained Controller없이 학습한 V와 M이 항상 좋은 성능을 낼 수 있을까?-? 이후 iterative한 방법으로 해결함
 ### 3 Car Racing Experiment
-![world model](/assets/img/world_model_5.PNG)
-![world model](/assets/img/world_model_6.PNG)
+![world model](/assets/img/world_model_4.PNG)
+
 Car Racing Environment는 자동차를 도로에서 벗어나지 않고 얼마나 잘 앞으로 나아가느냐에 대한 Environment입니다.
 신기한건, edge-detecting, stacking recent frames 같은 추가적인 pre-processing 없이도 훨씬 잘 작동하였습니다. 또한 V model만 했을 때와, V model과 M model을 같이 했을 때의 실험결과를 보여주었는데 여러 궁금증을 해소시켜주는 좋은 논문이라고 생각이 들었습니다.
 #### 3.4 Car Racing Dream
 그렇다면, z_t를 가지고 M model에서 z_(t+1)의 distribution을 얻으면, 거기서 sampling해서 계속 진행시키면 어떻게 될까에 대한 의문을 가지고 실험해보았는데 이를 Dream이라고 표현했습니다.
 
 ### 4. VizDoom Experiment
-![world model](/assets/img/world_model_7.PNG)
+![world model](/assets/img/world_model_5.PNG)
 VizDoom은 앞의 enemy가 던지는 fireball을 피해 오래 살아남는 게임입니다.
 여기서는 3.4에서 생긴 의문을 풀어주는 experiment를 진행합니다.
 3.4와 같은 의문을 가진다면, 우리는 이 dream에서 learning을 진행하고 transfer할 수 있을까? 에 대한 물음을 던집니다. 그리고 이 VizDoom 이란 environment에서 실험을 진행하는데, 4.1, 4.2에서 실제 환경에서와 Dream에서 진행할 때에 차이점에 대해, Car Racing에서와의 차이점에 대해 설명합니다.
@@ -73,7 +73,7 @@ Controller는 M model의 Dream에서 Cheating을 하기 시작하는데, 특정�
  이러한 이유가 M model같은 model이 지금까지 실제 환경을 대체하지 못했던 이유일 것이라고 설명하고 있습니다. 이전의 M model역할을 수행했던 M model에 대해 deterministic model, Bayesian model, RNN M(Controller can ignore a flawed M) 역사를 설명하고, Controller를 simplify한 contribution에 대해 설명합니다.
 마지막으로 위에서 살짝 언급했던 z_(t+1)을 sampling할 때, softmax의 temperature에 따라 Dream과 실제 environment에서의 performance를 비교하자면 이렇게 됩니다.
 
-![world model](/assets/img/world_model_8.PNG)
+![world model](/assets/img/world_model_6.PNG)
 
 위에서 들었을 의문일 수 있지만, deterministic 환경에서 MDN을 적용하는 것 자체가 과한거 아니냐? 싶었겠지만, temperature을 0.1을 주면(거의 deterministic) overfit된 것을 보실 수 있습니다.(enemy가 fireball을 안쏘는 등의 행위를 하므로 dream 에서의 score는 높음.)
 
