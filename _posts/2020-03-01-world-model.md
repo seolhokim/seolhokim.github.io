@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "World model "
+title:  "World model 리뷰 및 "
 subtitle:   ""
 categories: deeplearning
 tags: reinforcementlearning
