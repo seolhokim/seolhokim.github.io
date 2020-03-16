@@ -26,13 +26,17 @@ traffic control, power grids, natural language domain에서 주로 large action 
 여기서 DRL의 구조는 두개의 Deep Neural Network(DNN)을 사용하는데, DQN과 AEN으로 이루어져 있고, 이 네트워크들은 convolutional layer로 구성이 되어 있습니다. AEN의 마지막 activation으로는 linear contextual bandit model을 사용했는데 이는 관련없는 action을 높은확률로 제거하고, exploration과 exploitation을 균형있게 하도록 하여 유효한 action에 대해서만 Q-value를 학습하도록 합니다.
 
 ## 2. Related Work
-### Text-Based Game(TBG) : Text base game은 NLP등과 결합되어 새로운 문제에 대한 지평을 열었습니다. text를 기반으로 하기 때문에 굉장히 큰 action space를 가지고 있고, 이전에 어떤 행동을 했는지에 관해 sequential하게 게임이 이어집니다. 또한,  environment도 stochastic함을 담고있는데, 이러한 문제점이 agent를 수렴하기 어렵게 만듭니다.
+### Text-Based Game(TBG)
+* Text base game은 NLP등과 결합되어 새로운 문제에 대한 지평을 열었습니다. text를 기반으로 하기 때문에 굉장히 큰 action space를 가지고 있고, 이전에 어떤 행동을 했는지에 관해 sequential하게 게임이 이어집니다. 또한,  environment도 stochastic함을 담고있는데, 이러한 문제점이 agent를 수렴하기 어렵게 만듭니다.
 
-### Representations for TBG : Text를 어떤식으로 나타낼 것인지에 대해 word를 embedding하는 식의 방법을 제시합니다. 2014년엔 word level에서의 shallow한 cnn을 구성하여 SOTA를 달성하였습니다.이외에도 다양한 방법이 있으나 NLP에서의 적용이 중점이 아니므로 넘어갑니다.
+### Representations for TBG
+* Text를 어떤식으로 나타낼 것인지에 대해 word를 embedding하는 식의 방법을 제시합니다. 2014년엔 word level에서의 shallow한 cnn을 구성하여 SOTA를 달성하였습니다.이외에도 다양한 방법이 있으나 NLP에서의 적용이 중점이 아니므로 넘어갑니다.
 
-### DRL with linear function approximation : linear function의 stable에 대해 설명하고, model에 마지막에 linear하게 붙여주는게 자연스럽게 dynamics도 배우고, 위의 장점(feature engineering process의 필요성 + linear representation의 장점)을 합칠 수 있는 방법이라고 설명합니다.
+### DRL with linear function approximation
+* linear function의 stable에 대해 설명하고, model에 마지막에 linear하게 붙여주는게 자연스럽게 dynamics도 배우고, 위의 장점(feature engineering process의 필요성 + linear representation의 장점)을 합칠 수 있는 방법이라고 설명합니다.
 
-### RL in Large Action Space : 이전에는 large action space에 대해 binary subspace로 바꾸거나, continuous action을 구해 embedding된 action space와의  nearest discrete action을 얻는 식으로 large action space를 해결했습니다. 하지만 이 연구는 사실 적은 action space를 쪼개서 낸 결과이기 때문에 한계가 있습니다.
+### RL in Large Action Space
+* 이전에는 large action space에 대해 binary subspace로 바꾸거나, continuous action을 구해 embedding된 action space와의  nearest discrete action을 얻는 식으로 large action space를 해결했습니다. 하지만 이 연구는 사실 적은 action space를 쪼개서 낸 결과이기 때문에 한계가 있습니다.
 
 또한 이러한 action elimination에 대해 연구된 역사로는 value function의 신뢰구간을 구하고 이를 이용해 optimal이 아닐 확률이 높을 action을 elimination하는 방식부터 해서, 위험한 state를 피하는 것을 agent가 까먹어버리는 것을 피하기 위해 위험한 상황인지에 대해 classifier를 만들어 agent에게 reward 형식으로 주었습니다. 또 affordances(현 상황에 가능한 행동들의 집합)를 inner product를 통해 얻는 방법도 있었습니다.
 
