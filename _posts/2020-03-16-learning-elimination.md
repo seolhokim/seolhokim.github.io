@@ -44,9 +44,11 @@ traffic control, power grids, natural language domain에서 주로 large action 
 이 섹션에서는 MDP에서의 elimination signal에 대한 설명을 합니다. 기본적인 RL에 대한 notation을 다루고, Q-learning에 대해 언급합니다.
 여기서 중요한 점은 agent는 binary elimination signal e(s,a)를 받는데, 이게 1이면, state s 에서 action a는 eliminate됩니다.(실제 알고리즘내에선 threshold를 사용합니다) 다음부터 이 action은 state s 에서 뽑히지 않는다는 말입니다. 이 signal은 agent가 state s 에서 가지지 말아야 할 action에 대한 결정을 내리는데 도움을 주게 됩니다.
 
-#### Definition 1. Valid state-action pairs는 elimination process에서 지우지 말아야할 state action pair를 말합니다.
+#### Definition 1. 
+* Valid state-action pairs는 elimination process에서 지우지 말아야할 state action pair를 말합니다.
 시작전에 첫 유효한 state-action pairs에는 모든 state-action pairs가 들어있습니다.
-#### Definition 2. 가능한 state-action pair는 elimination algorithm에 의해 제거되지 않는 state action pair입니다.
+#### Definition 2. 
+* 가능한 state-action pair는 elimination algorithm에 의해 제거되지 않는 state action pair입니다.
 
 ### 3.1 Advantages in action elimination
 large action space에서 극복해야 하는 메인 문제들은 다음과 같습니다.
@@ -89,8 +91,8 @@ Definition 3. Action Elimination Q-learning은 오직 허용가능한 state-acti
 
 만약 elimination이 끝나면, AE DQN이 수렴했다는 말입니다.
 
-#### Proposition 1.  state-action pair들이 eliminated되지 않는다면, 계속 방문될 것입니다. 그러므로, 1 -  delta의 확률로 optimal에 수렴할 수 있습니다. 추가하자면 action은 최대 
- ![elimination](/assets/img/elimination-10.PNG)회 탐험해야 됩니다.
+#### Proposition 1.
+* state-action pair들이 eliminated되지 않는다면, 계속 방문될 것입니다. 그러므로, 1 -  delta의 확률로 optimal에 수렴할 수 있습니다. 추가하자면 action은 최대 ![elimination](/assets/img/elimination-10.PNG)회 탐험해야 됩니다.
 
 elimination signal에 noise가없다면, invalid action에 대해 항상 정확하게 제거해 invalid action은 유한번의 횟수만 sampling될 것입니다.
 
