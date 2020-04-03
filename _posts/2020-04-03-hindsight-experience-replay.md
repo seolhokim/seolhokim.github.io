@@ -32,4 +32,4 @@ UVFA는 DQN에서 multi goal을 가질 때, 이를 해결하기 위해 사용된
 
 ### 3.1 A motivating example
 
-한 쉬운 예를 들고 오겠습니다. 
+한 쉬운 예를 들고 오겠습니다. State space은 n-dimension의 binary space이고,({0,1}^n) action은 그에 대응한 {0,...,n-1}의 action space를 가지고 있습니다. 이 때, state의 i번째 dimension이 1 일때, action도 대응 되는 dimension의 index가 1이 되어야 positive reward를 받고 이외에는 negative reward를 받습니다. 그렇기 때문에 reward가 sparse하다고 할 수 있죠. 일반 DQN은 여기서 13개 이하일때만 잘 풀어냈는데, HER을 적용시킨 DQN은 50개가 될때까지 푸는 능력을 가질 만큼 성능이 좋았습니다.
