@@ -71,7 +71,7 @@ tags: reinforcementlearning
 # 3. Transfer and Multitask RL
 - [43]	Progressive Neural Networks, Rusu et al, 2016. Algorithm: Progressive Networks.
 - [44]	Universal Value Function Approximators, Schaul et al, 2015. Algorithm: UVFA.
-- [45]	Reinforcement Learning with Unsupervised Auxiliary Tasks, Jaderberg et al, 2016. Algorithm: UNREAL.
+- [45]	~~Reinforcement Learning with Unsupervised Auxiliary Tasks, Jaderberg et al, 2016. Algorithm: UNREAL.~~
 - [46]	The Intentional Unintentional Agent: Learning to Solve Many Continuous Control Tasks Simultaneously, Cabi et al, 2017. Algorithm: IU Agent.
 - [47]	PathNet: Evolution Channels Gradient Descent in Super Neural Networks, Fernando et al, 2017. Algorithm: PathNet.
 - [48]	Mutual Alignment Transfer Learning, Wulfmeier et al, 2017. Algorithm: MATL.
@@ -116,7 +116,7 @@ tags: reinforcementlearning
 # 8. Scaling RL
 
 - [72]	Accelerated Methods for Deep Reinforcement Learning, Stooke and Abbeel, 2018. Contribution: Systematic analysis of parallelization in deep RL across algorithms.
-- [73]	IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures, Espeholt et al, 2018. Algorithm: IMPALA.
+- [73]	~~IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures, Espeholt et al, 2018. Algorithm: IMPALA.~~
 - [74]	Distributed Prioritized Experience Replay, Horgan et al, 2018. Algorithm: Ape-X.
 - [75]	Recurrent Experience Replay in Distributed Reinforcement Learning, Anonymous, 2018. Algorithm: R2D2.
 - [76]	RLlib: Abstractions for Distributed Reinforcement Learning, Liang et al, 2017. Contribution: A scalable library of RL algorithm implementations. Documentation link.
