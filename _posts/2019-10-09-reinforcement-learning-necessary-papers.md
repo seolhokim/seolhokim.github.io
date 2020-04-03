@@ -76,7 +76,7 @@ tags: reinforcementlearning
 - [47]	PathNet: Evolution Channels Gradient Descent in Super Neural Networks, Fernando et al, 2017. Algorithm: PathNet.
 - [48]	Mutual Alignment Transfer Learning, Wulfmeier et al, 2017. Algorithm: MATL.
 - [49]	Learning an Embedding Space for Transferable Robot Skills, Hausman et al, 2018.
-- [50]	Hindsight Experience Replay, Andrychowicz et al, 2017. Algorithm: Hindsight Experience Replay (HER).
+- [50]	~~Hindsight Experience Replay, Andrychowicz et al, 2017. Algorithm: Hindsight Experience Replay (HER).~~
 
 # 4. Hierarchy
 
