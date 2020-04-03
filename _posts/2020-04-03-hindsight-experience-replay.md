@@ -33,3 +33,14 @@ UVFA는 DQN에서 multi goal을 가질 때, 이를 해결하기 위해 사용된
 ### 3.1 A motivating example
 
 한 쉬운 예를 들고 오겠습니다. State space은 n-dimension의 binary space이고,({0,1}^n) action은 그에 대응한 {0,...,n-1}의 action space를 가지고 있습니다. 이 때, state의 i번째 dimension이 1 일때, action도 대응 되는 dimension의 index가 1이 되어야 positive reward를 받고 이외에는 negative reward를 받습니다. 그렇기 때문에 reward가 sparse하다고 할 수 있죠. 일반 DQN은 여기서 13개 이하일때만 잘 풀어냈는데, HER을 적용시킨 DQN은 50개가 될때까지 푸는 능력을 가질 만큼 성능이 좋았습니다.
+
+### 3.2 Multi-goal RL
+
+2.4에서 관심가졌던 것 처럼 이 논문에서는 multiple goal에 대해 해결하고 싶어합니다. 그렇기 때문에, UVFA의 접근방식으로 부터 시작했고, policy와 value function의 input을 state뿐만아닌, goal을 넣어주게 됩니다. 하지만 이는 reward function이 sparse해지고, informative하지 않습니다. 그렇기 때문에, HER이라는 접근법을 사용하게 됩니다.
+
+### 3.3 Algorithm
+
+HER의 기본 알고리즘은 episode를 replay buffer에 저장하기 전에, original goal에 대해서만 저장하는 것이 아닌, 다른 goals에 대해서도 저장을 합니다. 이는 environment의 dynamics에 전혀 영향을 끼치지 않기때문에  쉽게 off-policy algorithm과 결합되어 사용될 수 있는 것입니다. 
+
+
+
