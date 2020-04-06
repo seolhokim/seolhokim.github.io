@@ -43,7 +43,32 @@ UVFA는 DQN에서 multi goal을 가질 때, 이를 해결하기 위해 사용된
 HER의 기본 알고리즘은 episode를 replay buffer에 저장하기 전에, original goal에 대해서만 저장하는 것이 아닌, 다른 goals에 대해서도 저장을 합니다. 이는 environment의 dynamics에 전혀 영향을 끼치지 않기때문에  쉽게 off-policy algorithm과 결합되어 사용될 수 있는 것입니다. 
 
 가장 Simple한 HER은 각각의 trajectory를 goal에 맞춰 replay하는데, 이 goal은 마지막 state에서 얻어집니다. 여기서는 실험적으로 다른 타입과 양의 goal을 Section 4.5에서 실험해 보입니다.
-[fig 5]
+
+HER은 하나의 goal을 그저 좀 더 어렵게 내부적으로 학습시키는 학습 방법으로 볼 수 있으나, 실험적인 면에서 더 좋은 성능을 보이는 것을 보였습니다.
+## 4. Experiments
+
+### 4.2 Does HER improve performance?
+
+[Fig 2]
+
+### 4.3 Does HER improve performance even if there is only one goal we care about?
+
+[Fig 3]
+
+### 4.4 How does HER interact with reward shaping?
+
+이 section에서는 reward shaping을 한 HER에 대해 실험했는데, 
+
+[수식 in 4.4] DDPG와 HER둘다 문제를 해결하지 못하는 모습을 보였는데, 여기서 얼마나 reward shaping이 중요한지 확인했다고 합니다. 
+크게 두가지 이유가 위의 shaped rewards의 성능을 낮게 나오도록 한 원인으로 보았는데, 
+* optimize하려는 것과 실제 성공적인 결과간의 불일치
+* 안좋은 행동에대해 패널티를 주는 것이 exploration에는 안좋은 영향을 끼침
+이러한 reward shaping을 하기 위해서는 domain 지식이 많이 필요함을 강조했습니다.
+
+### 4.5 How many goals should we replay each trajectory with and how to choose them?
+
+
+
 #### future
 * k 개의 random states를 같은 episode내에서 transition이 replay되고, 이후에 관찰된 것 처럼 replay
 
