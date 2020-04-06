@@ -83,7 +83,7 @@ HER은 하나의 goal을 그저 좀 더 어렵게 내부적으로 학습시키�
 * 전체중에서 random state를 뽑습니다.
 [Fig 4]
 
-
+여기까지 왔을 때, 느꼈던 점은 그렇다면 "goals은 어떻게 설정할 것인가?" 였는데, 3d의 objective를 잡는것으로 설정했다. 이래서 robotics  environment에서 experiments를 진행한 이유가 느껴졌다. 이런식으로 goal을 잡지 못하는 경우도 많을 것으로 판단이 됐다.
 
 
 
