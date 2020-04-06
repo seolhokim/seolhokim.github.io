@@ -42,5 +42,22 @@ UVFA는 DQN에서 multi goal을 가질 때, 이를 해결하기 위해 사용된
 
 HER의 기본 알고리즘은 episode를 replay buffer에 저장하기 전에, original goal에 대해서만 저장하는 것이 아닌, 다른 goals에 대해서도 저장을 합니다. 이는 environment의 dynamics에 전혀 영향을 끼치지 않기때문에  쉽게 off-policy algorithm과 결합되어 사용될 수 있는 것입니다. 
 
+가장 Simple한 HER은 각각의 trajectory를 goal에 맞춰 replay하는데, 이 goal은 마지막 state에서 얻어집니다. 여기서는 실험적으로 다른 타입과 양의 goal을 Section 4.5에서 실험해 보입니다.
+[fig 5]
+#### future
+* k 개의 random states를 같은 episode내에서 transition이 replay되고, 이후에 관찰된 것 처럼 replay
+
+#### episode
+* next
+
+#### random
+* next
+
+#### Algorithm
+[algorithm 사진]
+
+
+
+
 
 
