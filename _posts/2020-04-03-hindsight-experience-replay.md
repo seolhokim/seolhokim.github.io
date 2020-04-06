@@ -45,23 +45,23 @@ HER의 기본 알고리즘은 episode를 replay buffer에 저장하기 전에, o
 HER은 하나의 goal을 그저 좀 더 어렵게 내부적으로 학습시키는 학습 방법으로 볼 수 있으나, 실험적인 면에서 더 좋은 성능을 보이는 것을 보였습니다.
 
 #### Algorithm
-[algorithm 사진]
+![hindsight](/assets/img/hindsight-0.PNG) [algorithm 사진]
 
 ## 4. Experiments
 
 ### 4.2 Does HER improve performance?
 
-[Fig 2]
+![hindsight](/assets/img/hindsight-1.PNG) [Fig 2]
 
 ### 4.3 Does HER improve performance even if there is only one goal we care about?
 
-[Fig 3]
+![hindsight](/assets/img/hindsight-2.PNG) [Fig 3]
 
 ### 4.4 How does HER interact with reward shaping?
 
 이 section에서는 reward shaping을 한 HER에 대해 실험했는데, 
 
-[수식 in 4.4] DDPG와 HER둘다 문제를 해결하지 못하는 모습을 보였는데, 여기서 얼마나 reward shaping이 중요한지 확인했다고 합니다. 
+![hindsight](/assets/img/hindsight-3.PNG) [수식 in 4.4] DDPG와 HER둘다 문제를 해결하지 못하는 모습을 보였는데, 여기서 얼마나 reward shaping이 중요한지 확인했다고 합니다. 
 크게 두가지 이유가 위의 shaped rewards의 성능을 낮게 나오도록 한 원인으로 보았는데, 
 * optimize하려는 것과 실제 성공적인 결과간의 불일치
 * 안좋은 행동에대해 패널티를 주는 것이 exploration에는 안좋은 영향을 끼침
@@ -81,9 +81,11 @@ HER은 하나의 goal을 그저 좀 더 어렵게 내부적으로 학습시키�
 
 #### random
 * 전체중에서 random state를 뽑습니다.
-[Fig 4]
+![hindsight](/assets/img/hindsight-4.PNG) [Fig 4]
 
-여기까지 왔을 때, 느꼈던 점은 그렇다면 "goals은 어떻게 설정할 것인가?" 였는데, 3d의 objective를 잡는것으로 설정했다. 이래서 robotics  environment에서 experiments를 진행한 이유가 느껴졌다. 이런식으로 goal을 잡지 못하는 경우도 많을 것으로 판단이 됐다.
+
+
+여기까지 왔을 때, 느꼈던 점은 그렇다면 "goals은 어떻게 설정할 것인가?" 였는데, 3d의 objective를 잡는것으로 설정했다. 이래서 robotics  environment에서 experiments를 진행한 이유가 느껴졌다. 이런식으로 goal을 잡지 못하는 경우도 많을 것으로 판단이 됐다. 위의 실험결과에서도 나왔지만, k는 4나 8 정도가 적당했고, 그러면 goal을 total 몇개를 만들어 하는지가 의문인 상태이다.
 
 
 
