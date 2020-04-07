@@ -51,3 +51,19 @@ value와 target을 사용해 credit이 잘 assign됐는지 확인하는 방법
 * meta-controller(exploration rate와 discount factor로 이루어진) 가 policy를 선택하는 메커니즘을 소개합니다.
 * 처음으로 atari 57게임에서 모두 human baseline을 넘는 것에 대해 설명합니다. 또한 r2d2에서 좀만 re-tuning하여 publish된 paper보다 좀더 long-term credit assignment에 강하게 만든 결과를 설명합니다.
 
+## 2 Background : Never Give Up
+
+NGU Agent의 토대위에서 이 논문은 쓰여졌는데, 이는 두가지 아이디어로 부터 출발했습니다.
+1. Curiosity-driven exploration
+2. Distributed DRL(특히 R2D2)
+NGU는 exploration을 위해 intrinsic reward를 계산합니다. 이 reward는 episode내에서와 episode간에서로 나뉩니다. 
+전자인 r_t^{episodic}은 episode내에서 순식간에 감소하고, 이는 한 에피소드 내의 메모리에서 이전의 observation과의 비교를 통해 계산됩니다. 
+후자인 life-long novelty는 천천히 감소합니다. 여기서는 Random Network Distillation을 통해 이를 구했습니다.
+intrinsic reward는 다음과 같이 구해집니다. 
+
+[background 2에서의 첫수식]
+
+L= 5로 잡고, alpha_t는 life-long novelty 
+
+NGU는 N개의 다른 intrinsic reward scale을 가지고 있고, total reward는 r_{j,t} = r^e_t + \beta_j_jr^i_t가 됩니다. 결과적으로 NGU는 N개의 Q^*_{r_j}를 optimize하는 것에 중점을 두었습니다. 
+
