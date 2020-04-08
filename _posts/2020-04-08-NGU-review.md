@@ -77,9 +77,20 @@ intrinsic reward는 다음과 같은 세가지 성질을 가지고 있습니다.
 L은 scaling을 위해 존재하고 5로 잡아서 사용했습니다.
 
 * Embedding Network
+  * current observation을 p-dimension의 vector로 controllable state만 변환해주는 network에 대한 설명입니다. 이 논문에서는 state에서 agent가 제어할 수 없는 요소는 의미있는 exploration을 하도록 만들지 않는다고 판단했고, 이를 방지하기 위해 Siamese network를 만들어 사용했습니다. 이를 통해, state와 next state가 들어갔을 때, action을 output으로 가지도록 학습시키게 됩니다.
 * Episodic memory and intrinsic reward
-* Intergrating life-long curiousity
-
+  * Episodic memory M은 dynamic size를 가진 memory입니다. controllable state를 embedding한 data를 가지고 있으며, 이 때, episodic reward는 다음과 같이 주어지게 됩니다.
+  
+  [(2) 수식]
+  
+  * 이때 kernel function K는 
+  
+  [(3) 수식]
+  과 같은 방식으로 구하게 됩니다. d^2_m은 k개의 nearest states와의 거리의 제곱의 평균, d^2는 그 k개의 states들과의 각각의 거리 제곱입니다. 쉽게 normalize한 것입니다.
+* Integrating life-long curiousity
+  * 여기서는 life-long curiousity를 Random Network Distillation을 통해 구하였고, alpha는 다음과 같이 구하게됩니다.
+  
+  [Integrating life-long-curiosity 에서 normalize하는 수식]
 ## 3. The Never-Give-Up Agent
 
 * Proposed architecture
