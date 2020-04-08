@@ -18,7 +18,7 @@ exploration과 exploitation을 함으로써, 효과적인 exploratory policies�
 
 #여기서 policy는 network를 뜻하지 않습니다. 헷갈리지 않길 바랍니다.
 
-## Introduction
+## 1. Introduction
 
 Exploration에 대한 역사를 설명하는데, stochastic policies를 사용하여 dense reward scenarios에서 이를 해결한 paper부터, 최근에는 exploration을 
 유도하기 위해 intrinsic reward를 사용함을 소개하며, 지금 state가 이전에 방문했던 state들과 얼마나 다른지를 사용해 어려운 exploration을 해결한 
@@ -45,6 +45,54 @@ exploration이 더 필요하든 말든, 다시 그 state를 가려는 intrinsic 
 * 어려운 exploration이 필요한 게임에서 기존 SOTA보다 좋은 성능을 보였습니다.
 
 
+## 2. The Never-Give-Up Intrinsic Reward
+
+[2. 첫수식]
+time t에서의 reward는 extrinsic reward와 intrinsic reward의 합으로 구성되는데, beta는 positive weights이다. performance를 측정할 때는 extrinsic reward만을 통해 성능을 측정했고, 이제 intrinsic reward에 대한 설명을 하려고 합니다.
+
+intrinsic reward는 다음과 같은 세가지 성질을 가지고 있습니다.
+* 첫째로, 빠르게 한 episode내에서 같은(비슷한) state를 재방문 하지 않도록 합니다.
+* 둘째로, 천천히 inter-episode에서 많이 방문한 state를 방문하지 않도록 합니다.
+* 셋째로, agent의 action에 영향을 받지 않은 environment의 state를 무시합니다.
+
+다음은 intrinsic reward를 어떻게 계산하는지 overview를 보겠습니다. 
+
+[Fig 1]
+
+위에서 설명한 intrinsic reward와 extrinsic reward를 구하기 위해 network는 두가지 block으로 나뉘고, 각각 episodic novelty module(빨간색)과 life-long novelty module(녹색)로 부릅니다.  
+
+* episodic novelty module
+  * episodic memory(M)와, embedding function(f)로 구성되어 있습니다.
+    * memory M은 새 episode마다 비워지고, 각 스텝마다, episodic intrinsic reward가 계산됩니다.(계산되기 위해서 memory M에서 비교가 일어나야합니다.) 또한 controllable한 state를 memory M에 저장합니다.
+    * function f는 current controllable state를 representation으로만들기 위함입니다.
+    * episodic novelty는 agent가 한 episode내에서 다양한 state를 수집하도록 유도하는 역할을 합니다. 그러므로, inter-episode에서는 자주 일어났던 state라도 episodic novelty는 높을(새로울) 수 있습니다.
+
+* life-long novelty module
+  * inter-episode에서의 novelty를 계산합니다. 이는 alpha로 표현합니다.
+  
+이 둘을 결합해 intrinsic reward를 만듭니다.
+
+[(1)수식]
+
+L은 scaling을 위해 존재하고 5로 잡아서 사용했습니다.
+
+* Embedding Network
+* Episodic memory and intrinsic reward
+* Intergrating life-long curiousity
+
+## 3. The Never-Give-Up Agent
+
+* Proposed architecture
+* RL Loss function
+* Distributed training
+
+## 4. Experiments
+생략
+
+## 5. Conclusion
+    
+    
+  
 
 
 
