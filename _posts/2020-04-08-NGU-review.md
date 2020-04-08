@@ -47,7 +47,7 @@ exploration이 더 필요하든 말든, 다시 그 state를 가려는 intrinsic 
 
 ## 2. The Never-Give-Up Intrinsic Reward
 
-[2. 첫수식]
+![NGU](/assets/img/ngu_1.PNG)
 time t에서의 reward는 extrinsic reward와 intrinsic reward의 합으로 구성되는데, beta는 positive weights이다. performance를 측정할 때는 extrinsic reward만을 통해 성능을 측정했고, 이제 intrinsic reward에 대한 설명을 하려고 합니다.
 
 intrinsic reward는 다음과 같은 세가지 성질을 가지고 있습니다.
@@ -57,7 +57,7 @@ intrinsic reward는 다음과 같은 세가지 성질을 가지고 있습니다.
 
 다음은 intrinsic reward를 어떻게 계산하는지 overview를 보겠습니다. 
 
-[Fig 1]
+![NGU](/assets/img/ngu_2.PNG)
 
 위에서 설명한 intrinsic reward와 extrinsic reward를 구하기 위해 network는 두가지 block으로 나뉘고, 각각 episodic novelty module(빨간색)과 life-long novelty module(녹색)로 부릅니다.  
 
@@ -72,7 +72,7 @@ intrinsic reward는 다음과 같은 세가지 성질을 가지고 있습니다.
   
 이 둘을 결합해 intrinsic reward를 만듭니다.
 
-[(1)수식]
+![NGU](/assets/img/ngu_3.PNG)
 
 L은 scaling을 위해 존재하고 5로 잡아서 사용했습니다.
 
@@ -81,16 +81,16 @@ L은 scaling을 위해 존재하고 5로 잡아서 사용했습니다.
 * Episodic memory and intrinsic reward
   * Episodic memory M은 dynamic size를 가진 memory입니다. controllable state를 embedding한 data를 가지고 있으며, 이 때, episodic reward는 다음과 같이 주어지게 됩니다.
   
-  [(2) 수식]
+  ![NGU](/assets/img/ngu_4.PNG)
   
   * 이때 kernel function K는 
   
-  [(3) 수식]
+  ![NGU](/assets/img/ngu_5.PNG)
   과 같은 방식으로 구하게 됩니다. d^2_m은 k개의 nearest states와의 거리의 제곱의 평균, d^2는 그 k개의 states들과의 각각의 거리 제곱입니다. 쉽게 normalize한 것입니다.
 * Integrating life-long curiousity
   * 여기서는 life-long curiousity를 Random Network Distillation을 통해 구하였고, alpha는 다음과 같이 구하게됩니다.
   
-  [Integrating life-long-curiosity 에서 normalize하는 수식]
+  ![NGU](/assets/img/ngu_6.PNG)
 ## 3. The Never-Give-Up Agent
 이 Section에서는 앞에서 발생시킨 intrinsic reward를 어떻게 agent의 학습과정에 합칠지에 대해 설명합니다. 하지만 이 전에, intrinsic reward를 주는 것 자체가 MDP를 POMDP로 바꾸는 것을 의미합니다.(intrinsic reward에 대해 MDP가 성립하지 않음) 그렇기 때문에 이를 해결하기 위해 두가지 접근법을 제시했습니다.
 * 첫째로, intrinsic reward를 agent의 input으로 그대로 넣는 방식을 취했습니다.
@@ -100,7 +100,7 @@ L은 scaling을 위해 존재하고 5로 잡아서 사용했습니다.
 다른 intrinsic reward paper들과는 다르게, NGU는 intrinsic reward가 소멸되지 않으므로, 이것에 의해 policy는 driven됩니다. 거기다가 exploratory behaviour는 value function으로 encoding되고, 이는 쉽게 꺼지지 않기 때문에 이를 해결하기 위해, extrinsic reward에만 driven되는 exploitative policy를 함께 학습합니다.
 
 * Proposed architecture
-  * UVFA의 idea를 사용해, [Proposed architecture 수식 r_t^{beta_t}]의 형태의 reward를 가지고 학습합니다. 이 때 beta는 0부터 특정 값까지 discrete하게 나눠서 사용하는데, 이는 experiments와 App. H.3과 App. F.에서 자세히 살펴볼 수 있습니다. 
+  * UVFA의 idea를 사용해, ![NGU](/assets/img/ngu_7.PNG)의 형태의 reward를 가지고 학습합니다. 이 때 beta는 0부터 특정 값까지 discrete하게 나눠서 사용하는데, 이는 experiments와 App. H.3과 App. F.에서 자세히 살펴볼 수 있습니다. 
 * RL Loss function
   * Retrace double Q-learning loss 를 사용하고 App.E에서 자세히 살펴볼 수 있습니다. gamma도 beta의 i에 맞춰서 0.999부터 0.99까지 존재하고, 가장 exploratory policy에는 작은 discount factor를 사용했는데, 이는 intrinsic reward가 dense하고, 값의 범위가 충분히 작았다고 설명합니다. exploitative policy는 반면에 거의 undiscounted return과 비슷하게 하려고 했습니다. 
 * Distributed training
