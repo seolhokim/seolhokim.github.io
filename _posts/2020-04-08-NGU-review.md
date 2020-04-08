@@ -27,5 +27,26 @@ exploration이 더 필요하든 말든, 다시 그 state를 가려는 intrinsic 
 
 다른 방법으로는, prediction error를 사용하는 방법이 있습니다. 이 방법 역시 high cost이면서, 모든 환경에 일반화하기 어렵습니다.
 
+이 논문의 메인 아이디어로는 exploration과 exploitation을 같은 network로 부터 함께 배우는 것입니다. 이는 exploitative policy는 extrinsic reward에 집중하면서도, exploratory policy는 올바른 방향으로 exploration을 유지한다는 뜻입니다. 이를 해결하기 위해 UVFA의 framework을 사용했고, 다양한 exploratory policies를 사용합니다.
+
+여기서는 intrinsic reward를 두가지로 나눠 정의합니다.
+* per-episode(Episodic) novelty
+  * 이 novelty는 한 episode내에서의 novelty이므로, episode 전체로 봤을 땐, familiar한 state도 revisit하게 해줍니다.
+  * 한 episode내의 방문한 state들을 encoding시켜 저장합니다.
+  * 여기에서 사용하는 similarity(novelty의 반대)는 이전에 저장된 state과의 similarity입니다.
+* life-long novelty
+  * 이 novelty는 점진적으로 familiar한 state일수록 낮습니다.
+  * Random Network Distillation error로 규정합니다.
+이러한 두 가지 novelty의 결합은 complex task, high dimensional state space에서의 관측되지 않은 state에 대한 일관성과 episode 내와 episode사이에서의 일관성있는 exploration을 유지하도록 돕습니다.
+
+이 논문의 contribution은 다음과 같습니다.
+* exploration bonus를 정의해(episode내부와 episode간의 novelty로) training process내에서 exploration을 계속 유지하도록 합니다.
+* 위에서는 그냥 exploration이라고 적었지만, 사실 seperate exploration을 합니다. 여러 parameter들을 가지고, exploration policy를 사용하는데, 이후에 설명하도록 하겠습니다.
+* 어려운 exploration이 필요한 게임에서 기존 SOTA보다 좋은 성능을 보였습니다.
+
+
+
+
+
 
   
