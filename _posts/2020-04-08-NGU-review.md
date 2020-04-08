@@ -92,6 +92,12 @@ L은 scaling을 위해 존재하고 5로 잡아서 사용했습니다.
   
   [Integrating life-long-curiosity 에서 normalize하는 수식]
 ## 3. The Never-Give-Up Agent
+이 Section에서는 앞에서 발생시킨 intrinsic reward를 어떻게 agent의 학습과정에 합칠지에 대해 설명합니다. 하지만 이 전에, intrinsic reward를 주는 것 자체가 MDP를 POMDP로 바꾸는 것을 의미합니다.(intrinsic reward에 대해 MDP가 성립하지 않음) 그렇기 때문에 이를 해결하기 위해 두가지 접근법을 제시했습니다.
+* 첫째로, intrinsic reward를 agent의 input으로 그대로 넣는 방식을 취했습니다.
+* 둘째로, agent가 episode내에서 있엇던 모든 internal state representation을 가지고 있도록 했습니다.
+그리고 agent는 R2D2를 base로 두고 구현하였습니다.
+
+다른 intrinsic reward paper들과는 다르게, NGU는 intrinsic reward가 소멸되지 않으므로, 이것에 의해 policy는 driven됩니다. 거기다가 exploratory behaviour는 value function으로 encoding되고, 이는 쉽게 꺼지지 않기 때문에 이를 해결하기 위해, extrinsic reward에만 driven되는 exploitative policy를 함께 학습합니다.
 
 * Proposed architecture
 * RL Loss function
