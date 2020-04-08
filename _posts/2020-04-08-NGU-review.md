@@ -100,15 +100,17 @@ L은 scaling을 위해 존재하고 5로 잡아서 사용했습니다.
 다른 intrinsic reward paper들과는 다르게, NGU는 intrinsic reward가 소멸되지 않으므로, 이것에 의해 policy는 driven됩니다. 거기다가 exploratory behaviour는 value function으로 encoding되고, 이는 쉽게 꺼지지 않기 때문에 이를 해결하기 위해, extrinsic reward에만 driven되는 exploitative policy를 함께 학습합니다.
 
 * Proposed architecture
-  * UVFA의 idea를 사용해, r_t^{beta_t}의 형태의 reward를 
+  * UVFA의 idea를 사용해, [Proposed architecture 수식 r_t^{beta_t}]의 형태의 reward를 가지고 학습합니다. 이 때 beta는 0부터 특정 값까지 discrete하게 나눠서 사용하는데, 이는 experiments와 App. H.3과 App. F.에서 자세히 살펴볼 수 있습니다. 
 * RL Loss function
+  * Retrace double Q-learning loss 를 사용하고 App.E에서 자세히 살펴볼 수 있습니다. gamma도 beta의 i에 맞춰서 0.999부터 0.99까지 존재하고, 가장 exploratory policy에는 작은 discount factor를 사용했는데, 이는 intrinsic reward가 dense하고, 값의 범위가 충분히 작았다고 설명합니다. exploitative policy는 반면에 거의 undiscounted return과 비슷하게 하려고 했습니다. 
 * Distributed training
+  * 최근에는 distributed training structure들의 좋은 성능을 보았기 때문에, 여기서도 그 구조를 착안하였습니다.
 
 ## 4. Experiments
 생략
 
 ## 5. Conclusion
-    
+생략
     
   
 
