@@ -100,6 +100,7 @@ L은 scaling을 위해 존재하고 5로 잡아서 사용했습니다.
 다른 intrinsic reward paper들과는 다르게, NGU는 intrinsic reward가 소멸되지 않으므로, 이것에 의해 policy는 driven됩니다. 거기다가 exploratory behaviour는 value function으로 encoding되고, 이는 쉽게 꺼지지 않기 때문에 이를 해결하기 위해, extrinsic reward에만 driven되는 exploitative policy를 함께 학습합니다.
 
 * Proposed architecture
+  * UVFA의 idea를 사용해, r_t^{beta_t}의 형태의 reward를 
 * RL Loss function
 * Distributed training
 
