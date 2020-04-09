@@ -34,6 +34,6 @@ distributed RL분야에서도 연구했던 방향은 gradients를 업데이트�
 [Fig 1 사진] 
 
 [Algorithm 1 사진]
-사실 기본 algorithm은 정말 간단합니다. 기존의 PER를 안보셨다고 해도, Actor와 Learner가 분리되어 각 Actor는 learner의 buffer에 Local buffer를 sampling해서 처리해 넣고, learner는 그 buffer를 이용해 update하는 형식입니다. 중요하게 볼점은, 1. learner의 buffer는 학습후 비운다. 2. actor는 local buffer를 가진다. 정도입니다.
+사실 기본 algorithm은 정말 간단합니다. 기존의 PER를 안보셨다고 해도, Actor와 Learner가 분리되어 각 Actor는 learner의 buffer에 Local buffer를 sampling해서 처리해 넣고, learner는 그 buffer를 이용해 update하는 형식입니다. 중요하게 볼점은, 1. learner의 buffer는 학습후 비운다. 2. actor는 local buffer를 가진다. 3. PER에서는 sampling된 sample들만 priority를 update해줬는데 여기서는 actor들이 replay에 넣을 때 다시 계산하니, 추가적인 computation없이 큰 문제를 해결하였습니다. 정도입니다.
 
 
