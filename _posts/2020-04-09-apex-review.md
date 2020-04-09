@@ -29,4 +29,11 @@ distributed RL분야에서도 연구했던 방향은 gradients를 업데이트�
 * 이 기법은 지도학습계열에서 먼저 neural network의 학습을 빠르게 하기 위해 parallelizing하는 방식으로 사용되었습니다. 동기적과 비동기적으로 업데이트 하는 방법이 있는데, 둘다 효과적임을 보였고, 표준이 되어갔습니다. 이를 강화학습에서 비동기적으로 업데이트 하는 방식이 활성화되어 GA3C와 PAAC등이 사용되었습니다.
 
 ## 3. Our Contribution : Distributed Prioritized Experience Replay
-* 이 논문에서는 PER을 distributed setting으로 확장시켰고, 높은 확장성을 갖는 방법임을 보입니다. 이런 방법을 Ape-X라고 명명하였습니다.
+이 논문에서는 PER을 distributed setting으로 확장시켰고, 높은 확장성을 갖는 방법임을 보입니다. 이런 방법을 Ape-X라고 명명하였습니다.
+
+[Fig 1 사진] 
+
+[Algorithm 1 사진]
+사실 기본 algorithm은 정말 간단합니다. 기존의 PER를 안보셨다고 해도, Actor와 Learner가 분리되어 각 Actor는 learner의 buffer에 Local buffer를 sampling해서 처리해 넣고, learner는 그 buffer를 이용해 update하는 형식입니다. 중요하게 볼점은, 1. learner의 buffer는 학습후 비운다. 2. actor는 local buffer를 가진다. 정도입니다.
+
+
