@@ -6,7 +6,7 @@ categories: deeplearning
 tags: reinforcementlearning
 ---
 
-#Distributed Prioritized Experience Replay
+# Distributed Prioritized Experience Replay
 
 ## Abstract
 
@@ -21,4 +21,12 @@ distributed RL분야에서도 연구했던 방향은 gradients를 업데이트�
 이 논문은 data를 더 만들어내고, priority를 이용하는 방법으로 scale up을 할 수 있는 기법을 사용한 것에 contribution이 있는 논문입니다. 
 (주로 data-generation에 집중하였다고 합니다.)
 
+여기서 사용한 architecture는 주로 DQN과DDPG의 기반을 두고 있고 Arcade Learning Environment라는 benchmark를 이용해 성능을 테스트하였습니다.
 
+## 2. Background
+
+### Distributed Stochastic Gradient Descent
+* 이 기법은 지도학습계열에서 먼저 neural network의 학습을 빠르게 하기 위해 parallelizing하는 방식으로 사용되었습니다. 동기적과 비동기적으로 업데이트 하는 방법이 있는데, 둘다 효과적임을 보였고, 표준이 되어갔습니다. 이를 강화학습에서 비동기적으로 업데이트 하는 방식이 활성화되어 GA3C와 PAAC등이 사용되었습니다.
+
+## 3. Our Contribution : Distributed Prioritized Experience Replay
+* 이 논문에서는 PER을 distributed setting으로 확장시켰고, 높은 확장성을 갖는 방법임을 보입니다. 이런 방법을 Ape-X라고 명명하였습니다.
