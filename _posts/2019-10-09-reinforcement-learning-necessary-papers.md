@@ -70,7 +70,7 @@ tags: reinforcementlearning
 
 # 3. Transfer and Multitask RL
 - [43]	Progressive Neural Networks, Rusu et al, 2016. Algorithm: Progressive Networks.
-- [44]	Universal Value Function Approximators, Schaul et al, 2015. Algorithm: UVFA.
+- [44]	~~Universal Value Function Approximators, Schaul et al, 2015. Algorithm: UVFA.~~
 - [45]	~~Reinforcement Learning with Unsupervised Auxiliary Tasks, Jaderberg et al, 2016. Algorithm: UNREAL.~~
 - [46]	The Intentional Unintentional Agent: Learning to Solve Many Continuous Control Tasks Simultaneously, Cabi et al, 2017. Algorithm: IU Agent.
 - [47]	PathNet: Evolution Channels Gradient Descent in Super Neural Networks, Fernando et al, 2017. Algorithm: PathNet.
@@ -101,7 +101,7 @@ tags: reinforcementlearning
 - [62]	Sample-Efficient Reinforcement Learning with Stochastic Ensemble Value Expansion, Buckman et al, 2018. Algorithm: STEVE.
 - [63]	Model-Ensemble Trust-Region Policy Optimization, Kurutach et al, 2018. Algorithm: ME-TRPO.
 - [64]	Model-Based Reinforcement Learning via Meta-Policy Optimization, Clavera et al, 2018. Algorithm: MB-MPO.
-- ~~[65]	Recurrent World Models Facilitate Policy Evolution, Ha and Schmidhuber, 2018.~~
+- [65]	Recurrent World Models Facilitate Policy Evolution, Ha and Schmidhuber, 2018.
 ## b. Model is Given
 - [66]	~~Mastering Chess and Shogi by Self-Play with a General Reinforcement Learning Algorithm, Silver et al, 2017. Algorithm: AlphaZero.~~
 - [67]	Thinking Fast and Slow with Deep Learning and Tree Search, Anthony et al, 2017. Algorithm: ExIt.
@@ -117,8 +117,8 @@ tags: reinforcementlearning
 
 - [72]	Accelerated Methods for Deep Reinforcement Learning, Stooke and Abbeel, 2018. Contribution: Systematic analysis of parallelization in deep RL across algorithms.
 - [73]	~~IMPALA: Scalable Distributed Deep-RL with Importance Weighted Actor-Learner Architectures, Espeholt et al, 2018. Algorithm: IMPALA.~~
-- [74]	Distributed Prioritized Experience Replay, Horgan et al, 2018. Algorithm: Ape-X.
-- [75]	Recurrent Experience Replay in Distributed Reinforcement Learning, Anonymous, 2018. Algorithm: R2D2.
+- [74]	~~Distributed Prioritized Experience Replay, Horgan et al, 2018. Algorithm: Ape-X.~~
+- [75]	~~Recurrent Experience Replay in Distributed Reinforcement Learning, Anonymous, 2018. Algorithm: R2D2.~~
 - [76]	RLlib: Abstractions for Distributed Reinforcement Learning, Liang et al, 2017. Contribution: A scalable library of RL algorithm implementations. Documentation link.
 
 # 9. RL in the Real World
