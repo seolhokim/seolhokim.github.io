@@ -40,9 +40,15 @@ RL은 Model의 유무에 따라 Model-free와 Model-based로 나뉘어진다. Mo
 Value equivalent model은 action을 포함하여 value를 optimize하는 형식으로 확장되었는데 TreeQN은 abstract MDP model을 배우고, optimal value function을 approximate합니다. Value iteration network는 local MDP model을 배우고, optimal value function을 근사하였습니다. Value prediction network는 MuZero와 가장 근사한데, 실제 action으로부터 MDP를 배웁니다. 
 
 ## MuZero Algorithm
+Model은 각 내부 스텝마다 representation function, dynamics function, prediction function으로 구성됩니다. 
 
+![MuZero](/assets/img/muzero_1.PNG)
 
+그림으로 보면, actual state를 hidden state로 바꾸어주는 representation function, 이 정보를 가지고, policy와 value를 예측하는 prediction function, 마지막으로 sampling된 action(not actual action)과 함께 reward와 next hidden state를 예측하는 dynamics function이 있습니다.
 
+이 모델로부터 MCTS를 결합해 사용하는데, AlphaZero와 비슷하게, policy target과 value target은 MCTS search로인해 업데이트되지만, AlphaZero와 다른점은, n-step bootstrapping을 사용한다는 점입니다.
 
+결국 다음과 같이 loss는 predicted policy p와 search policy u의 l2 loss, predicted value v와 value target z의 l2 loss, predicted reward r과 observed reward u의 l2 loss, L2 regularization으로 구성됩니다.
 
+![MuZero](/assets/img/muzero_2.PNG)
 
