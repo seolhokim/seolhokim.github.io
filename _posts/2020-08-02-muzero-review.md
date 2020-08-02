@@ -5,6 +5,7 @@ subtitle:   ""
 categories: deeplearning
 tags: reinforcementlearning
 ---
+한줄요약 : 이전까지의 Model-based는 이래서 별로고 저래서 안됐고 하는게 항상 새로운 SOTA로 변화할 때마다, 이전의 문제들을 객관적으로 바라보고 reasonable하게 해결하는게 놀랍다고 느꼈다.
 
 # Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model
 
@@ -29,5 +30,19 @@ tree-based search방식과 search-based policy iteration을 가지고, learned m
 모든 것을 hidden state로 가져가야하는 직접적인 제약이나 요구사항이 없습니다. 단지 위의 세가지를 잘 나타낼 수 있도록 hidden state로 만들어 주면 되기 때문에, 쓸모없는 정보들이 간소화되면서
 성능이 올라감을 알 수 있습니다.
 
-## 
+## Prior Work
+RL은 Model의 유무에 따라 Model-free와 Model-based로 나뉘어진다. Model-based는 environment의 model을 만드는데, 이는 MDP로 이루어집니다. MDP는 두가지 구성요소가 있는데, state transition과 reward입니다. 한번 모델이 만들어지면, MDP value iteration과 MCTS 같은 planning algorithm을 적용할 수 있는데, 이는 MDP의 optimal value또는 optimal policy를 계산하기 위한 algorithm입니다. 큰 환경이나 POMDP같은 상황에서는 model이 predict할 수 있는 state representation을 먼저 만들어야 하는데, 이러한 representation을 배우고, model을 배우고, planning을 하는 세가지로 나누게 된다면 cumulative error를 피할 수 없어 효과적인 planning이 불가능하게 됩니다.
+* 주요한 접근법으로는 pixel level에서의 접근이 있었습니다. 그러나 pixel-level에서의 세밀함은 크기가 큰 문제에서 쉽지 않을 뿐더러, planning에 필요하지않은 곳에까지 세밀함을 가지고 있어 model-free에 비해 좋지않은 성능을 보이고 있었습니다.
+
+* 다른 접근으로는, 최근에 발전된 방법인데, value function을 predicting하는 것입니다. 메인 아이디어는 실제 environment를 planning하는 것처럼 추상적인 MDP에서 추상적인 model을 만드는 것입니다. 이는 실제 한 state에서 시작해, abstract MDP의 cumulative reward를 실제 environment에 맞추는 방법인 value equivalence을 통해 이루어집니다.
+이러한 방법은 action없이 value를 predicting하는 방식에서 시작했는데, model은 MDP를 따랐지만, 실제 environment의 state를 맞추기 위한 transition model이 필요없었고, 그저 neural network의 hidden layer정도로만 여겨졌습니다.
+
+Value equivalent model은 action을 포함하여 value를 optimize하는 형식으로 확장되었는데 TreeQN은 abstract MDP model을 배우고, optimal value function을 approximate합니다. Value iteration network는 local MDP model을 배우고, optimal value function을 근사하였습니다. Value prediction network는 MuZero와 가장 근사한데, 실제 action으로부터 MDP를 배웁니다. 
+
+## MuZero Algorithm
+
+
+
+
+
 
