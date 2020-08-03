@@ -38,4 +38,38 @@ Agent는 multi-objective에 대해서 상대적인 중요도에 대해 알고있
 
 여기서는 Hindsight Experience Replay와 homotopy optimization을 사용하고, 새로운 환경에 대해 어떻게 자동으로 중요도를 선정하는지 보입니다.
 
+## background
+
+MOMDP는 다음과 같은 tuple로 나타낼 수 있습니다.
+
+$$ \langle \mathcal{S}, \mathcal{A},
+\mathcal{P}, \Omega,f_{\Omega} \rangle $$
+
+순서대로 
+* state space, action space, transition distribution, vector reward function, space of preferences, preference function 인데, 주목할 점은, reward가 vector라는 점과 preference는 이전에 말하던 중요도(선호)를 가르킨다는 점입니다.
+preference function은 linear한 function으로 정의하며,  수식으로 정의하면, $$ f_{\omega}(r(s,a)) = \omega^Tr(s,a) $$ 로 정의할 수 있다. 당연하지만, 만약 $$ \omega $$가 고정된다면, MOMDP는 MDP로 나타낼 수 있습니다. 
+한편으로, multi-objective에서 파레토 최적관련 개념이이 나오게 되는데, 이를 여기에 적용하면, 파레토 최적의 set을 구하면, 이 set내의 값들은 누적보상합이 더 나아질 수 없는 상태를 의미하게 됩니다. 이를 수식으로 나타내면 $$ \mathcal{F}^* := \{\hat{r} | \nexists\hat{r}' \in \mathcal{F}^*\} $$ 가 됩니다. $$\hat{r}$$ 은 $$\hat{r} := \sum_t{\gamma^tr(s_t,a_t)}$$ 입니다.(누적보상합)
+
+그러므로 우리는 가능한 모든 중요도 $$ \Omega $$ 에서 pareto frontier의 convex coverage set을 다음처럼 정의할 수 있습니다. (convex set은 간단히 두점을 이었을 때 그 선분위의 점들이 set에 포함되는 set을 나타냅니다.)
+
+$$ CCS := \{ \hat{r} \in \mathcal{F}^* | \exists \omega \in \Omega s.t. \omega^T\hat{r}\geq \omega^T\hat{r}', \forall\hat{r}' \in \mathcal{F}^*  \} $$ 로 나타냅니다. 그러므로 CCS내의 원소들은 어느 objective를 다른 objective의 안좋은 영향을 끼치지 않은 채로 optimize할수가 없다는 뜻입니다.
+
+![Fig2](/assets/img/multi-object-policy-adap-2.PNG)
+
+이는 그림과 같습니다.
+
+그리고 여기에, linear $$ \omega $$ 가 주어진다면, 가장 큰 projection값을 갖는 방향이 optimal solution이 될 것입니다.
+
+![Fig3](/assets/img/multi-object-policy-adap-3.PNG)
+
+이는 그림과 같습니다.
+
+그리고 이 논문은 두개의 단계로 MORL을 진행합니다.
+
+* Learning phase : 여기서는 agent가 CCS에서의 optimal policy $$ \Pi_{\mathcal{L}} $$ 를 배우게 됩니다. $$ \pi $$ 가 optimal policy $$ \Pi_{\mathcal{L}} $$ 에 속한다면, 어떤 $$ \omega $$ 에선 다른 어떤 policy $$ \pi' $$ 보다 가장 좋은 optimal임을 아래의 수식에서 볼 수 있습니다.
+
+$$ \pi \in \Pi_{\mathcal{L}} \Rightarrow \exists \omega \in \Omega, s.t. \forall\pi' \in \Pi, \omega^Tv^{\pi}(s_0) \geq\omega^Tv^{\pi'}(s_0)$$
+
+* Adaption phase : learning후에, 새로운 task를 받았을 때, unseen preference에 대해 어떻게 적용할지에 대한 파트입니다.
+
 
