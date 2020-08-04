@@ -72,4 +72,15 @@ $$ \pi \in \Pi_{\mathcal{L}} \Rightarrow \exists \omega \in \Omega, s.t. \forall
 
 * Adaption phase : learning후에, 새로운 task를 받았을 때, unseen preference에 대해 어떻게 적용할지에 대한 파트입니다.
 
+### 2.1 Related Work
+Introduction에서 나왔던 내용을 좀더 자세하게 설명합니다.
+* Multi-Objective RL
+  * Single-policy Method : objective에 대해 주어진 중요도에 대해 학습합니다. 그렇기 때문에 중요도가 주어지지 않았을 때, 동작할 수 없습니다.
+  * Multi-policy Method : 위에서 설명했던 Pareto frontier를 근사하기 위해서 policy에 대한 집합을 학습합니다. 이는 scale-up이 제한된다는 것을 말하고, 거기에 새로운 중요도에 대해 쉽게 적용할 수 있지 않습니다.
+
+* Scalarized Q-Learning : 이는 중요도 벡터와 vector형식의 value function과의 inner product를 사용하는 Q-learning입니다. inner loop에서는 스칼라로 업데이트하지만 outer loop에서는 이러한 중요도를 찾기 위해 이런 방법을 사용합니다. 이전의 연구에서도 single neural network를 가지고 중요도에 대한 전체 space를 나타내도록 학습했던 시도가 있었는데, sample efficiency가 떨어졌고, sub-optimal을 피할 수 없었습니다. 이는 다음 그림에서 알 수 있습니다.
+
+![Fig4](/assets/img/multi-object-policy-adap-4.PNG)
+
+이전의 연구에서도 중요도와 잘못 매칭된 optimal solution들을 가지고도 학습을 할 수 있었으나, 한 선호도를 가지고 여러 optimal solution에 학습할 수 없었습니다. 이를 Hindsight Experience Replay의 방법을 차용하여서 한 sample로 sample efficiency를 높이면서, sub-optimal에서 벗어날 수 있도록 하였습니다.
 
