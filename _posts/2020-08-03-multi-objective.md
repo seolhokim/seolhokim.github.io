@@ -52,7 +52,7 @@ preference function은 linear한 function으로 정의하며,  수식으로 정�
 
 그러므로 우리는 가능한 모든 중요도 $$ \Omega $$ 에서 pareto frontier의 convex coverage set을 다음처럼 정의할 수 있습니다. (convex set은 간단히 두점을 이었을 때 그 선분위의 점들이 set에 포함되는 set을 나타냅니다.)
 
-$$ CCS := \{ \hat{r} \in \mathcal{F}^* | \exists \omega \in \Omega s.t. \omega^T\hat{r}\geq \omega^T\hat{r}', \forall\hat{r}' \in \mathcal{F}^*  \} $$ 로 나타냅니다. 그러므로 CCS내의 원소들은 어느 objective를 다른 objective의 안좋은 영향을 끼치지 않은 채로 optimize할수가 없다는 뜻입니다.
+$$ CCS := \{ \hat{r} \in \mathcal{F}^* \mid \exists \omega \in \Omega s.t. \omega^T\hat{r}\geq \omega^T\hat{r}', \forall\hat{r}' \in \mathcal{F}^*  \} $$ 로 나타냅니다. 그러므로 CCS내의 원소들은 어느 objective를 다른 objective의 안좋은 영향을 끼치지 않은 채로 optimize할수가 없다는 뜻입니다.
 
 ![Fig2](/assets/img/multi-object-policy-adap-2.PNG)
 
