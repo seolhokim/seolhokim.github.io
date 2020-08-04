@@ -94,3 +94,22 @@ Introduction에서 나왔던 내용을 좀더 자세하게 설명합니다.
 이 논문의 policy adaption은 중요도 도출(preference elicitation) 혹은 역강화학습(inverse RL)과 관련이 있습니다. IRL에서는 expert의 도움으로 reward function을 배우거나, expert의 policy를 따라해 reward function를 배우는 형식입니다. IRL은 숨겨진 중요도가 고정됐거나 expert의 설명이 가능할때 유효한데, 여기서는 여러 다른 중요도가 사용되므로 더이상의 설명은 하지 않는다고 합니다.
 
 ## Multi-objective RL with Envelope Value Update
+
+이 섹션에서는 드디어 이 논문에서 제안하는 MORL 알고리즘 envelope Q-learning을 소개합니다. 키 아이디어는 vector화된 value function과 envelope update(파라미터를 업데이트할 때, frontier set의 convex envelope를 활용하는 방법입니다.)가 있고, 하나의 policy network를 이용하지만, 여러 중요도에 따른 policies set을 학습하는 것이기때문에 기존의 single-objective의 수렴성이 보장되지 않아 아래에서 알고리즘의 결과의 이론적인 분석을 먼저 진행합니다. 
+
+* Bellman operators
+Bellman operator T는 optimality filter(max) H 와 함께 다음과 같이 정의됩니다.
+$$ TQ(s,a) := r(s,a) + \gamma \mathbb{E}_{s'~\mathcal{P}(\cdot \mid s,a)}(HQ)(s')$$
+
+여기서 multi-objective q-learning은 아래와 같이 나타낼 수 있다.
+
+$$ \mathcal{T}Q(s,a,\omega) := r(s,a) + \gamma \mathbb{E}_{s'~\mathcal{P}(\cdot \mid s,a)}(\mathcal{H}Q)(s',\omega)$$
+
+$$ \mathcal{T} $$는 multi-objective optimality operator로  single-objective에서의 Bellman operator T와 같은 역할을 하는데 달라진 것은 $$ mathcal{H} $$가 solution frontier set의 convex envelope에서 주어진 중요도 w와 주어진 state s에 대해 optimize를 한다는 점입니다.
+
+#### Theorem 1
+#### Theorem 2
+#### Theorem 3
+
+### Learning Algorithm
+### Policy Adaption
