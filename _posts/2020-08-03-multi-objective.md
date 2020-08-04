@@ -5,7 +5,7 @@ subtitle:   ""
 categories: deeplearning
 tags: reinforcementlearning
 ---
-한줄 리뷰 : background가 많이 필요한 논문이다. Hindsight Experience Replay를 이해하고 있으면, Algorithm은 HER의 변형이므로 생각보다 쉬울 수 있다.
+한줄 리뷰 : background가 많이 필요한 논문이지만, 큰 틀은 Hindsight Experience Replay를 벗어나지 않기때문에 이를 이해하고 있으면 생각보다 쉬울 수 있다.
 # A Generalized Algorithm for Multi-Objective Reinforcement Learning and Policy Adaptation
 
 ## Abstract
@@ -84,3 +84,13 @@ Introduction에서 나왔던 내용을 좀더 자세하게 설명합니다.
 
 이전의 연구에서도 중요도와 잘못 매칭된 optimal solution들을 가지고도 학습을 할 수 있었으나, 한 선호도를 가지고 여러 optimal solution에 학습할 수 없었습니다. 이를 Hindsight Experience Replay의 방법을 차용하여서 한 sample로 sample efficiency를 높이면서, sub-optimal에서 벗어날 수 있도록 하였습니다.
 
+이 논문의 contribution은 결국 세가지로 정리할 수 있습니다.
+* 첫째로, 알고리즘 레벨에서 policy network를 업데이트하기위해, solution frontier의 convex envelope를 이용한 Q-learning을 진행합니다.
+* 둘째로, 이론적인 레벨에서 value-based MORL 알고리즘을 소개하고, 수렴을 보입니다.
+* 마지막으로 경험적인 수준에서 MORL의 성능을 테스트할 수 있는 기준과 벤치마크를 만들었습니다.
+
+
+* Policy Adaption
+이 논문의 policy adaption은 중요도 도출(preference elicitation) 혹은 역강화학습(inverse RL)과 관련이 있습니다. IRL에서는 expert의 도움으로 reward function을 배우거나, expert의 policy를 따라해 reward function를 배우는 형식입니다. IRL은 숨겨진 중요도가 고정됐거나 expert의 설명이 가능할때 유효한데, 여기서는 여러 다른 중요도가 사용되므로 더이상의 설명은 하지 않는다고 합니다.
+
+## Multi-objective RL with Envelope Value Update
