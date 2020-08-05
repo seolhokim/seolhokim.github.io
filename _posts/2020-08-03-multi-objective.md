@@ -129,4 +129,10 @@ loss를 추가합니다. 이를
 
 $$ L(\theta) = (1- \lambda) \cdot L^A(\theta) + \lambda \cdot L^B(\theta) $$로, $$lambda $$ 값을 천천히 증가시켜 처음엔 실제 total reward와 근사하고 점점 활용하기 좋게 만드는 형태로, 위에서 언급했던 homotopy optimization이라고 불리는 방법입니다.
 
+loss function에는 $$ \omega $$ 에 대한 loss 가있는데, 이는 중요도에 대해 random sampling을 해서 얻게되지만, transition에서는 분리되어있기 때문에, sample efficiency 를 높이고, 이는 HER의 algorithm과 비슷한 형태를 띄고 있습니다. 
+그리고, $$ \mathcal{H}$$를 전체 $$ \mathcal{Q} $$에 대고 하기는 어려우니 minibatch에서 업데이트를 진행합니다. 
+
+
 ### Policy Adaption
+
+중요도 $$\omega $$를 mltivariable Gaussian distribution에서의 sampling을 통해 policy model을 fix한뒤, argmax를 찾는 방법으로 새 테스크에 맞는 중요도를 적용시킬 수있다는 내용입니다.
