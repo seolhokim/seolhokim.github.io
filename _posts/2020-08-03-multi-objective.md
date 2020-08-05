@@ -5,7 +5,7 @@ subtitle:   ""
 categories: deeplearning
 tags: reinforcementlearning
 ---
-한줄 리뷰 : background가 많이 필요한 논문이지만, 큰 틀은 Hindsight Experience Replay를 벗어나지 않기때문에 이를 이해하고 있으면 생각보다 쉬울 수 있다.
+한줄 리뷰 : background가 많이 필요한 논문이지만, 큰 틀은 Hindsight Experience Replay를 벗어나지 않기때문에 이를 이해하고 있으면 생각보다 쉬울 수 있습니다. 표기에 벡터등에 대한 bold 표기를 ~~귀찮아서~~ 안했으므로 논문과 대조해서 보셔야합니다.
 # A Generalized Algorithm for Multi-Objective Reinforcement Learning and Policy Adaptation
 
 ## Abstract
@@ -119,7 +119,14 @@ $$ Q^*(s,a,\omega) = arg_Q \sup_{\pi \in \Pi}\omega^T \mathbb{E}_{\tau~(\mathcal
 
 reward도 그에 맞게 Objective마다의 reward를 발생시켜야하므로 같은 차원입니다.
 
+loss는 두가지로 구성되는데,
 
+$$ L^A(\theta) = \mathbb{E}_{s,a,\omega}[\mid \mid y - Q(s,a,\omega;\theta) \mid \mid ^2_2], y = \mathbb{E}_{s'}[r + \gamma arg_Q max_{a,\omega'}\omega^TQ(s',a,\omega';\theta_k)] $$
+로 Q-learning의 틀과 같다. loss를 이 하나만 쓰기에는 적용이 어려울 수 있는데 이는, optimal frontier가 너무 많은 discrete solution을 가져, loss function이 너무 non-smooth해 질 수 있기 때문에, 추가로
+$$ L^B(\theta) = \mathbb{E}_{s,a,\omega}[\mid \omega^Ty - \omega^TQ(s,a,\omega;\theta) \mid] $$
 
+loss를 추가합니다. 이를 
+
+$$ L(\theta) = (1- \lambda) \cdot L^A(\theta) + \lambda \cdot L^B(\theta) $$로, $$lambda $$ 값을 천천히 증가시켜 처음엔 실제 total reward와 근사하고 점점 활용하기 좋게 만드는 형태로, 위에서 언급했던 homotopy optimization이라고 불리는 방법입니다.
 
 ### Policy Adaption
