@@ -103,13 +103,23 @@ $$ TQ(s,a) := r(s,a) + \gamma \mathbb{E}_{s'~\mathcal{P}(\cdot \mid s,a)}(HQ)(s'
 
 여기서 multi-objective q-learning은 아래와 같이 나타낼 수 있다.
 
-$$ \mathcal{T}Q(s,a,\omega) := r(s,a) + \gamma \mathbb{E}_{s'~\mathcal{P}(\cdot \mid s,a)}(\mathcal{H}Q)(s',\omega)$$
+$$ \mathcal{T}Q(s,a,\omega) := r(s,a) + \gamma \mathbb{E}_{s' \sim \mathcal{P}(\cdot \mid s,a)}(\mathcal{H}Q)(s',\omega)]$$
 
 $$ \mathcal{T} $$는 multi-objective optimality operator로  single-objective에서의 Bellman operator T와 같은 역할을 하는데 달라진 것은 $$ mathcal{H} $$가 solution frontier set의 convex envelope에서 주어진 중요도 w와 주어진 state s에 대해 optimize를 한다는 점입니다.
 
 #### Theorem 1
+$$ Q^*(s,a,\omega) = arg_Q \sup_{\pi \in \Pi}\omega^T \mathbb{E}_{\tau~(\mathcal{P},\pi) \mid s_0=s,a_0=a}[\sum^{\infty}_{t=0}\gamma^tr(s_t,a_t)] $$
+
+으로, operator $$ \mathcal{T}$$ 는 value space에서 Fix된 하나의 point로 나타난다.
 #### Theorem 2
 #### Theorem 3
 
 ### Learning Algorithm
+전체 space를 $$ \Omega $$로 두었을 때, $$ \mathcal{Q} \subseteq (\Omega \rightarrow \mathcal{R}^m)^{\mathcal{S} \times \mathcal{A}} $$ 로 나타낼 수 있다. 이는 m개의 중요도를 가짐을 의미하고, input으로 state와 , m-dim의 $$ \omega $$가 들어간다. output으로는 원래 Action의 dimension의 Q값이 나오는게 보통 Q-learning방식인데, 여기서 $$\mathcal{A} \times m $$ 의 vectorized q-value가 나오는게 특이점입니다.
+
+reward도 그에 맞게 Objective마다의 reward를 발생시켜야하므로 같은 차원입니다.
+
+
+
+
 ### Policy Adaption
