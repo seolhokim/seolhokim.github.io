@@ -37,6 +37,7 @@ conda install -c peterjc123 pytorch-cpu
 ~~~
 
 로 설치했더니 잘 설치되었다.
+
 ~~~
 (unity) D:\>python
 Python 3.6.7 |Anaconda, Inc.| (default, Dec 10 2018, 20:35:02) [MSC v.1915 64 bit (AMD64)] on win32
@@ -67,3 +68,8 @@ python
 >>> torch.__version__
 '1.0.1'
 ~~~
+안된다면,
+~~~
+conda install pytorch-cpu -c pytorch
+~~~
+를 다시 해보면 될것이다.
