@@ -5,7 +5,7 @@ subtitle:   ""
 categories: deeplearning
 tags: remind
 ---
-가끔 까먹는 이런 라이트한 주제도 
+가끔 까먹는 이런 라이트한 주제도 다뤄보면 좋을것같아 개인 노션에 정리하던 것들을 가끔 풀어볼 예정이다.
 1. **Background** 
     - Mean Squard Error, Cross Entropy Error는 regression과 classification에서 주로 쓰이는 loss들이다. 이는 loss를 convex하게 만들어주는 역할을 한다. 하지만, 우리가 업데이트하기 위한 parameters는 network내부의 non-linear activation function에 의해 non-convex인데, loss가 convex하다고, non-convex한 parameter를 가진 network를 최적화 시킬 수 있을까?
 2. **Description**
