@@ -4,5 +4,5 @@ title: Paper
 slug: paper
 category: deeplearning
 menu: false
-order: 5
+order: 3
 ---

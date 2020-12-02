@@ -4,5 +4,5 @@ title: pytorch
 slug: pytorch
 category: deeplearning
 menu: false
-order: 7
+order: 5
 ---

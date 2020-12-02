@@ -4,5 +4,5 @@ title: Remind
 slug: remind
 category: deeplearning
 menu: false
-order: 9
+order: 2
 ---
