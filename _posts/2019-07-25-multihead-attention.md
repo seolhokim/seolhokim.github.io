@@ -3,16 +3,13 @@ layout: post
 title:  "multihead attention in cifar10"
 subtitle:   ""
 categories: deeplearning
-tags: attention
+tags: etc
 ---
 
-cs234를 듣다가 너무 어려워서(Emma 교수님 말씀이 너무 빨라요 흑흑)
-
-self attention 관련한 강화학습 논문을 쓸까 고민하고 있었는데 테스트용으로 self attention 구현을 해보았다.
 
 https://keras.io/examples/cifar10_cnn/
 
-에서 쓰인 cifar10 sample code에 덧입혔는데, 파라미터 수는 25% 줄였지만 성능은 거의 비슷하다. 하지만 overfitting이 심함.
+에서 쓰인 cifar10 sample code에 덧입혔는데, 파라미터 수는 25% 줄였지만 성능은 거의 비슷하다.
 
 ~~~
 class Attention(Layer):
