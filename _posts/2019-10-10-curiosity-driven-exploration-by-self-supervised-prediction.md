@@ -69,7 +69,7 @@ figure.2는 뒤에서 설명할 예정이다.
 
 learning function으로 $$ g $$ 는 다음과 같이 정의 된다.
 
-$$ \hat {a_t} = g(s_t,s_{t+1};\theta_I) (2) $$
+$$ \hat {a_t} = g(s_t,s_{t+1};\theta_I) (2)  $$
 
 $$ \hat {a_t} $$ 는 action $$ a_t $$의 추정이고, neural network parameter $$ \theta_I L_I(\hat{a_t},a_t)$$ 는 다음과 같이 optimize된다.
 
@@ -79,7 +79,7 @@ $$ \min_{\theta_I}{L_I(\hat{a_t},a_t)} (3) $$
 
 여기선 추가적으로, inverse dynamics model로 feature encoding을 predict하는 network를 하나 더만들었다. f는 model의 forwarding이다.
 
-$$ \hat {\phi}(s_{t+1}) = f(\phi(s_t),a_t; \theta_F) (4)$$
+$$ \hat {\phi}(s_{t+1}) = f(\phi(s_t),a_t; \theta_F) (4) $$
 
 그리고 loss는 다음과 같이 구성하였다.
 
