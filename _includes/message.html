@@ -3,13 +3,7 @@
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 
 </header>
-<script type="text/javascript">
-if (window.MathJax) {
-  MathJax.Hub.Queue(
-    ["Typeset",MathJax.Hub]
-  );
-}
-</script>
+
 {% if include.text %}
   {% capture desc %}
 {{ include.text | strip_newlines }}
@@ -20,3 +14,10 @@ if (window.MathJax) {
   <div class="hr" style="padding-bottom:0"></div>
 {% endif %}
 
+<script type="text/javascript">
+if (window.MathJax) {
+  MathJax.Hub.Queue(
+    ["Typeset",MathJax.Hub]
+  );
+}
+</script>
