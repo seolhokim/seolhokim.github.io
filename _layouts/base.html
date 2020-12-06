@@ -29,11 +29,7 @@ layout: compress
   <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   {% include head.html %}
   <script type="text/javascript">
-  if (window.MathJax) {
-    MathJax.Hub.Queue(
-      ["Typeset",MathJax.Hub]
-    );
-  }
+  Mathjax.typesetPromise()
   </script>
 </head>
 
