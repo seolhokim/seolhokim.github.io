@@ -1,29 +1,6 @@
 
 <header>
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-<script>
-setTimeout(function () {
-  const content = document.createElement('span')
-  content.textContent = '\\(x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}\\)'
-
-  const done = document.createElement('span')
-  done.textContent = '   done!'
-  
-  const syncTypeset = document.querySelector('#syncTypeset')
-  syncTypeset.appendChild(content.cloneNode(true))
-  setTimeout(function () {
-    MathJax.typeset()
-    syncTypeset.appendChild(done.cloneNode(true))
-  }, 3000)
-
-  const asyncTypeset = document.querySelector('#asyncTypeset')
-  asyncTypeset.appendChild(content.cloneNode(true))
-  setTimeout(async function () {
-    await MathJax.typesetPromise()
-    asyncTypeset.appendChild(done.cloneNode(true))
-  }, 3000)
-}, 0)
-</script>
 </header>
 
 {% if include.text %}
