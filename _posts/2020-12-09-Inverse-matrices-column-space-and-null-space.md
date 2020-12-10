@@ -42,11 +42,11 @@ tags: linearalgebra
             - Nonzero case
                 - Linear transformation is one-to-one correspondence
                     - Only one vector is corresponded to Only one transformated vector.
-                - Only one solution in x = A^-1 v always exists. and we can call A^-1 as the **inverse of A**
-                - A^-1 * A equals the transformation that does nothing. → identity transformation
-                - det(A) ≠ 0, A doesn't squish the space
+                - Only one solution in $$x = A^{-1} v$$ always exists. and we can call $$A^{-1}$$ as the **inverse of A**
+                - $$A^{-1} * A$$ equals the transformation that does nothing. → identity transformation
+                - $$det(A) ≠ 0$$, A doesn't squish the space
             - **Zero case**
-                - In det(A) = 0 case, A squish the space to lower dimension. So we can't find Inverse of A. we can't unsquish line to plane using function.
+                - In $$det(A) = 0$$ case, A squish the space to lower dimension. So we can't find Inverse of A. we can't unsquish line to plane using function.
                     - Because single vector has to become multiple vector to broaden dimension.
                 - But we can find the infinite solutions if transformation squish a plane to line while x and v are same direction(linearly dependant) and others do not exist solution.
             - **Rank**
@@ -69,7 +69,7 @@ tags: linearalgebra
                     - If plane is squished to line, then there are lots of vectors in same line become zero vector.
                     - If space is squished to plane, then there are also lots of vectors in same line become zero vector.
                     - If space is squished to line, then there are lots of vectors in plane vectors become zero vector.
-                - $A \vec{x} = \vec{0}$ → all null space be possible solution.
+                - $$A \vec{x} = \vec{0}$$ → all null space be possible solution.
         - O**verview**
             - Each system has some kind of linear transformation associated with it. and when that transformation has an inverse, we can use that inverse to solve our system.
             - column space lets us understand when a solution even exists.

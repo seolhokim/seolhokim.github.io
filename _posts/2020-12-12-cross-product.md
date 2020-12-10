@@ -11,25 +11,25 @@ tags: linearalgebra
     - What is the Cross product
 2. **Description**
     - Notation
-        - $\vec{x}\times\vec{y} = \vec{z}$
+        - $$\vec{x} \times \vec{y} = \vec{z}$$
     - New vector that length is same the parallelagram that two vectors make. It's direction is decided by right hand rule.
     - How to calculate
         - Determinant is needed.
-            - About two vector $\vec{x} = \begin{bmatrix}
+            - About two vector $$ \vec{x} = \begin{bmatrix}
             x_1 & x_2
-            \end{bmatrix}$, $\vec{y} = \begin{bmatrix}
+            \end{bmatrix}$$, $$\vec{y} = \begin{bmatrix}
             y_1 & y_2
-            \end{bmatrix}$, we can think it as transformation $\begin{bmatrix}
+            \end{bmatrix}$$, we can think it as transformation $$\begin{bmatrix}
             x_1 & y_1 \\ x_2 & y_2
-            \end{bmatrix}$. And find how square area that basis vector make is changed.
-    - $\vec{z}$ is bigger when two vector $\vec{x}$ and $\vec{y}$ is perpendicular.
-    - $\vec{z}$ is linear about length of two vector $\vec{x}$ and $\vec{y}$.
-    - To make it more general, $\vec{x} = \begin{bmatrix}
+            \end{bmatrix}$$. And find how square area that basis vector make is changed.
+    - $$\vec{z}$$ is bigger when two vector $$\vec{x}$$ and $$\vec{y}$$ is perpendicular.
+    - $$\vec{z}$$ is linear about length of two vector $$\vec{x}$$ and $$\vec{y}$$.
+    - To make it more general, $$\vec{x} = \begin{bmatrix}
     x_1 & x_2 & x_3
-    \end{bmatrix}$ and $\vec{y} = \begin{bmatrix}
+    \end{bmatrix}$$ and $$\vec{y} = \begin{bmatrix}
     y_1 & y_2 & y_3
-    \end{bmatrix}$. So,
-    - $\vec{x}\times\vec{y} = \vec{z}$ is
+    \end{bmatrix}$$. So,
+    - $$\vec{x}\times\vec{y} = \vec{z}$$ is
 
         $$\begin{bmatrix}
         x_1 \\ x_2 \\ x_3
