@@ -25,7 +25,7 @@ tags: linearalgebra
     - Let's think about function $$f(\vec{x})$$, derminant of $$\vec{x},\vec{v},\vec{w}$$.
 
         $$f\left (  \begin{bmatrix}
-        x  \\ y  \\z 
+        x  \\ y  \\ z 
         \end{bmatrix}\right ) = det\left (  \begin{bmatrix}
         x & v_1 & w_1 \\ y & v_2 & w_2 \\z & v_3 & w_3 
         \end{bmatrix}\right ) 
