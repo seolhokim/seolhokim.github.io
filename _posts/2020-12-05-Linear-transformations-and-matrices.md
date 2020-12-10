@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Linear transformations and matrices"
+title:  "3. Linear transformations and matrices"
 subtitle:   ""
-categories: deeplearning
-tags: remind
+categories: mathematics
+tags: linearalgebra
 ---
 ## Linear transformations and matrices
 1. **What to learn**

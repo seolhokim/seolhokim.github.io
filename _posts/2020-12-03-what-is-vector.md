@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "What is the vector"
+title:  "1. What is the vector"
 subtitle:   ""
-categories: deeplearning
-tags: remind
+categories: mathematics
+tags: linearalgebra
 ---
 
 ## What is the vector?

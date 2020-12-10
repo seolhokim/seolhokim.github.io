@@ -2,8 +2,8 @@
 layout: post
 title:  "Convexity of network and corresponding parameter update"
 subtitle:   ""
-categories: deeplearning
-tags: remind
+categories: mathematics
+tags: etc
 ---
 가끔 까먹는 이런 라이트한 주제도 다뤄보면 좋을것같아 개인 노션에 정리하던 것들을 가끔 풀어볼 예정이다.
 1. **Background** 

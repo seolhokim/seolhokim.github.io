@@ -1,9 +1,9 @@
 ---
 layout: post
-title:  "Linear combinations, span and basis"
+title:  "2. Linear combinations, span and basis"
 subtitle:   ""
-categories: deeplearning
-tags: remind
+categories: mathematics
+tags: linearalgebra
 ---
 ## Linear combinations, span and basis
 1. **What to learn**
