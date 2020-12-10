@@ -12,20 +12,18 @@ tags: linearalgebra
 2. **Description**
     - Why is $$\vec{v} \cdot \vec{w} = \vec{w} \cdot \vec{v}$$ true?
         - Let's think same length vectors $$\vec{v},\vec{w}$$
-
-            ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1fd10106-c762-4654-922f-e857d02b6e1c/linear_algebra_4.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/1fd10106-c762-4654-922f-e857d02b6e1c/linear_algebra_4.png)
+            ![linear_algebra_1.PNG](/assets/img/linear_algebra_1.PNG)
 
             we can draw line that makes equal angle between them. And projecting each other makes same length of projected line!
 
         - Let's think other length vectors $2\vec{v},\vec{w}$
 
-            ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0106e617-ca43-469f-a0bb-cb4ec1b6f0b9/linear_algebra_5.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0106e617-ca43-469f-a0bb-cb4ec1b6f0b9/linear_algebra_5.png)
-
+            ![linear_algebra_2.PNG](/assets/img/linear_algebra_2.PNG)
             the length of $$\vec{v}$$  has doubled.
 
             $$(2\vec{v})\cdot\vec{w} = 2 \vec{v}\cdot\vec{w}$$! 
 
-            ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/21354f47-4c77-4646-81e9-56bd2907771f/linear_algebra_6.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/21354f47-4c77-4646-81e9-56bd2907771f/linear_algebra_6.png)
+            ![linear_algebra_3.PNG](/assets/img/linear_algebra_3.PNG)
 
             the length of projected $$\vec{v}$$ has doubled.
 
