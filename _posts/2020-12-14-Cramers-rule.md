@@ -11,7 +11,7 @@ tags: linearalgebra
     - Understand Cramer's rule by geometrically
 2. **Description**
     - Gaussian elimination is always fast. But understanding cramer's rule geometrically will help to stretch out our linear algebra skill.
-    - About linear transformation $T$,
+    - About linear transformation $$T$$,
 
         $$\begin{bmatrix}
         x  \\ y  
@@ -23,7 +23,7 @@ tags: linearalgebra
         1  \\ 0  
         \end{bmatrix}\right)$$
 
-        But, if $T$ is orthonormal(orthogonal and unit), then 
+        But, if $$T$$ is orthonormal(orthogonal and unit), then 
 
         $$\begin{bmatrix}
         x  \\ y  
@@ -35,7 +35,7 @@ tags: linearalgebra
         1  \\ 0  
         \end{bmatrix}\right)$$
 
-        and, Any orthonormal linear transformation $A$, 
+        and, Any orthonormal linear transformation $$A$$, 
 
         $$\begin{bmatrix}
         a & b \\c&d  
@@ -45,7 +45,7 @@ tags: linearalgebra
         e\\f
         \end{bmatrix}$$
 
-        we can find misterious vector $\vec{v}$ by inner dot 
+        we can find misterious vector $$\vec{v}$$ by inner dot 
 
         $$x = \begin{bmatrix}
         e\\f
@@ -57,19 +57,19 @@ tags: linearalgebra
         b\\d
         \end{bmatrix}$$
 
-        Because, basis of transformed $\vec{x}$ is same as the result of inner dot $\begin{bmatrix}
+        Because, basis of transformed $$\vec{x}$$ is same as the result of inner dot $$\begin{bmatrix}
         e\\f
-        \end{bmatrix}$ with new basis.
+        \end{bmatrix}$$ with new basis.
 
     - Yellow area is 1 * y
 
-        ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ded98dce-14c2-47bc-83f2-41fc79620ff2/linear_algebra_7.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/ded98dce-14c2-47bc-83f2-41fc79620ff2/linear_algebra_7.png)
+        ![linear_algebra_4.PNG](/assets/img/linear_algebra_4.PNG)
 
-        Then, after transformated, we can calculate area of  yellow area transformed by $A$ is $det(A)y$.
+        Then, after transformated, we can calculate area of  yellow area transformed by $$A$$ is $$det(A)y$$.
 
-        - Because, it is linear transformation. $1 \times y$ stretch out $det(A) \times 1 \times y$
+        - Because, it is linear transformation. $$1 \times y$$ stretch out $$det(A) \times 1 \times y$$
 
-        So, $y = \frac{Area}{det(A)}$, Area is (landing vector $\vec{v}$) $\cdot$(transformed i hat). We can describe like this.
+        So, $$y = \frac{Area}{det(A)}$$, Area is (landing vector $$\vec{v}$$) $$\cdot$$(transformed i hat). We can describe like this.
 
         $$y = \frac{Area}{det(A)} = \frac{\left( \begin{bmatrix}
         a & v_1 \\c&v_2  
