@@ -60,3 +60,10 @@ tags: reinforcementlearning
 - Metric에 대해 FIM외에 다른 metric에 대한 가능성에 대해 얘기하고 Hessian과의 관계, Cramer-Rao bound, asymptotically efficient에 대한 얘기를 하는데, 너무 설명이 길어져서 생략하고 유튜브 링크를 남긴다.
     - [링크1](https://www.youtube.com/watch?v=Za1YxRJL-SA)
     - [링크2](https://www.youtube.com/watch?v=eaN_A2cHUb8)
+- 마지막으로, Natural Policy Gradient의 알고리즘은 다음과 같다.
+
+   ![npg algorithm](/assets/img/npg_0.PNG)
+
+    2.의  $$\nabla\mathcal{L}(\theta)$$ 는 $$\nabla\mathcal{L}(\theta) =\nabla\eta(\theta) = \sum_{s,a}{\rho^\pi(s)\nabla\pi(a;s,\theta)Q^\pi(s,a)}$$로, 이에 대해 4.에서 covarient하게 $$\tilde{\nabla}\mathcal{L}(\theta) =F^{-1}\nabla_\theta\mathcal{L}(\theta)$$ 로 업데이트하게 되어 5.를 진행한다. 이때, 다음과 같이 normalize시킨 step size를 이용할 수 있다. 복잡해보이지만, $$\nabla\mathcal{L}(\theta) = g$$로, 리만 공간에서의 업데이트하는 양의 크기를 분모에 넣은 것 뿐이다.
+
+   ![npg algorithm](/assets/img/npg_1.PNG)
