@@ -55,7 +55,7 @@ tags: reinforcementlearning
 
                     위에서  $$\pi_\infty(a,s) = 0$$이면 $$a \notin \mathrm{argmax}_{a'}\tilde{\nabla}{\eta}(\theta)^T\phi_{sa}$$임을 보았으므로, 이를 이용하면 action $$a \in\mathrm{argmax}_{a'}f^\pi(s,a';\tilde{\omega})$$ 는 $$\pi_\infty(a;s) = 0$$이 된다는 것을 알 수 있다.
 
-            - 이 증명은  non-covarient 할 때는 오직 better action을 구할 수 밖에 없다는 것을 강조하기 위한 증명이다. 엄밀히 왜인지는 조금 생각해봐야함. 정확한 이유는 아니지만 $$\nabla\rho(\nabla\eta)$$에 대해 1차 미분만가지고 argmax를 쓰기 위해 유도하는게 어려웠다.
+            - 이 증명은 non-covarient 할 때는 오직 better action을 구할 수 밖에 없다는 것을 강조하기 위한 증명이다. 엄밀히 왜인지는 조금 생각해봐야함. 정확한 이유는 아니지만 $$\nabla\rho(\nabla\eta)$$의 방향에 대해 expectation을 사용해 구하기 때문에($$f^\pi(s,a;\tilde{\omega}) > \mathbb{E}_{\pi(a';s)}\{f^\pi(s,a';\tilde{\omega}\}$$) best action이 선택되지 않아도 된다는 점을 본 것 같다.
     - 다음으론 general한 상황에서의 정의를 보이는데, 증명은 쉬우니까 생략한다. $$\pi$$가 $$f$$를 증가시키는 방향으로 update됨을 볼 수 있는 정의이다. greedy action selection은 general하게 policy를 update시키진 못하지만 여러 optimization method와 함께 사용한다면 policy improvement를 이끌 수 있다는 내용이다.
 - Metric에 대해 FIM외에 다른 metric에 대한 가능성에 대해 얘기하고 Hessian과의 관계, Cramer-Rao bound, asymptotically efficient에 대한 얘기를 하는데, 너무 설명이 길어져서 생략하고 유튜브 링크를 남긴다.
     - [링크1](https://www.youtube.com/watch?v=Za1YxRJL-SA)
