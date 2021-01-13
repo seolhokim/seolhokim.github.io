@@ -28,11 +28,11 @@ tags: reinforcementlearning
 
             $$\left \| dx\right \|^2 = dx \cdot dx = (e_1 dx_1+e_2dx+...+e_ndx_n)(e_1 dx_1+e_2dx+...+e_ndx_n ) \\= \sum^{n}_{i=1}\sum^{n}_{j=1}{g_{ij}dx_idx_j}$$
 
-            이때, $$g_{ij}$$를 행렬 $${G}$$로 나타낼 수 있다. 이 행렬 $$G$$를 quadratic form으로 나타내어 본다면, $$dx^TGdx$$로 나타낼 수 있다. 이를 이용해 steepest descent방향을 구하기 위해,(업데이트를 위해 ascent할 것이지만) 행렬 $G$는 positive-definite matrix로 나타내는 것이 compatiable하다고 볼 수 있다. 왜냐면 positive definite일 때, $$dx^TGdx>0$$이고, 극소점이 발생하기 때문이다. 
+            이때, $$g_{ij}$$를 행렬 $${G}$$로 나타낼 수 있다. 이 행렬 $$G$$를 quadratic form으로 나타내어 본다면, $$dx^TGdx$$로 나타낼 수 있다. 이를 이용해 steepest descent방향을 구하기 위해,(업데이트를 위해 ascent할 것이지만) 행렬 $$G$$는 positive-definite matrix로 나타내는 것이 compatiable하다고 볼 수 있다. 왜냐면 positive definite일 때, $$dx^TGdx>0$$이고, 극소점이 발생하기 때문이다. 
 
         - 위를 통해 리만 공간에서 미소거리를 구하는 법을 살펴보았다. 그렇다면, 가장 steepest한 방향은 어디일까?
             - 유클리드 공간에서 가장 steepest한 방향은 기울기 (반대)방향이었다. 이를 응용해 리만 공간에서는 Lagrangean method를 통해 구할 수 있다. 먼저, 미소 거리를 $$\epsilon$$로 둔다. 유클리드 공간에서의 steepest한 vector를 잡을때 처럼, 이 증명에서도 steepest unit vector $${a}$$를 정의한다. 어떤 parameter $$w$$에 의해 정의된 함수 $$f(w)$$가 있을 때, 미소거리에서의  $$w$$에 의한 변화량 $$dw$$는 $$dw = \epsilon {a}$$이다. 그렇다면 $$f(w+dw) = f(w)   + \nabla f(w)^T  dw$$(유클리드공간 미분정의)가 최소이므로,  $$f(w+dw) = f(w)   + \epsilon\nabla f(w)^T  a$$이다. 이때 $$\left \| a \right \|^2 = 1$$이므로, Lagrangean method를 사용하면, $$\left \| a \right \|^2 = 1$$를 만족하면서 $$\nabla f(w)^Ta$$ 최소화 시키는 $$a$$를 찾으면 된다. 그렇기 때문에, $$\frac{\partial}{\partial a}\{ \nabla f(w)^Ta - \lambda a^T Ga\} = 0$$을 만족시키는 $$a$$를 찾으면 되는데 일단 미분이 바로 가능하므로 미분하면, $$\nabla f(w) = 2\lambda Ga$$임 을 알 수 있다. 그렇기 때문에 $$a$$는 $$a = \frac{1}{2\lambda}G^{-1}\nabla f(w)$$로 정의할 수 있다.  결국 유클리드 공간에서의 기울기에서 리만공간의 basis에 대한 변형에 비례하는 matrix $$G$$에 대한 역행렬을 곱해준 것과 같다.
-        - 이때 논문에서는 policy space에서의 metric tensor $G$에 대한 근사로 parameter space와 policy space사이에 대한 관계를 mapping하는 역할에 fisher information matrix(FIM)를 선택했다. 이는 당연한 선택으로 보이는데, positive-definite matrix이고, parameter independent하며, 어떤 분포를 approximation하는것엔 Talyer series보다 log가 더욱 정확하기 때문이다. 또한 function compatible도 간단한 조건을 취해 쉽게 유도해낼 수 있다.
+        - 이때 논문에서는 policy space에서의 metric tensor $$G$$에 대한 근사로 parameter space와 policy space사이에 대한 관계를 mapping하는 역할에 fisher information matrix(FIM)를 선택했다. 이는 당연한 선택으로 보이는데, positive-definite matrix이고, parameter independent하며, 어떤 분포를 approximation하는것엔 Talyer series보다 log가 더욱 정확하기 때문이다. 또한 function compatible도 간단한 조건을 취해 쉽게 유도해낼 수 있다.
 
     - 지금까지 policy를 어떻게 optimize하는 것이 좋을까에 대한 얘기를 했다. 다음은 어떤 조건에서 가능한지(compatible), policy iteration을하면서 얻는 action에 대한 얘기를 한다.
         - 위에서 설명했듯이 Natural Policy Gradient도 Compatible Q approximation function $$f$$를 정의하는데 Policy Gradient에서 보여준 내용과 크게 다르지 않다. 다만, policy gradient에서 조건이 하나 더 추가되는데, function $$f$$가 $$\psi^\pi(s,a) = \nabla \log\pi(a;s,\theta)$$일 때,  $$f^\pi(s,a;\omega)= \omega^T\psi^\pi(s,a)$$라는 조건을 하나 더 만족해야 한다. 이는 FIM을 유도하기 위함인데 다음과 같다.
@@ -53,10 +53,10 @@ tags: reinforcementlearning
 
                     $$\mathrm{argmax}_{a'}f^\pi(s,a';\tilde{\omega}) = \mathrm{argmax}_{a'}\tilde{\nabla}\eta(\theta)^T\phi_{sa'}$$
 
-                    위에서  $$\pi_\infty(a,s) = 0$이면 $a \notin \mathrm{argmax}_{a'}\tilde{\nabla}{\eta}(\theta)^T\phi_{sa}$$임을 보았으므로, 이를 이용하면 action $$a \in\mathrm{argmax}_{a'}f^\pi(s,a';\tilde{\omega})$$ 는 $$\pi_\infty(a;s) = 0$$이 된다는 것을 알 수 있다.
+                    위에서  $$\pi_\infty(a,s) = 0$$이면 $$a \notin \mathrm{argmax}_{a'}\tilde{\nabla}{\eta}(\theta)^T\phi_{sa}$$임을 보았으므로, 이를 이용하면 action $$a \in\mathrm{argmax}_{a'}f^\pi(s,a';\tilde{\omega})$$ 는 $$\pi_\infty(a;s) = 0$$이 된다는 것을 알 수 있다.
 
             - 이 증명은  non-covarient 할 때는 오직 better action을 구할 수 밖에 없다는 것을 강조하기 위한 증명이다. 엄밀히 왜인지는 조금 생각해봐야함. 정확한 이유는 아니지만 $$\nabla\rho(\nabla\eta)$$에 대해 1차 미분만가지고 argmax를 쓰기 위해 유도하는게 어려웠다.
-    - 다음으론 general한 상황에서의 정의를 보이는데, 증명은 쉬우니까 생략한다. $\pi$가 $f$를 증가시키는 방향으로 update됨을 볼 수 있는 정의이다. greedy action selection은 general하게 policy를 update시키진 못하지만 여러 optimization method와 함께 사용한다면 policy improvement를 이끌 수 있다는 내용이다.
+    - 다음으론 general한 상황에서의 정의를 보이는데, 증명은 쉬우니까 생략한다. $$\pi$$가 $$f$$를 증가시키는 방향으로 update됨을 볼 수 있는 정의이다. greedy action selection은 general하게 policy를 update시키진 못하지만 여러 optimization method와 함께 사용한다면 policy improvement를 이끌 수 있다는 내용이다.
 - Metric에 대해 FIM외에 다른 metric에 대한 가능성에 대해 얘기하고 Hessian과의 관계, Cramer-Rao bound, asymptotically efficient에 대한 얘기를 하는데, 너무 설명이 길어져서 생략하고 유튜브 링크를 남긴다.
     - [링크1](https://www.youtube.com/watch?v=Za1YxRJL-SA)
     - [링크2](https://www.youtube.com/watch?v=eaN_A2cHUb8)
