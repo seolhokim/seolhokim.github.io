@@ -18,7 +18,7 @@ tags: reinforcementlearning
 
             이를 이용한 일차 근사는 다음과 같다.  
 
-            $$ds = f(\bold{x}+\Delta) \approx f(\bold{x}) + \frac{\partial f}{\partial x_1}dx_1 + \frac{\partial f}{\partial x_2}dx_2 + ...+ \frac{\partial f}{\partial x_n}dx_n$$
+            $$ds = f(\mathbf{x}+\Delta) \approx f(\mathbf{x}) + \frac{\partial f}{\partial x_1}dx_1 + \frac{\partial f}{\partial x_2}dx_2 + ...+ \frac{\partial f}{\partial x_n}dx_n$$
 
             이를 위에서 정의했던 $$e_i$$로 치환하면 다음과 같다.
 
@@ -35,7 +35,7 @@ tags: reinforcementlearning
         - 이때 논문에서는 policy space에서의 metric tensor $G$에 대한 근사로 parameter space와 policy space사이에 대한 관계를 mapping하는 역할에 fisher information matrix(FIM)를 선택했다. 이는 당연한 선택으로 보이는데, positive-definite matrix이고, parameter independent하며, 어떤 분포를 approximation하는것엔 Talyer series보다 log가 더욱 정확하기 때문이다. 또한 function compatible도 간단한 조건을 취해 쉽게 유도해낼 수 있다.
 
     - 지금까지 policy를 어떻게 optimize하는 것이 좋을까에 대한 얘기를 했다. 다음은 어떤 조건에서 가능한지(compatible), policy iteration을하면서 얻는 action에 대한 얘기를 한다.
-        - 위에서 설명했듯이 Natural Policy Gradient도 Compatible Q approximation function $f$를 정의하는데 Policy Gradient에서 보여준 내용과 크게 다르지 않다. 다만, policy gradient에서 조건이 하나 더 추가되는데, function $$f$$가 $$\psi^\pi(s,a) = \nabla \log\pi(a;s,\theta)$$일 때,  $$f^\pi(s,a;\omega)= \omega^T\psi^\pi(s,a)$$라는 조건을 하나 더 만족해야 한다. 이는 FIM을 유도하기 위함인데 다음과 같다.
+        - 위에서 설명했듯이 Natural Policy Gradient도 Compatible Q approximation function $$f$$를 정의하는데 Policy Gradient에서 보여준 내용과 크게 다르지 않다. 다만, policy gradient에서 조건이 하나 더 추가되는데, function $$f$$가 $$\psi^\pi(s,a) = \nabla \log\pi(a;s,\theta)$$일 때,  $$f^\pi(s,a;\omega)= \omega^T\psi^\pi(s,a)$$라는 조건을 하나 더 만족해야 한다. 이는 FIM을 유도하기 위함인데 다음과 같다.
 
             $$ \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)  [f_w(s,a) - Q^\pi(s,a)]} = 0 \\ \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)  [\psi^\pi(s,a)^T{\omega}- Q^\pi(s,a) ]} = 0 \\\sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)\psi^\pi(s,a)^T{\omega}} = \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)  Q^\pi(s,a)} \\ F(\theta)\omega = \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)  Q^\pi(s,a)} \\ F(\theta)\omega = \nabla \eta(\theta)\\ (\because \nabla \eta(\theta) = \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)  Q^\pi(s,a)} = \sum_s{\rho^\pi(s)}{\nabla\pi(s,a) Q^\pi(s,a)}) \\ \omega = F(\theta)^{-1}\nabla\eta(\theta)$$
 
@@ -43,17 +43,17 @@ tags: reinforcementlearning
 
     - 그 다음으로, 이러한 policy가 non-covarient할 때의 그저 better action을 선택하는 것을 비판하고, covarient할 땐 best action을 선택할 수 있고, line search등의 optimization 방법과 결합하여, policy를 improve할 수 있음을 설명한다.
         - policy가 exponential family일 때에 대해 증명하는데 이는 geometrically affine properties를 가진다. 그래서 tangent vector에 의해 transformated된 point도 여전히 같은 manifold에 위치한다. 여기서는 엄밀히는 꼭 tangent vector에 의한 변화가 같은 manifold에 위치하지 않아도 된다고 한다지만 geometrical하게 이해되지는 않는다.
-            - $$\pi(a;s,\theta) \propto \exp(\theta^T\phi_{sa}), \tilde{\nabla}\eta(\theta) \neq0$$ 일때, gradient ascent할 양에 대한 상수 $$\alpha$$를 infinity로 보내면,($$\pi_\infty(a;s) = \lim_{\alpha \rightarrow \infty}\pi(a;s,\theta+\alpha \tilde\nabla\eta(\theta))$) action $a$는 $f^\pi(s,a'\tilde{\omega})$$를 최대화 하는 action이 아니면 $$\pi_\infty(a;s) = 0$$이 된다.
-                - $$\pi(a;s,\theta) \propto \exp(\theta^T\phi_{sa})$$이므로, $$\pi(a;s,\theta+\alpha\tilde{\eta}(\theta)) \propto \exp(\theta^T\phi_{sa}+\alpha\tilde{\eta}(\theta)^T\phi_{sa})$$이고, $$\tilde{\eta}(\theta) \neq 0$$ 이므로, $$\alpha$$가 infinity로 갈 때, $$\tilde{\eta}(\theta)^T\phi_{sa}$$가 dominate하게 되므로, $$\pi_\infty(a,s) = 0$$이면 $$a \notin \argmax_{a'}\tilde{\nabla}{\eta}(\theta)^T\phi_{sa}$$이다.
+            - $$\pi(a;s,\theta) \propto \exp(\theta^T\phi_{sa}), \tilde{\nabla}\eta(\theta) \neq0$$ 일때, gradient ascent할 양에 대한 상수 $$\alpha$$를 infinity로 보내면,($$\pi_\infty(a;s) = \lim_{\alpha \rightarrow \infty}\pi(a;s,\theta+\alpha \tilde\nabla\eta(\theta))$$) action $$a$$는 $$f^\pi(s,a'\tilde{\omega})$$를 최대화 하는 action이 아니면 $$\pi_\infty(a;s) = 0$$이 된다.
+                - $$\pi(a;s,\theta) \propto \exp(\theta^T\phi_{sa})$$이므로, $$\pi(a;s,\theta+\alpha\tilde{\eta}(\theta)) \propto \exp(\theta^T\phi_{sa}+\alpha\tilde{\eta}(\theta)^T\phi_{sa})$$이고, $$\tilde{\eta}(\theta) \neq 0$$ 이므로, $$\alpha$$가 infinity로 갈 때, $$\tilde{\eta}(\theta)^T\phi_{sa}$$가 dominate하게 되므로, $$\pi_\infty(a,s) = 0$$이면 $$a \notin \\mathrm{argmax}_{a'}\tilde{\nabla}{\eta}(\theta)^T\phi_{sa}$$이다.
                 - 이때, $$f^\pi(s,a;\tilde\omega) = \omega^T\psi^\pi(s,a)=\tilde\nabla\eta(\theta)^T\psi^\pi(s,a)$$이고, policy가 exponential family라는 것과 function compatible조건을 이용하면, (잘 기억이 안되면,gibbs distribution에서 function $$f$$를 도출해낸 것을 다시 본다.) $$\psi^\pi(s,a)=\phi_{sa}-\mathbb{E}_{\pi(a';s,\theta)}(\phi_{sa'})$$로 정리 가능하다. 그러므로 $$f^\pi$$를 최대화 시키는 action $$a$$는 다음과 같다.
 
-                    $$\argmax_{a'}f^\pi(s,a';\tilde{\omega}) = \argmax_{a'}\tilde{\nabla}\eta(\theta)^T\phi_{sa'} - \mathbb{E}_{\pi(a';s,\theta)}(\phi_{sa'})$$
+                    $$\mathrm{argmax}_{a'}f^\pi(s,a';\tilde{\omega}) = \mathrm{argmax}_{a'}\tilde{\nabla}\eta(\theta)^T\phi_{sa'} - \mathbb{E}_{\pi(a';s,\theta)}(\phi_{sa'})$$
 
                     이 때 expectation term은 $$a$$에 대한 값이 아니므로, 없애면 다음과 같다.
 
-                    $$\argmax_{a'}f^\pi(s,a';\tilde{\omega}) = \argmax_{a'}\tilde{\nabla}\eta(\theta)^T\phi_{sa'}$$
+                    $$\mathrm{argmax}_{a'}f^\pi(s,a';\tilde{\omega}) = \mathrm{argmax}_{a'}\tilde{\nabla}\eta(\theta)^T\phi_{sa'}$$
 
-                    위에서  $$\pi_\infty(a,s) = 0$이면 $a \notin \argmax_{a'}\tilde{\nabla}{\eta}(\theta)^T\phi_{sa}$$임을 보았으므로, 이를 이용하면 action $$a \in\argmax_{a'}f^\pi(s,a';\tilde{\omega})$$ 는 $$\pi_\infty(a;s) = 0$$이 된다는 것을 알 수 있다.
+                    위에서  $$\pi_\infty(a,s) = 0$이면 $a \notin \mathrm{argmax}_{a'}\tilde{\nabla}{\eta}(\theta)^T\phi_{sa}$$임을 보았으므로, 이를 이용하면 action $$a \in\mathrm{argmax}_{a'}f^\pi(s,a';\tilde{\omega})$$ 는 $$\pi_\infty(a;s) = 0$$이 된다는 것을 알 수 있다.
 
             - 이 증명은  non-covarient 할 때는 오직 better action을 구할 수 밖에 없다는 것을 강조하기 위한 증명이다. 엄밀히 왜인지는 조금 생각해봐야함. 정확한 이유는 아니지만 $$\nabla\rho(\nabla\eta)$$에 대해 1차 미분만가지고 argmax를 쓰기 위해 유도하는게 어려웠다.
     - 다음으론 general한 상황에서의 정의를 보이는데, 증명은 쉬우니까 생략한다. $\pi$가 $f$를 증가시키는 방향으로 update됨을 볼 수 있는 정의이다. greedy action selection은 general하게 policy를 update시키진 못하지만 여러 optimization method와 함께 사용한다면 policy improvement를 이끌 수 있다는 내용이다.
