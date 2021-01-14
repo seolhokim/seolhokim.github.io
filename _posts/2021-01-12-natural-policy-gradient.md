@@ -50,8 +50,8 @@ tags: reinforcementlearning
     - 그 다음으로, 이러한 policy가 non-covarient할 때의 그저 better action을 선택하는 것을 비판하고, covarient할 땐 best action을 선택할 수 있고, line search등의 optimization 방법과 결합하여, policy를 improve할 수 있음을 설명한다.
         - policy가 exponential family일 때에 대해 증명하는데 이는 geometrically affine properties를 가진다. 그래서 tangent vector에 의해 transformated된 point도 여전히 같은 manifold에 위치한다. 여기서는 엄밀히는 꼭 tangent vector에 의한 변화가 같은 manifold에 위치하지 않아도 된다고 한다지만 geometrical하게 이해되지는 않는다.
             - $$\pi(a;s,\theta) \propto \exp(\theta^T\phi_{sa}), \tilde{\nabla}\eta(\theta) \neq0$$ 일때, gradient ascent할 양에 대한 상수 $$\alpha$$를 infinity로 보내면,($$\pi_\infty(a;s) = \lim_{\alpha \rightarrow \infty}\pi(a;s,\theta+\alpha \tilde\nabla\eta(\theta))$$) action $$a$$는 $$f^\pi(s,a'\tilde{\omega})$$를 최대화 하는 action이 아니면 $$\pi_\infty(a;s) = 0$$이 된다.
-                - $$\pi(a;s,\theta) \propto \exp(\theta^T\phi_{sa})$$이므로, $$\pi(a;s,\theta+\alpha\tilde{\eta}(\theta)) \propto \exp(\theta^T\phi_{sa}+\alpha\tilde{\eta}(\theta)^T\phi_{sa})$$이고, $$\tilde{\eta}(\theta) \neq 0$$ 이므로, $$\alpha$$가 infinity로 갈 때, $$\tilde{\eta}(\theta)^T\phi_{sa}$$가 dominate하게 되므로, $$\pi_\infty(a,s) = 0$$이면 $$a \notin \\mathrm{argmax}_{a'}\tilde{\nabla}{\eta}(\theta)^T\phi_{sa}$$이다.
-                - 이때, $$f^\pi(s,a;\tilde\omega) = \omega^T\psi^\pi(s,a)=\tilde\nabla\eta(\theta)^T\psi^\pi(s,a)$$이고, policy가 exponential family라는 것과 function compatible조건을 이용하면, (잘 기억이 안되면,gibbs distribution에서 function $$f$$를 도출해낸 것을 다시 본다.) $$\psi^\pi(s,a)=\phi_{sa}-\mathbb{E}_{\pi(a';s,\theta)}(\phi_{sa'})$$로 정리 가능하다. 그러므로 $$f^\pi$$를 최대화 시키는 action $$a$$는 다음과 같다.
+                - $$\pi(a;s,\theta) \propto \exp(\theta^T\phi_{sa})$$이므로, $$\pi(a;s,\theta+\alpha\tilde{\eta}(\theta)) \propto \exp(\theta^T\phi_{sa}+\alpha\tilde{\eta}(\theta)^T\phi_{sa})$$이고, $$\tilde{\eta}(\theta) \neq 0$$ 이므로, $$\alpha$$가 infinity로 갈 때, $$\tilde{\eta}(\theta)^T\phi_{sa}$$가 dominate하게 되므로, $$\pi_\infty(a,s) = 0$$이면 $$a \notin \mathrm{argmax}_{a'}\tilde{\nabla}{\eta}(\theta)^T\phi_{sa}$$이다.
+                - 이때, $$f^\pi(s,a;\tilde\omega) = \omega^T\psi^\pi(s,a)=\tilde\nabla\eta(\theta)^T\psi^\pi(s,a)$$이고, policy가 exponential family라는 것과 function compatible조건을 이용하면, (잘 기억이 안나면, gibbs distribution에서 function $$f$$를 도출해낸 것을 다시 본다.) $$\psi^\pi(s,a)=\phi_{sa}-\mathbb{E}_{\pi(a';s,\theta)}(\phi_{sa'})$$로 정리 가능하다. 그러므로 $$f^\pi$$를 최대화 시키는 action $$a$$는 다음과 같다.
 
                     $$\mathrm{argmax}_{a'}f^\pi(s,a';\tilde{\omega}) = \mathrm{argmax}_{a'}\tilde{\nabla}\eta(\theta)^T\phi_{sa'} - \mathbb{E}_{\pi(a';s,\theta)}(\phi_{sa'})$$
 
@@ -64,8 +64,8 @@ tags: reinforcementlearning
             - 이 증명은 non-covarient 할 때는 오직 better action을 구할 수 밖에 없다는 것을 강조하기 위한 증명이다. 엄밀히 왜인지는 조금 생각해봐야함. 정확한 이유는 아니지만 $$\nabla\rho(\nabla\eta)$$의 방향에 대해 expectation을 사용해 구하기 때문에($$f^\pi(s,a;\tilde{\omega}) > \mathbb{E}_{\pi(a';s)}\{f^\pi(s,a';\tilde{\omega}\}$$) best action이 선택되지 않아도 된다는 점을 본 것 같다.
     - 다음으론 general한 상황에서의 정의를 보이는데, 증명은 쉬우니까 생략한다. $$\pi$$가 $$f$$를 증가시키는 방향으로 update됨을 볼 수 있는 정의이다. greedy action selection은 general하게 policy를 update시키진 못하지만 여러 optimization method와 함께 사용한다면 policy improvement를 이끌 수 있다는 내용이다.
 - Metric에 대해 FIM외에 다른 metric에 대한 가능성에 대해 얘기하고 Hessian과의 관계, Cramer-Rao bound, asymptotically efficient에 대한 얘기를 하는데, 너무 설명이 길어져서 생략하고 유튜브 링크를 남긴다.
-    - [링크1](https://www.youtube.com/watch?v=Za1YxRJL-SA)
-    - [링크2](https://www.youtube.com/watch?v=eaN_A2cHUb8)
+            - [링크1](https://www.youtube.com/watch?v=Za1YxRJL-SA)
+            - [링크2](https://www.youtube.com/watch?v=eaN_A2cHUb8)
 - 마지막으로, Natural Policy Gradient의 알고리즘은 다음과 같다.
 
    ![npg algorithm](/assets/img/npg_0.PNG)
