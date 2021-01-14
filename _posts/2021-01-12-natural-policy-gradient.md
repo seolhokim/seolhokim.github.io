@@ -37,7 +37,13 @@ tags: reinforcementlearning
     - 지금까지 policy를 어떻게 optimize하는 것이 좋을까에 대한 얘기를 했다. 다음은 어떤 조건에서 가능한지(compatible), policy iteration을하면서 얻는 action에 대한 얘기를 한다.
         - 위에서 설명했듯이 Natural Policy Gradient도 Compatible Q approximation function $$f$$를 정의하는데 Policy Gradient에서 보여준 내용과 크게 다르지 않다. 다만, policy gradient에서 조건이 하나 더 추가되는데, function $$f$$가 $$\psi^\pi(s,a) = \nabla \log\pi(a;s,\theta)$$일 때,  $$f^\pi(s,a;\omega)= \omega^T\psi^\pi(s,a)$$라는 조건을 하나 더 만족해야 한다. 이는 FIM을 유도하기 위함인데 다음과 같다.
 
-            $$ \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)  [f_w(s,a) - Q^\pi(s,a)]} = 0 \\ \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)  [\psi^\pi(s,a)^T{\omega}- Q^\pi(s,a) ]} = 0 \\\sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)\psi^\pi(s,a)^T{\omega}} = \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)  Q^\pi(s,a)} \\ F(\theta)\omega = \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)  Q^\pi(s,a)} \\ F(\theta)\omega = \nabla \eta(\theta)\\ (\because \nabla \eta(\theta) = \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)  Q^\pi(s,a)} = \sum_s{\rho^\pi(s)}{\nabla\pi(s,a) Q^\pi(s,a)}) \\ \omega = F(\theta)^{-1}\nabla\eta(\theta)$$
+            $$ \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)  [f_w(s,a) - Q^\pi(s,a)]} = 0$$ 
+            $$ \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)  [\psi^\pi(s,a)^T{\omega}- Q^\pi(s,a) ]} = 0$$
+            $$ \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)\psi^\pi(s,a)^T{\omega}} = \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)  Q^\pi(s,a)} $$
+            $$ F(\theta)\omega = \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)  Q^\pi(s,a)} $$
+            $$ F(\theta)\omega = \nabla \eta(\theta)$$
+            $$ (\because \nabla \eta(\theta) = \sum_s{\rho^\pi(s)}{\pi(a;s,\theta)\psi^\pi(s,a)  Q^\pi(s,a)} = \sum_s{\rho^\pi(s)}{\nabla\pi(s,a) Q^\pi(s,a)}) $$
+            $$ \omega = F(\theta)^{-1}\nabla\eta(\theta)$$
 
             로 나타낼 수 있고 이는 natural policy gradient update식과 같다.
 
