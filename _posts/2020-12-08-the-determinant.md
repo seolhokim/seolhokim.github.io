@@ -40,7 +40,7 @@ tags: linearalgebra
         - thumb : k hat
     - If Determinant is smaller than zero, we have to change right hand rule to using left hand(Orientation flipped)
 
-    $$det\left ( \begin{bmatrix}a & b &c\\ d & e &f \\ g&h&i\end{bmatrix} \right ) = a \cdot det\left ( \begin{bmatrix}e & f\\ h & i\end{bmatrix} \right ) + b\cdot det\left ( \begin{bmatrix}d & f\\ g & i\end{bmatrix} \right )  + c\cdot det\left ( \begin{bmatrix}d & e\\ g & h\end{bmatrix} \right )$$
+    $$det\left ( \begin{bmatrix}a & b &c\\ d & e &f \\ g&h&i\end{bmatrix} \right ) = a \cdot det\left ( \begin{bmatrix}e & f\\ h & i\end{bmatrix} \right ) - b\cdot det\left ( \begin{bmatrix}d & f\\ g & i\end{bmatrix} \right )  + c\cdot det\left ( \begin{bmatrix}d & e\\ g & h\end{bmatrix} \right )$$
 
 1. **Next Step**
     - Inverse matrices, column space and null space
