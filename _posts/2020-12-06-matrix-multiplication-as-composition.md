@@ -18,10 +18,10 @@ tags: linearalgebra
 
         $$\begin{bmatrix}a & b\\ c & d\end{bmatrix}\begin{bmatrix}e\\ g\end{bmatrix} , \begin{bmatrix}a & b\\ c & d\end{bmatrix}\begin{bmatrix}f\\ h\end{bmatrix} = e \begin{bmatrix}a\\ b\end{bmatrix} + g \begin{bmatrix}b\\ d\end{bmatrix} , f \begin{bmatrix}a\\ b\end{bmatrix} + h \begin{bmatrix}b\\ d\end{bmatrix} $$
 
-        $$e \begin{bmatrix}a\\ b\end{bmatrix} + g \begin{bmatrix}b\\ d\end{bmatrix} , f \begin{bmatrix}a\\ b\end{bmatrix} + h \begin{bmatrix}b\\ d\end{bmatrix} = \begin{bmatrix}
-        ae+bg & af+bh\\ 
-        be+dg & bf+dh
-        \end{bmatrix}$$
+        $$e \begin{bmatrix}a\\ c\end{bmatrix} + g \begin{bmatrix}b\\ d\end{bmatrix} , f \begin{bmatrix}a\\ c\end{bmatrix} + h \begin{bmatrix}b\\ d\end{bmatrix} = \begin{bmatrix}
+ae+bg & af+bh\\ 
+ce+dg & cf+dh
+\end{bmatrix}$$
 
 3. **Next Step**
     - Three-dimensional linear transformations
