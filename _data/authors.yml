@@ -7,9 +7,7 @@ isme2n:
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
-  about:             |
-    RL이 재밌어 RL을 업으로 삼고, 건축설계 자동화 프로젝트를 진행중입니다.|
-    좋은 아이디어와  언제든지 환영합니다. |
+  about: RL independent researcher가 되기 위해 매일 정진하고 있습니다.
     
 
   # This photo will be used in the about section
