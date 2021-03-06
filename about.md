@@ -7,7 +7,7 @@ order: 10
 
 ## 소개
 
-안녕하세요. Deep Reinforcement Learning Engineer 김설호입니다.
+안녕하세요. 프리랜서로 일하는 Deep Reinforcement Learning Engineer 김설호입니다.
 
 빠른 습득력과 paper reading, PoC, ML Research, Getting Things Done에 강점이 있습니다.
 
@@ -18,6 +18,7 @@ PoC부터 production까지 진행되는 과정을 잘 이해하고, 한정된 �
 전 회사들에선 투자 및 특허등에서 성공적으로 기술분야에서의 해결을 이끌었고, 최근엔 리서치와 PoC 부분에서 업무를 진행하였습니다.
 
 ## 약력
+- 2020.02 ~         서울대학교병원과 robotics 연구중
 - 2019.12 ~ 2020.12 스타트업 (주)스페이스워크 에서 강화학습기반 건축설계 자동화 솔루션 개발
 - 2018.08 ~ 2018.12 스타트업 (주)투미유 에서 챗봇 및 추천시스템 개발
 - 2019.01 ~ 2019.04 스타트업 (주)위팝 에서 SNS 관련 빅데이터 솔루션 제공
