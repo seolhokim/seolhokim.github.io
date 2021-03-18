@@ -6,18 +6,6 @@ categories: deeplearning
 tags: etc
 ---
 
-
-
-
-
-keras를 기준으로 이해를 돕기 위해 썼습니다.
-
-포스트 내용은 지극히 주관적이고 연구한 내용을 바탕으로 적은 것이니, 틀리거나 다른 견해가 있다면 상처안받게 잘 남겨주시면 감사하겠습니다 ^^
-
-
-
-
-
 ## 1. Activation function 이란
 
 input value는 보통 layer들과의 dot을 통한 값이 propagation 되어 output이 된다. 이 과정에서 매트릭스가 사용되게 되는데, 이를 수식으로 나타내면 보통은 이런식으로 표현한다.
