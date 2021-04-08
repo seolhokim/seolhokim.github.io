@@ -7,7 +7,7 @@ order: 10
 
 ## 소개
 
-안녕하세요. 프리랜서로 일하는 Deep Reinforcement Learning Engineer 김설호입니다.
+안녕하세요. Deep Reinforcement Learning Researcher 김설호입니다.
 
 빠른 습득력과 paper reading, PoC, ML Research, Getting Things Done에 강점이 있습니다.
 
