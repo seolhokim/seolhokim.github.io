@@ -5,95 +5,54 @@ subtitle:   ""
 categories: deeplearning
 tags: reinforcementlearning
 ---
+1. **Abstract**
+    - 이 논문은 agent의 쉬우면서도 오버헤드가 적은 exploration strategy에 대한 설명을 합니다. 이 때, exploration이 어떠한 intrinsic reward에 의해 이루어지는데, 이 reward(exploration bonus)는 논문 제목에서와 같이 random하게 initialize된 한 고정된 neural network의 forward pass한 값의 error입니다. 이 논문은 이를 통해 exploration이 문제가 됐던 atari games중에서 인간의 평균을 넘어서는 모습을 보입니다.
+2. **Introduction**
+    - RL의 발전은 굉장히 다양하면서도 어려운 문제들을 해결했고, 이러한 해결에는 병렬적으로 많은 양의 데이터를 사용함으로써 이루어졌습니다. 이 때, exploration strategy는 이전과 비교해서 확장성이 떨어지고, 효율적이지 못했습니다.
+    - 이 논문에서는 neural network가 이전에 방문했던 states에 대한 observation에서 낮은 prediction error를 보이는 점을 이용한 연구 방식에서 착안합니다. 그리하여 prediction error를 사용해
+        1. 간단하고,
+        2. high-dimension에서 잘 working하며,
+        3. computation 측면에서 효율적인 
 
-한줄 리뷰 : Randomly Initialized network를 통해 forwarding 한번으로 intrinsic reward를 구할 수 있다는 게 신기했다@! 이걸로 supermariobro agent를 만들어볼 예정이다!
+        방법을 제시합니다. 
 
-# EXPLORATION BY RANDOM NETWORK DISTILLATION
+    - 이전의 많은 연구자들이 이러한 방법에는 dynamics의 stochastic함에 의해 생기는 문제에 대해 지적하였습니다. 이러한 prediction error는 stochastic한 상황과 un-explorated한 상황에 대해 구별할 능력이 없습니다. 그렇기 때문에 의미없는 stochastic한 상황에 있어서도 intrinsic reward가 높게 부여될 수 밖에 없습니다.
+    - 그렇기 때문에, 여기서는 이를 해결하기 위해 이를 input을 deterministic하게 만드는 방법을 택했습니다.
+3. **Method**
 
-## Abstract
+    **3.1 Exploration Bonuses**
 
-구현하기 쉽고 최소한의 overhead를 일으키는 exploration bonus method이다. 그 보너스는 observation의 feature를 predicting 하는 것인데 완전히 랜덤하게
-고정되어 initialized 된 네트워크로 부터!(벌써 재밌을 것 같다.) Random Network Distillation(RND) bonus는 이 향상된 flexibility와 결합되어 
-상당한 진전을 이루었다. 
+    - Exploration bonuses는 exploration을 위해 reward 형태로 agent가 학습하는데 사용되는데, 기존의 $$r_t$$를 $$r_t=e_t+i_t$$로 시점 t에서의 extrinsic reward와 intrinsic reward형태로 나타낼 수 있습니다. 이 챕터에서는 이 exploration을 "잘"해내기 위한 previous works들을 소개하는데, count-based, pseudo-counts, 그리고 intrinsic reward를 사용한 이전의 연구들에 대해 흐름을 소개합니다.
 
-## 1. Introduction 
+    **3.2 Random Network Distillation**
 
-RL은 Expected return(reward)를 최대화 하는게 목표이고, reward가 dense하고 easy to find할 때, 잘 작동한다. 하지만 현실의 task들의 reward는 sparse 하고 hard to find하다. 
+    - 이번 챕터에서는 주요 아이디어와 함께 MNIST에서의 실험 결과를 얘기합니다. key idea만을 간략하게 설명하면, exploration bonus를 만들기 위한 network는 두 개 입니다.
+        - target network : fix(freeze)하고, 처음 initialized된 이후 weights이 바뀌지 않습니다. observation을 통해 정해진 output dimension의 vector를 만듭니다.
+        - predictor network : observation을 통해 정해진 output dimension의 vector를 만듭니다. 이 때 predictor network의 output과 target network의 mean squared error를 통해 predictor network가 학습됩니다.
 
-최근의 Deep RL은 최근의 많은 어려운 문제들에 대해 병렬적으로 많이 복제한 환경에 대해 많은 양의 samples 이 해답인 것을 제시하는 것 처럼 보인다. 하지만 최근에는 이에 대하여 counts를 하거나 information gain같은 exploration methods를 내놓는다.
+        **3.2.1. Source of prediction errors**
 
-여기서는 꽤 simple to implement 한 exploration bonus를 설명하는데 high-dimensional observations에 대해 잘 작동한다고 한다. 오직 single forward passing 만이 필요하고, 이는 비슷한 상황에 대해 lower prediction errors를 갖는 것에 기반한다. 
+        - prediction error는 다음과 같은 요소들에 의해 영향을 받습니다.
+            1. Amount of training data : predictor가 자주 보지 못한 데이터일수록 prediction error가 높습니다.
+            2. Stochasticity :  dynamics가 stochastic할수록 prediction error가 높습니다.
+            3. Model misspecification : observation을 나타내기 위한 중요한 정보량이 손실될수록, class가 target function의 complexity를 맞추기에 너무 제한된 경우 prediction error가 높습니다.
+            4. Learning Dynamics : target function에 맞추기 위한 predictor의 학습이 실패했을 때 prediction error가 높습니다.
+        - 첫번째 요소가 우리가 원하는 prediction error지만, 실제로 이 네가지 요소들에 의해 prediction error가 발생됩니다.
+        - 두번째 요소는 동전 앞 뒷면 관측과 같이 stochastic한 결과를 얻을 때 발생하는 prediction error로, "noisy-TV"라는 문제에 빠지도록 유도합니다. 이를 기존의 intrinsic reward를 사용하는 방식이 효과적으로 해결하지 못했던 문제입니다. 이 논문은 이 2번과 3번의 문제를  효과적으로 해결하는데 기여합니다.
 
-많은 저자들이 말했듯이 input의 stochastic function이 문제가 되는데(완전한 랜덤같은 경우에 계속해서 큰 curiosity를 주게된다) 이를 효율적으로 개선하는 방법이 어렵다.
+        3.2.2. Relation to uncertainty quantification
 
-여기서는 이러한 stochasticity를 하기 위해 랜덤하게 initialize된 network를 이용하는 것이다.
+        - RND에서의 prediction error는 [Osband의 연구](https://arxiv.org/abs/1806.03335) 중 불확실성의 양을 측정하는 방법과 관련되어 있습니다. 이번 챕터를 이해하기 위해서는 사실 bayesian rule과 함께 bayesian neural network를 함께 이해하고 있어야 쉽게 이해할 수 있습니다. 간단하게 설명을 하자면, 기존의 Neural entwork는 uncertainty에 대한 고려를 하지 않음이 자명하고(예를 들면, unseen data가 들어왔을 때, 어느 class의 값이 dominant함이 보일 수 있습니다. 하지만 그 output은 uncertainty가 높지만 이같은 점이 고려되지 않습니다.) 그로인해 uncertainty를 계산하자는 개념에서 Bayesian neural network를 통해 이제 특정 class에 대해 분포로 값을 추정할 수 있게 되었고, 이런 측면에서 uncertainty 문제가 RL에서도 똑같이 발생하므로 어떻게 이를 해결할까가 Osband의 연구였습니다. 그 연구에서 사용되는 방법이 다음의 (1)의 식과 유사한데, 먼저 식을 보겠습니다.
 
-## 2. Method
+            ![rnd](/assets/img/rnd_0.PNG)
 
-### 2.1 Exploration Bonuses
+            prior theta(weights로 일단 이해하고 이후에 prior, posterior등에 대해 좀더 깊게 찾아보시면 좋겠습니다.), mapping function f(neural network 정도로 생각하면 됩니다.) 를 가지고 untrainable한 network를 이용해 prior $$\theta^*$$를 함께 ensemble하여 posterior를 근사하는 과정입니다. 이 때, $$y_i$$가 0일 경우에 대해, 두 network가 unbiased되었다면, (mean이 같다면) 같은 loss function으로 볼 수 있습니다. 그렇기 때문에, distillation error는 zero function을 predicting하는 불확실성의 양을 측정하는 것과 같습니다.
 
-Exploration bonuses는 agent가 외부에서 받는 reward $$ e_t $$ 가 sparse 할 때, agent가 좀더 explore 할 수 있도록 돕는 방법이다. 우리는 이 $$ e_t $$ 를 새롭게 reward 를 time $$ t $$ 에서의 exploration bonus $$ i_t $$ 와 함께 $$ r_t = e_t + i_t $$ 로 정의하였다. 
+    **3.3 Combining Intrinsic and Extrinsic Returns**
 
-여기서 agent가 novel한 state를 visit 하기 위해, novel state에 대해서 $$ i_t $$ 가 높아야하는게 바람직하다. count-based exploration methods 는 이러 한 방법의 bonuses 를 제공하는데, tabular 환경에서는 대략 $$ n_t $$ 에 반비례하게, non-tabular 환경에서는 similar to visited state에 대해 density model로 bonuses를 제공한다.
+    - 다음으로, intrinsic reward와 extrinsic reward를 어떻게 결합하여 줄것인가에 대해 고민해 보아야 합니다. 또한, 이 intrinsic reward는 extrinsic reward가 한 episode내에서 일어난 reward에 대해 주어져야 하는 것이 기본적으로 맞지만, novel한 state는 episode를 넘어 다양하게 발생될 수 있습니다. 그렇기 때문에 이 논문에서는 non-episodic intrinsic reward, episodic extrinsic reward를 linear 결합으로 total reward를 만드는데, 이 성질이 다른 두 reward를 다루기 위해(approximation) 두 개의 value function을 사용하게 됩니다.
 
-또다른 alternative는 prediction error 형태로 $$ i_t $$ 를 제공하는데, Curiosity-driven Exploration by Self-supervised Prediction를 보면 충분히 이해할 수 있을 것같다.
+    **3.4 Reward and Observation Normalization**
 
-
-### 2.2 Random network Distillation
-
-network는 두개로 구성된다. fixed randomly initialized target network 와 predictor network 이다.
-
-target network : $$ f : \mathcal{O} \rightarrow \mathbb{R}^k $$ 
-
-predictor network : $$ \hat{f} : \mathcal{O} \rightarrow \mathbb{R}^k $$
-
-학습은  
-
-$$MSE||\hat{f} (x;\theta) - f(x)||^2 $$
-
-를 통해 이루어진다.(target은 non trainable이다)
-
-그렇다면 predictor network는 target network에 distill될 것이고, 이미 train 된 state에 대해 적은 prediction error가 나올 것이다.
-
-mnist에 대고 실험을 해봤는데 위와 같은 가설을 충족 시켜주는 결과가 나왔다. 0은 자주 본 state같은 상황이고, 다른 숫자들에 대해 실험해 보았는데, 
-
-![Figure 2](/assets/img/rnd_mnist_test.PNG)
-
-같은 결과를 통해 활용할 수 있음을 보였다. 그리고 이 방법은 target network를 predictor가 그대로 완벽히 따라할 가능성이 있을 수 있다고 생각되었지만 위의 실험결과를 보면 아닌걸 볼 수 있다.
-
-#### 2.2.1 Sources of prediction errors
-
-prediction errors 들은 다음과 같은 요인들에 의해 생긴다.
-
-- 1. similar data가 부족한 경우
-- 2. target function이 너무 stochasitc한 경우
-- 3. target function의 복잡도를 fit하기 위한 class가 제한되거나, state의 필요 정보가 너무 부족할때
-- 4. target function을 approximate하기위한 predictor를 찾는데 실패했을때
-
-1번 요인은 허용 가능하지만, 2와 3은 피해야한다. 이런 상황을 RND는 정적인 network를 통해 deterministic하게 만들어버린다.
-
-#### 2.2.2 Relation to uncertainty quantification
-~~이부분은 이해도가 낮아서 다음에 다시 볼 예정이다.~~
-RND prdiction error는 uncertainty quantification method와 비슷한데, 즉 data distribution $$ D = {x_i,y_i}_ {i} $$를 지닌 회귀 문제를 보자.
-Baysian 상황에서 우리는 이전을 $$f_{\theta^{\ast}} $$ 로 맵핑된 $$ p(\theta^{\ast}) $$ 로 두고 결과에 대해 업데이트 한 후에 이전을 계산한다.(결과을 통해 baysian임을 가정해 이전의 네트워크를 계산해 deterministic하게 만든다는 것 같다) $$ \theta $$ 는 prediction error를 줄이기 위해 주어진다. $$ \mathcal{F} $$ 는 function $$ g_{\theta} = f_{\theta} + f_{\theta^{\ast}} $$ 에 의한 분포이고 그렇다면 prediction error 는 다음과 같은 정의로 나타낼 수 있다.
-
-$$ \theta = argmin_{\theta} \mathbb{E}_{(x_i,y_i)~D} ||f_{\theta}(x_i) + f_{\theta^{\ast}}(x_i) - y_i ||^2 + \mathbb{R}(\theta) $$ 
-
-여기서 특별한 케이스로 타겟 $$ y_i $$ 가 0이라면, 절댓값 내의 마지막 term이 사라지고, prior function을 distillation하는 것과 같다. 다른말로 distillation error는 uncertainty의 양과 같다!!
-
-### 2.3 Combining intrinsic and extrinsic returns
-
-~~이전의 실험들에서는 intrinsic rewards를 그저 better exploration을 위해 사용했다. 이런 rewards 는 game over같은 것을 의미 하지 않는다. 하지만 novel states를 찾는 것은~~
-
-이전 실험들에서도 intrinsic reward는 non-episodic하게 다뤄졌다. game over를 당해도 intrinsic reward가 줄거나 하지 않는다. 이런 방법은 exploration을 하기 위한 자연스러운 방법인데, 미래의 novel state를 찾는 intrinsic return은 한 episode내에서도 일어날 수 있고, 여러 episodes에 spread 됐을 수도 있기 때문이다. 하지만 이를 episodic한 extrinsic reward $$ e_t $$ 와 결합하는 일은 obvious 하지 않다.여기에서의 solution은 그냥 reward 를 $$ R = R_E + R_I $$ 로 각각 두었고 그러므로 두개의 value network를 가진다. $$ V = V_E + V_I $$ 로.
-
-### 2.4 Reward and Observartion Normalization
-
-intrinsic reward는 표준편차로 나눠진다. 특히 random untrainable network가 있기 때문에 이를 더 섬세하게 다뤄야한다.
-
-## 3 Experiments
-
-원래 experiments는 눈으로 훑으면서 읽는데 여기서는 training에 필요한 여러 테크닉들이 많이 기술되어있어서 잘 보아야 한다.
-
-combining episodic and non-episodic return 에 대해 다루고, discount factors에 대해 다루고 scaling등 rnn은 좋을줄알았는데 별로였다 이런 내용도 담겨있다.
-
+    - 또한 intrinsic reward의 크기를 어떻게 조절할까에 대해 고민해보아야 하는데, 이를 intrinsic reward의 running estimation의 표준편차로 나눠서 조절합니다.
+    - target network또한 parameter가 계속 고정되어있기 때문에, target network에도 observation을 잘 normalization하여 넣어주어야 합니다. 그리하여 observation은 running mean으로 빼주고, running std로 나눈 뒤 -5~5로 clipping합니다. 이는 predictor와 target network, policy network에도 동일하게 적용됩니다.
