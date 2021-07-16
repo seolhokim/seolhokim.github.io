@@ -47,7 +47,7 @@ tags: reinforcementlearning
     4. **Unsupervised Pre-training**
         - agent network에 pixel-input을 받기 위한 cnn은 pre-train된 후엔 fix된 채로 전체 학습이 끝날 때 까지 고정되는데, 이는 Convolutional Auto-Encoder방식으로, 두 가지 network $$(f_{\theta_e}, g_{\theta_d})$$로 이루어지는데, 전자는 input을 lower dimension에 encoding하고, 후자는 다시 복원하는 식으로 training됩니다. 이 loss는 다음과 같이 쓸 수 있습니다.
 
-            $$L(\bm{x})= \frac{1}{n}\sum^{n}_{i=1}(g_{\theta_d}(f_{\theta_e}(x_i))-x_i)^2$$
+            $$L(\bold{x})= \frac{1}{n}\sum^{n}_{i=1}(g_{\theta_d}(f_{\theta_e}(x_i))-x_i)^2$$
 
             이 때, encoder만 agent network에서 pixel-input을 encoding하기 위해 쓰입니다.
 
