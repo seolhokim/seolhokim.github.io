@@ -18,7 +18,7 @@ tags: reinforcementlearning
 
     ![human_feedback](/assets/img/deep_coach_0.PNG)
 
-    reconstruction task를 통해 pre-trained시킨 policy는, human feedback을 통해 학습을 하게 됩니다. 알고리즘은 다음과 같습니다.
+    reconstruction task를 통해 pre-trained시킨 encoder 역할을 하는 network와 결합시킨 policy network는 human feedback을 통해 학습을 하게 됩니다. 알고리즘은 다음과 같습니다.
 
     ![human_feedback](/assets/img/deep_coach_1.PNG)
 
