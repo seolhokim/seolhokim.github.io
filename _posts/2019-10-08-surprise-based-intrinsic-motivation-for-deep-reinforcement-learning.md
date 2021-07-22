@@ -29,13 +29,13 @@ surprise를 실제 policy를 배우는 모델로 부터 probability distribution
 
 policy update step은 surprise measure가 들어가게되면 성능과의 trade off 가 일어나게 되는데(바로 $$L(\theta)$$를 최적화 하는게 아닌, curiousity term이 추가 되기 때문에 당연하다. 여기서 (1)의 expression이 약간 이상했는데 보자면 
 
-$$ min_{\phi} - \frac {1} {|D|} \sum_{(s,a,s') \in D} \log {P_{\phi}(s|s,a)} + \alpha f(\phi) (1) $$
+$$ min_{\phi} - \frac {1} {\vert D \vert} \sum_{(s,a,s') \in D} \log {P_{\phi}(s\vert s,a)} + \alpha f(\phi) (1) $$
 
 여기서 transition probability(다음 상태로 갈 확률)를 왜 minimize 하려는지 이해가 안된다.
 
 그래도 다음식을 이해하는데 무리가 없는데,
 
-$$ max_{\pi}L(\pi) + \eta E_{s,a~\pi}[D_{KL}(P||P_{\phi})[s,a]] (2)$$
+$$ max_{\pi}L(\pi) + \eta E_{s,a~\pi}[D_{KL}(P\Vert P_{\phi})[s,a]] (2)$$
 
 agent가 가본 곳은 뒤의 텀이 작을 것이다. 왜냐면 이미 transition이 비슷하게 학습되었기 때문에 KL-divergence가 작다. 하지만 덜 갔던 곳(unfamiliar places)은 KL divergence가 높을 것이다. 그래서 이 KL divergence가 높은 곳을 갈 수 있도록 term을 추가해준 것이다.
 
@@ -45,7 +45,7 @@ $$ P_{\phi} $$ 를 KL-divergency의 loss를 주어서 같은 분포를 만드려
 
 
 
-$$ r'(s,a,s') = r(s,a,s') + \eta( \log{P(s'|s,a)} - \log{P_{\phi}(s'|s,a)}) (3)$$
+$$ r'(s,a,s') = r(s,a,s') + \eta( \log{P(s'\vert s,a)} - \log{P_{\phi}(s'\vert s,a)}) (3)$$
 
 이런식으로 나타내 reward function으로 부터 2의 max를 구할 수 있다. 하지만 당연하게도 transition probability $$ P$$ 는 unknown이어서 (2)를 근사하는 다른 solution을 아래 나타낸다.
 
@@ -59,17 +59,17 @@ $$ r'(s,a,s') = r(s,a,s') + \eta( \log{P(s'|s,a)} - \log{P_{\phi}(s'|s,a)}) (3)$
 
 이 두 가지를 만족한다면, cross-entropy를 다음과 같이 나타낼 수 있다.
 
-$$H(P,P_{\phi})[s,a] = E_{s'~P(\cdot|s,a)}[-\log{P_{\phi}(s'|s,a)}] $$
+$$H(P,P_{\phi})[s,a] = E_{s'~P(\cdot\vert s,a)}[-\log{P_{\phi}(s'\vert s,a)}] $$
 
 그러면 $$D_{KL}$$식도 변형되는데, 다음과 같이 그냥 cross-entropy로 나타낼 수 있다.
 
-$$ D_{KL}(P||P_{\phi})[s,a] = H(P,P_{\phi})[s,a] - H(P)[s,a] $$
+$$ D_{KL}(P\Vert P_{\phi})[s,a] = H(P,P_{\phi})[s,a] - H(P)[s,a] $$
 
 $$                          \approx H(P,P_{\phi})[s,a] (4)$$
 
 reward 도 이렇게 바꿀 수 있다.
 
-$$ r'(s,a,s') = r(s,a,s') - \eta \log{P_{\phi}(s'|s,a)} (5)$$
+$$ r'(s,a,s') = r(s,a,s') - \eta \log{P_{\phi}(s'\vert s,a)} (5)$$
 
 $$s'$$ 에 대한 놀람은($$ P_{\phi}$$와 context $$(s,a)$$로부터 얻어지는) intrinsic reward이다! 
 
@@ -77,18 +77,18 @@ $$s'$$ 에 대한 놀람은($$ P_{\phi}$$와 context $$(s,a)$$로부터 얻어�
 
 다른 방법으로는 lower bound를 두는 방법인데, 
 
-$$  D_{KL}(P||P_{\phi})[s,a] =  D_{KL}(P||P_{\phi'})[s,a] + E_{s'~P} [\log {\frac {P_{\phi'}(s'|s,a)}{P_{\phi}(s'|s,a)}}]$$
+$$  D_{KL}(P\Vert P_{\phi})[s,a] =  D_{KL}(P\Vert P_{\phi'})[s,a] + E_{s'~P} [\log {\frac {P_{\phi'}(s'\vert s,a)}{P_{\phi}(s'\vert s,a)}}]$$
 
-$$ \geq E_{s'~P} [\log {\frac {P_{\phi'}(s'|s,a)}{P_{\phi}(s'|s,a)}}] (6)$$
+$$ \geq E_{s'~P} [\log {\frac {P_{\phi'}(s'\vert s,a)}{P_{\phi}(s'\vert s,a)}}] (6)$$
 
 이다. 앞에 텀(KL-divergence)은 jensen 부등식에 의해 0보다 같거나 크다는게 증명되었으므로, 항상 같거나 크다
 
-$$ r'(s,a,s') = r(s,a,s') + \eta( \log{P_{\phi'}(s'|s,a)} - \log{P_{\phi}(s'|s,a)}) (7)$$
+$$ r'(s,a,s') = r(s,a,s') + \eta( \log{P_{\phi'}(s'\vert s,a)} - \log{P_{\phi}(s'\vert s,a)}) (7)$$
 
 (6)를 통해 (7) 로 나타낼 수 있고, (1)식을 통해 k 번 updates된 $$\phi'$$ 를 가지고 사용하게된다. (1)식이 optimization expression임은 자명했으나,
 이걸 통해 어떻게 업데이트 하는지는 아직 모르겠다.
 
-$$ r'(s,a,s') = r(s,a,s') + \eta( \log{P_{\phi_{t}}(s'|s,a)} - \log{P_{\phi_{t-k}}(s'|s,a)}) (8)$$
+$$ r'(s,a,s') = r(s,a,s') + \eta( \log{P_{\phi_{t}}(s'\vert s,a)} - \log{P_{\phi_{t-k}}(s'\vert s,a)}) (8)$$
 
 결국 (7) expression은 (8)으로 변환 가능하고, 결국 experiment에선 (5)와 (8) 두가지로 모두 실험했다.
 
@@ -99,17 +99,17 @@ $$ r'(s,a,s') = r(s,a,s') + \eta( \log{P_{\phi_{t}}(s'|s,a)} - \log{P_{\phi_{t-k
  
  그다음은 (8)식을 Bayesian surprise에 연결 시켰는데,
  
- $$ D_{KL}(P(\phi | h_t,a_t,\phi) || P(\phi | h_t)) (8.1) $$ 로 표현했다.
+ $$ D_{KL}(P(\phi \vert h_t,a_t,\phi) \Vert P(\phi \vert h_t)) (8.1) $$ 로 표현했다.
  
- $$P(\phi | h_t)) $$ 는 $$\phi $$ 에 의한 distribution 이고, $$ h_t $$가 이전의 history다. 그러므로, (8.1) 은 이전 history로부터 $$a_t$$ 로인한 $$s_{t+1} $$가 일어났을 때의 transition probability다.
+ $$P(\phi \vert h_t)) $$ 는 $$\phi $$ 에 의한 distribution 이고, $$ h_t $$가 이전의 history다. 그러므로, (8.1) 은 이전 history로부터 $$a_t$$ 로인한 $$s_{t+1} $$가 일어났을 때의 transition probability다.
  
- 바로 다음단계의 transition probability 이므로 Baysian하게 $$ P(\phi | h_t,a_t, s_{t+1})  $$ 를 구하면,
+ 바로 다음단계의 transition probability 이므로 Baysian하게 $$ P(\phi \vert h_t,a_t, s_{t+1})  $$ 를 구하면,
  
- $$  P(\phi | h_t,a_t, s_{t+1}) = \frac {P(\phi | h_t) P(s_{t+1} | h_t,a_t,\phi)} {E_{\phi ~ P(\sdot | h_t)[P(s_{t+1} | h_t,a_t,\phi)]}} $$
+ $$  P(\phi \vert h_t,a_t, s_{t+1}) = \frac {P(\phi \vert h_t) P(s_{t+1} \vert h_t,a_t,\phi)} {E_{\phi ~ P(\sdot \vert h_t)[P(s_{t+1} \vert h_t,a_t,\phi)]}} $$
  
  로 나타낼 수 있다.
  
- 결국, $$ E_{\phi ~ P_{t+1} \log{ P(S_{t+1} | h_t,a_t,\phi)}} - E_{\phi ~ P_{t} \log{ P(S_{t+1} | h_t,a_t,\phi)}} (9)$$ 로 표현될 수 있고,
+ 결국, $$ E_{\phi ~ P_{t+1} \log{ P(S_{t+1} \vert h_t,a_t,\phi)}} - E_{\phi ~ P_{t} \log{ P(S_{t+1} \vert h_t,a_t,\phi)}} (9)$$ 로 표현될 수 있고,
  (8)은 Baysian은 아니지만, (8)도 (9)와 비슷한 정보를 가지고 있음을 알 수 있다.
 
 
