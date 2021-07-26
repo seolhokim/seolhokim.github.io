@@ -13,9 +13,11 @@ tags: reinforcementlearning
 4. **Neural Architecture for TSP**
     - TSP 문제는 n개의 도시 s에서 모든 도시 n개를 방문하여 제자리로 돌아오는 최단거리를 찾는 문제입니다. 이 때 cost는 전체 edge의 weights이고, stochastic policy $$p_\theta(\pi\vert s)$$는 neural network와 policy gradient를 통해 이를 배우게 됩니다.
     - 논문의 구조는 기존의 encoder decoder 구조를 사용합니다. encoder는 input set $$I = (i_1,...,i_n)$$에 대해 representation $$Z = (z_1,...,z_n)$$로 mapping하고, $$Z$$에 대해 decoder는 순차적으로 output $$O = (o_1,...,o_n)$$을 생성해냅니다. 이때 이 과정은 자신의 output이 다시 input으로 들어와 자기회귀된다는 의미의 "Auto-Regressive하다"라는 표현을 합니다.
-    1. **TSP Setting and Input Preprocessing**
+
+  1. **TSP Setting and Input Preprocessing**
         - 논문은 2D Euclidean TSP에 집중합니다. 이 때 Principal Component Analysis(PCA)를 통해 input이 회전에 대해 invariance하도록 만들어 사용합니다.
-    2. **Encoder**
+
+  2. **Encoder**
         - encoder는 각 city에 대한 representation을 만드는 과정인데, 기존 연구와 다르게 LSTM을 사용하지 않고, multi-head-attention을 사용합니다. 좀 더 구조를 자세히 살펴보자면 다음과 같습니다.
         - **TSP encoder**
 
@@ -31,7 +33,8 @@ tags: reinforcementlearning
 
                 - **Feed-Forward**
                     - 두개의 position-wise linear transformation(1d convolution)와 ReLU로 이루어져있는데, 요즘 transformer에선 fc로도 많이 처리를 합니다.
-    3. **Decoder**
+
+  3. **Decoder**
         - 기존의 decoder는 다음과 같은 수식으로 나타낼 수 있습니다.
 
             $$p_\theta(\pi \vert s) = \prod^n_{t=1}p_\theta(\pi(t) \vert \pi(<t),s)$$
