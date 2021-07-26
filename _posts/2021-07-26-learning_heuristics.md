@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Neural Combinatorial Optimization with Reinforcement Learning 논문 리뷰 및 설명"
+title:  "Learning Heuristics for the TSP by Policy Gradient 논문 리뷰 및 설명"
 subtitle:   ""
 categories: deeplearning
 tags: reinforcementlearning
