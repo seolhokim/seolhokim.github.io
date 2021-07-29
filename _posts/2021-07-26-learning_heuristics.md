@@ -83,5 +83,7 @@ Learning Heuristics for the TSP by Policy Gradient
                     이후 두개의 fc를 거쳐 scalar 값이 나오게 됩니다. critic은 reward와의 MSE를 통해 학습됩니다.
 
 - References
+
     [1] [Learning Heuristics for the TSP by Policy Gradient](https://link.springer.com/chapter/10.1007/978-3-319-93031-2_12)
+
 치명적인 단점으로 fixed length input, input이 크고 서로간의 적은 상관성을 가진 경우에 대해 과도한 연산을 하게됩니다.

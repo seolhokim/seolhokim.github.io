@@ -109,5 +109,7 @@ Problems on Real-World Graphs in Linear Time
         - **TSP**
             - 생략합니다.
 - References
+
     [1] [Learning to Solve Combinatorial Optimization Problems on Real-World Graphs in Linear Time](https://arxiv.org/abs/2006.03750)
+
 개인적으로 MCTS에 대해 조금 더 설명했으면 좋겠다는 생각에 MCTS에 관해 하나를 더 리뷰하려고합니다.

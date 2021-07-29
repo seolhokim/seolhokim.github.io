@@ -144,5 +144,6 @@ Solving NP-hard Problems on Graphs with Extended AlphaGo Zero
                     - AlphaGo Zero처럼 두 플레이어 간의 winning rate를 구할 수 없으므로, random graph를 생성하고 mean performance를 측정하는 파트입니다.
 
 - References
+
     [1] [Solving NP-Hard Problems on Graphs with Extended AlphaGo Zero](https://arxiv.org/abs/1905.11623)
     [2] [https://coinse.kaist.ac.kr/projects/mctsps/](https://coinse.kaist.ac.kr/projects/mctsps/)
