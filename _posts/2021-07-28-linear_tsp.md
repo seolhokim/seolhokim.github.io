@@ -28,7 +28,7 @@ Problems on Real-World Graphs in Linear Time
         3. **A unified framework for solving any combinatorial optimization problem over graphs**
             - line graph를 통해서 node action과 edge action에 모두 적용할 수 있음을 보입니다.
 3. **Unified Framework**
-    - graph $$\mathcal{G}$$는 vertices, edges, weights로 이루어졌습니다.  $$\mathcal{G} = (V,E,W),\ V = \{1,..,n \}$, edges $e_{ij}$$는 $$w_{ij} = w_{ji}$$인 undirected edge이며, $$\vert V \vert, \vert E \vert$$ 모두 vertices와 edges의 개수를 의미합니다. $$\mathcal{N}(i)$$는 node $$i$$에 대한 neighboring nodes입니다.
+    - graph $$\mathcal{G}$$는 vertices, edges, weights로 이루어졌습니다.  $$\mathcal{G} = (V,E,W),\ V = \{1,..,n \}$$, edges $$e_{ij}$$는 $$w_{ij} = w_{ji}$$인 undirected edge이며, $$\vert V \vert, \vert E \vert$$ 모두 vertices와 edges의 개수를 의미합니다. $$\mathcal{N}(i)$$는 node $$i$$에 대한 neighboring nodes입니다.
     - **Line graph**
 
         ![linear_tsp](/assets/img/linear_tsp_1.PNG)
@@ -41,6 +41,7 @@ Problems on Real-World Graphs in Linear Time
 
     - **Graph generation**
         - Minimum Spanning Tree(MST)와 Single-Source Shortest Paths(SSP)를 학습하기 위해서 다섯가지의 random graph 생성방식을 사용합니다. TSP와 VRP을 학습하기 위해서도 random nodes를 만듭니다.
+
     1. **Problems over Graphs**
         - **Minimum Spanning Tree(MST)**
             - connected and undirected graph $$\mathcal{G} = (V,E,W)$$에서 모든 nodes를 포함하면서 edge weights는 최소화하는 tree $$\mathcal{T} = (V_\mathcal{T},E_{\mathcal{T}}), (\ V_\mathcal{T} = V,\ E_\mathcal{T} \subset E)$$를 찾는 것이 목적입니다. greedy algorithm으로는 time complexity가 $$O( \vert E \vert \log \vert V \vert )$$임이 알려져 있습니다.
@@ -50,6 +51,7 @@ Problems on Real-World Graphs in Linear Time
             - graph $$\mathcal{G} = (V,E,W)$$에 대해, $$V$$가 cities를 나타내고, $$W$$가 city간의 거리를 나타낼 때, 처음 도시를 지나 모든 도시를 들러 다시 처음도시로 도착하는 문제로 다양한 solver들이 존재합니다.
         - **Vehicle Routing Problem(VRP)**
             - $$M$$개의 vehicles을 가지고 graph $$\mathcal{G} = (V,E)$$ 에 대해서 optimal route를 찾는 문제입니다. 각 vehicles은 depot에서 시작해 각자 겹치지 않으면서 모든 도시를 방문한 후 다시 depot으로 돌아오게 됩니다. 이 때 optimal은 route의 가장 긴 길이를 minimize하게 됩니다. TSP는 VRP의 special case로 볼 수 있습니다.
+
     2. **Learning Graph Algoritmhs as Single Player Games**
 
         ![linear_tsp](/assets/img/linear_tsp_2.PNG)
@@ -95,6 +97,7 @@ Problems on Real-World Graphs in Linear Time
         ![linear_tsp](/assets/img/linear_tsp_5.PNG)
 
         - 지금까지 살펴본 문제들에 대해 general algorithm을 적자면, Input graph에 대해 line graph가 필요하면 계산하고, encoder로 encoding한 후, decoder로 action을 선택해 tree에 add합니다. training시엔 아래처럼 baseline을 넣은 REINFORCE algorithm을 통해 학습합니다.(baseline에 대한 특별한 언급은 없고 한 그래프에서 진행한다면 running estimation of mean정도로 사용해도 괜찮을 것 같습니다.)
+
     1. **Solutions**
         - **MST**
             - graph $$\mathcal{G} = (V,E,W)$$, $$W$$는 edge weights일 때, policy $$\pi$$는 edge를 선택해 더해야만 합니다. 이를 통해 tree를 정의하면, 다음과 같습니다. $$\mathcal{T} = (V,E_\pi,W_\pi),\ E_\pi \subset E,\ W_\pi \subset W$$. reward는 다음과 같이 정의할 수 있습니다.
@@ -105,5 +108,6 @@ Problems on Real-World Graphs in Linear Time
 
         - **TSP**
             - 생략합니다.
-
+- References
+    [1] [Learning to Solve Combinatorial Optimization Problems on Real-World Graphs in Linear Time](https://arxiv.org/abs/2006.03750)
 개인적으로 MCTS에 대해 조금 더 설명했으면 좋겠다는 생각에 MCTS에 관해 하나를 더 리뷰하려고합니다.

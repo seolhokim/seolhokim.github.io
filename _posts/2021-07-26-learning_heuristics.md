@@ -6,6 +6,7 @@ categories: deeplearning
 tags: reinforcementlearning
 ---
 Learning Heuristics for the TSP by Policy Gradient
+
 이전의 [NCO](https://seolhokim.github.io/deeplearning/2021/07/26/nco/)를 읽고 오시면 도움이 됩니다.
 1. **Abstract**
     - 이 논문은 Combinatorial Optimization Problem을 해결하는데 ML이 heuristic algorithm과 결합하여 좋은 성능을 낼 수 있음을 보입니다. 이 때, encoder와 decoder 모두 LSTM을 제거한 점이 눈에 띕니다.
@@ -75,9 +76,12 @@ Learning Heuristics for the TSP by Policy Gradient
             이를 통해 Stochastic Gradient Descent와 함께 policy parameter $$\theta$$를 update하게 됩니다.
 
             - **Critic**
-                - critic은 actor와 같은 encoder를 사용하며, query $$q$$에 zero vector를 넣어 pointing distribution $$p_\phi(s)$$를 만듭니다. 이를 통해 NCO처럼 glipse vector를 만드는데, 이는 전체 city에 대한 weighted sum을 통해 baseline에 영향을 주는 cities에 대한 가중치합을 만드는 것과 같다고 설명했었습니다. 이는 수식으로 나타내면 다음과 같습니다.
+                - critic은 actor와 같은 encoder를 사용하며, query $$q$$에 zero vector를 넣어 pointing distribution $$p_\phi(s)$$를 만듭니다. 이를 통해 NCO처럼 glimpse vector를 만드는데, 이는 전체 city에 대한 weighted sum을 통해 baseline에 영향을 주는 cities에 대한 가중치합을 만드는 것과 같다고 설명했었습니다. 이는 수식으로 나타내면 다음과 같습니다.
 
                     $$gl_s = \sum^n_{i=1}p_\phi(s)_ia_i$$
 
                     이후 두개의 fc를 거쳐 scalar 값이 나오게 됩니다. critic은 reward와의 MSE를 통해 학습됩니다.
+
+- References
+    [1] [Learning Heuristics for the TSP by Policy Gradient](https://link.springer.com/chapter/10.1007/978-3-319-93031-2_12)
 치명적인 단점으로 fixed length input, input이 크고 서로간의 적은 상관성을 가진 경우에 대해 과도한 연산을 하게됩니다.

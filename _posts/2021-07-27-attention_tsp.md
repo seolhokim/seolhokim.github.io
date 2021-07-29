@@ -6,6 +6,7 @@ categories: deeplearning
 tags: reinforcementlearning
 ---
 Attention, Learn to Solve Routing Problems!
+
 1. **Abstract**
     - 최근 Combinatorial Optimization Problems을 해결하는 방법을 배우는 아이디어는 개발 비용을 줄일 수 있기 때문에 유망한 분야 중 하나입니다. 이를 실제로 구현해서 사용하기 위해선 좀더 좋은 모델과 학습방법이 필요한데 이 논문에서는 그 두가지를 모두 제시합니다.
         - 첫 째로, Pointer Network보다 장점이 많은 attention 기반의 모델을 제시합니다.
@@ -35,7 +36,7 @@ Attention, Learn to Solve Routing Problems!
             이 후 N개의  multi-head attention layer를 거치게 되는데 이를 통해 나온 각 노드 $$\boldsymbol{h}^{N}_i$$에 대해 mean을 취한 $$\bar{\boldsymbol{h}}^{N}_i$$와 함께 decoder에 들어가게 됩니다. 
 
             - **Attention layer**
-                - 이는 이전에 Learning Heuristics for the TSP by Policy Gradient를 설명할 때 설명했으므로(MHA랑 FF만을 설명했는데, batch normalization과  skip connection을 더한 수식은 다음과 같습니다.)
+                - 이는 이전에 [Learning Heuristics for the TSP by Policy Gradient](https://seolhokim.github.io/deeplearning/2021/07/26/learning_heuristics/)를 설명할 때 설명했으므로(MHA랑 FF만을 설명했는데, batch normalization과  skip connection을 더한 수식은 다음과 같습니다.)
 
                     $$\hat{\boldsymbol{h}}_i = \mathrm{BN}({\boldsymbol{h}}_i^{(l-1)} + \mathrm{MHA}^l_i({\boldsymbol{h}}^{(l-1)}_i,...,{\boldsymbol{h}}^{(l-1)}_n))$$
 
@@ -48,7 +49,7 @@ Attention, Learn to Solve Routing Problems!
 
         - **Context embedding**
             - 시점 t에서 decoder의 context는 encoder와 t까지의 output에 의해 나타냅니다. 이를 수식으로 나타내면, 이전에 언급했듯, 마지막 output node와 첫 node를 같이 넣어 context를 만듭니다. 
-            $$
+            
 
                 $$\boldsymbol{h}^{(N)}_{(c)} = \left\{\begin{matrix}
                 [\bar{\boldsymbol{h}}^{(N)},\boldsymbol{h}^{(N)}_{\pi_{t-1}},\boldsymbol{h}^{(N)}_{\pi_1}] \ \ t>1\\ 
@@ -100,3 +101,5 @@ Attention, Learn to Solve Routing Problems!
             baseline을 구하는 방법을 제외하곤 기존 REINFORCE algorithm과 같습니다.
 
         - **Efficiency**
+- References
+    [1] [Attention, Learn to Solve Routing Problems!](https://arxiv.org/abs/1803.08475)

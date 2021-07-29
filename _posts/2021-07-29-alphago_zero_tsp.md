@@ -6,6 +6,7 @@ categories: deeplearning
 tags: reinforcementlearning
 ---
 Solving NP-hard Problems on Graphs with Extended AlphaGo Zero
+
 1. **Abstract** 
     - Graph neural network와 MCTS의 결합을 통해 Combinatorial Problem을 해결함을 보입니다. 이 때, 학습 방법으로 AlphaGo Zero를 변형한 **CombOpt Zero**를 소개합니다.
 2. **Introduction**
@@ -93,7 +94,7 @@ Solving NP-hard Problems on Graphs with Extended AlphaGo Zero
 
             ![alphago_zero_tsp](/assets/img/alphago_zero_tsp_1.PNG)
 
-            - 각 action마다 node를 0이나 1로(파란색, 빨간색) 색칠합니다. 그리고 그 노드를 제거하면서 얼마나 많은 인접한 색색의 노드가 제거되었는지를 저장합니다. $$A_s = \{ (x,c) \vert x \in V, c \in \{1,2\} \}$$는 nodes에 색칠할 수 있는 set을 나타내고, $$(x,c)$$는 node를 color c로 색칠하는 것을 의미합니다. $$L = \mathbb{N}^2$$는 각 adjacent nodes가 각 색에 의해 몇 회 색칠됐는지를 나타냅니다. $$R(s,(x,c))$는 $(3-c)\mathrm{-th}$$에 대해 c가 1이면 2, c가 2이면 1의 $$d(x)$$값입니다.(색칠된 색의 반대 dimension을 고른 값)
+            - 각 action마다 node를 0이나 1로(파란색, 빨간색) 색칠합니다. 그리고 그 노드를 제거하면서 얼마나 많은 인접한 색색의 노드가 제거되었는지를 저장합니다. $$A_s = \{ (x,c) \vert x \in V, c \in \{1,2\} \}$$는 nodes에 색칠할 수 있는 set을 나타내고, $$(x,c)$$는 node를 color c로 색칠하는 것을 의미합니다. $$L = \mathbb{N}^2$$는 각 adjacent nodes가 각 색에 의해 몇 회 색칠됐는지를 나타냅니다. $$R(s,(x,c))$$는 $$(3-c)\mathrm{-th}$$에 대해 c가 1이면 2, c가 2이면 1의 $$d(x)$$값입니다.(색칠된 색의 반대 dimension을 고른 값)
         - **Maximum Clique**
             - 비슷하므로 생략합니다.
     2. **Ideas for CombOpt Zero**
@@ -141,7 +142,7 @@ Solving NP-hard Problems on Graphs with Extended AlphaGo Zero
 
                 - **model evaluators**
                     - AlphaGo Zero처럼 두 플레이어 간의 winning rate를 구할 수 없으므로, random graph를 생성하고 mean performance를 측정하는 파트입니다.
-            - 가장 최고의 모델은 이 세
-- References
 
-    [1] [https://coinse.kaist.ac.kr/projects/mctsps/](https://coinse.kaist.ac.kr/projects/mctsps/)
+- References
+    [1] [Solving NP-Hard Problems on Graphs with Extended AlphaGo Zero](https://arxiv.org/abs/1905.11623)
+    [2] [https://coinse.kaist.ac.kr/projects/mctsps/](https://coinse.kaist.ac.kr/projects/mctsps/)
