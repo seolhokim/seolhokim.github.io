@@ -5,6 +5,7 @@ subtitle:   ""
 categories: deeplearning
 tags: reinforcementlearning
 ---
+Attention, Learn to Solve Routing Problems!
 1. **Abstract**
     - 최근 Combinatorial Optimization Problems을 해결하는 방법을 배우는 아이디어는 개발 비용을 줄일 수 있기 때문에 유망한 분야 중 하나입니다. 이를 실제로 구현해서 사용하기 위해선 좀더 좋은 모델과 학습방법이 필요한데 이 논문에서는 그 두가지를 모두 제시합니다.
         - 첫 째로, Pointer Network보다 장점이 많은 attention 기반의 모델을 제시합니다.
