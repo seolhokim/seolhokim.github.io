@@ -14,7 +14,7 @@ Solving NP-hard Problems on Graphs with Extended AlphaGo Zero
     - 그렇기 때문에 Q-learning을 CombOpt Zero로 대체합니다. 이는 두 플레이어로 이루어진 게임에 제한되었는데 이를 sampling과 간단한 reward normalization을 통해 해결합니다.
 3. **Preliminary**
     1. **Notation**
-        - 논문의 graph $$G=(V,E)$$는 undirected, unlabelled graph를 사용합니다. $$V$$와 $$E$$는 vertices와 edges를 나타냅니다. $$V(G)$$는 graph의 vertices set을 의미하고, $$\mathcal{N}(x)$$는 node $$x$$에 대한 한 edge로 연결된 neighbors를 의미하고, node set $$S$$에 대해 $$\mathcal{N}(S) = \bigcup_{x \in S} \mathcal{N}(x)$$와 같이 표현합니다. $$\boldsymbol{p}$$와 $$\boldsymbol{\pi}$$는 모두 vector이므로 bold체로 표기합니다.
+        - 논문의 graph $$G=(V,E)$$는 undirected, unlabelled graph를 사용합니다. $$V$$와 $$E$$는 vertices와 edges를 나타냅니다. $$V(G)$$는 graph의 vertices set을 의미합니다. $$\mathcal{N}(x)$$는 node $$x$$에 대한 한 edge로 연결된 neighbors를 의미하고, node set $$S$$에 대해 $$\mathcal{N}(S) = \bigcup_{x \in S} \mathcal{N}(x)$$와 같이 표현합니다. $$\boldsymbol{p}$$와 $$\boldsymbol{\pi}$$는 모두 vector이므로 bold체로 표기합니다.
     2. **Machine Learning for Combinatorial Optimization**
     3. **AlphaGo Zero**
         - AlphaGo Zero는 바둑에서 인간을 압도한 RL algorithm입니다. 이는 RL을 통해 parameter $$\theta$$의 neural network $$f_\theta$$를 학습시킵니다. state에 대해 network는 action에대한 distribution vector $$\boldsymbol{p}$$과 state value $$v, v\in [-1,1]$$를 output으로 가집니다.
@@ -60,6 +60,9 @@ Solving NP-hard Problems on Graphs with Extended AlphaGo Zero
         - **structure2vec**
             - 기존에 설명했으므로 생략합니다.
         - **Graph Convolutional Network**
+
+            $$H^{(l+1)} = \sigma(\hat{D}^{-1/2}\hat{A}\hat{D}^{-1/2}H^{(l)}\theta^{(l)})
+            
             - 그래프의 인접행렬 $$A$$에 대해 $$\tilde{A} = A + I_n$$이고, $$D$$는 각 node의 degree를 나타내는 행렬일 때, $$\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}$$는 $$A$$를 정규화시킵니다. 그리고 이전의 hidden $$H^{(l)}$$를 곱하는 것은 각 노드의 hidden을 다음 neighbors의 hidden로 전달하는 것과 같습니다. 이 때 trainable matrix $${\theta^{(l)}}$$를 곱한뒤 마지막으로, non linearity를 더해 다음 $$H^{(l+1)}$$을 recursive하게 만듭니다.
         - **Graph Isomorphism Network**
             - aggregation, readout이 injective function이어야하기 때문에 neighbors와 자신 모두 summation한 뒤 MLP를 통과합니다. 마지막으로 모든 MLP layer를 concatenate한 output을 사용하는데, 이를 나타내면 다음과 같습니다.
