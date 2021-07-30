@@ -101,7 +101,8 @@ Attention, Learn to Solve Routing Problems!
             baseline을 구하는 방법을 제외하곤 기존 REINFORCE algorithm과 같습니다.
 
         - **Efficiency**
-        
+
+
 - References
 
     [1] [Attention, Learn to Solve Routing Problems!](https://arxiv.org/abs/1803.08475)
