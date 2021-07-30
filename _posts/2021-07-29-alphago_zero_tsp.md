@@ -103,7 +103,7 @@ Solving NP-hard Problems on Graphs with Extended AlphaGo Zero
     2. **Ideas for CombOpt Zero**
         - **Combinatorial Optimization vs. Go**
             - AlphaGo Zero를 MDP formulation에 적용할 때 두가지 바둑과는 다른 점이 있습니다. 첫째로, 바둑은 고정된 input size를 가지나, combinatorial problem은 대체로 dynamic합니다. 그렇기 때문에 GNN을 통해 이를 해결합니다. 둘째로, 결과가 단순화되지 않습니다. 바둑은 승리하거나 비기거나 지는 경우로 나뉘는데  combinatorial problem은 그렇지 않습니다. 바둑처럼 $$[-1,1]$$의 범위에서 큰 value를 가질수록 이길확률이 크다는 것을 따라서 만들 수 있지만, graph size가 커질수록, trajectory length가 길어지게되고, cumulative reward가 높다면, (3)의 첫 번째 term이 dominent해지게 되므로 탐색이 제대로 이루어지지 않습니다. 여기서는 normalization technic을 사용하여 이를 해결합니다.
-            - 먼저 AlphaGo Zero의 network $$f_\theta(s) = (\boldsymbol{p},v)$$에서 value를 vector로 만들어 state action value형태로 만듭니다. 이는 다음과 같이 표현합니다.
+            - 먼저 AlphaGo Zero의 network $$f_\theta(s) = (\boldsymbol{p},v)$$에서 value를 각 action에 대한 value로 만들어 state action value형태로 만듭니다. 이는 다음과 같이 표현합니다.
 
                 $$f_\theta(s)= (\boldsymbol{p},\boldsymbol{v})$$
 
@@ -126,7 +126,7 @@ Solving NP-hard Problems on Graphs with Extended AlphaGo Zero
 
             ![alphago_zero_tsp](/assets/img/alphago_zero_tsp_2.PNG)
 
-            pseudo code는 다음과 같습니다. graph의 특성상 action space가 states에 따라 dynamic하므로 action space의 $$c_{\mathrm{iter}}$$에 비례하게 action을 행동할 수 있게 합니다. 또한 root의 prior probability는 Dirichlet noise를 넣어 explore을 촉진합니다.
+            pseudo code는 다음과 같습니다. graph의 특성상 action space가 states에 따라 dynamic하므로 action space의 $$c_{\mathrm{iter}}$$에 비례하게 iteration할 수 있게 합니다. 또한 root의 prior probability는 Dirichlet noise를 넣어 explore을 촉진합니다.
 
             이후 selection과 expand, backup을 하는데, backup쪽만 살펴보겠습니다. $$f_\theta$$를 통해서 normalized state value를 얻은 다음 이를 random sampling을 통해 얻은 mean과 standard deviation을 통해 reward를 계속해서 normalization합니다. 그리하여 $$W(s,a)$$와 $$Q(s,a)$$는 모두 normalization된 값을 가지게 됩니다. 그리고 MCTS $$\boldsymbol{\pi}$$를 output으로 가집니다.
 
@@ -136,7 +136,7 @@ Solving NP-hard Problems on Graphs with Extended AlphaGo Zero
 
                     ![alphago_zero_tsp](/assets/img/alphago_zero_tsp_3.PNG)
 
-                    self-play records를 randomly generated graph로 부터 계속해서 만듭니다. 이는 MCTS policy $$\boldsymbol{\pi}$$로 부터 생성된 trajectory로 볼 수 있습니다.
+                    self-play records를 randomly generated graph로부터 계속해서 만듭니다. 이는 MCTS policy $$\boldsymbol{\pi}$$로 부터 생성된 trajectory로 볼 수 있습니다.
 
                 - **learners**
                     - 랜덤하게 sampling한 records로부터 다음과 같이(AlphaGo Zero의 loss와 같은) loss를 계산합니다.
