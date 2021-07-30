@@ -61,7 +61,7 @@ Solving NP-hard Problems on Graphs with Extended AlphaGo Zero
             - 기존에 설명했으므로 생략합니다.
         - **Graph Convolutional Network**
 
-            $$H^{(l+1)} = \sigma(\hat{D}^{-1/2}\hat{A}\hat{D}^{-1/2}H^{(l)}\theta^{(l)})
+            $$H^{(l+1)} = \sigma(\hat{D}^{-1/2}\hat{A}\hat{D}^{-1/2}H^{(l)}\theta^{(l)})$$
             
             - 그래프의 인접행렬 $$A$$에 대해 $$\tilde{A} = A + I_n$$이고, $$D$$는 각 node의 degree를 나타내는 행렬일 때, $$\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}$$는 $$A$$를 정규화시킵니다. 그리고 이전의 hidden $$H^{(l)}$$를 곱하는 것은 각 노드의 hidden을 다음 neighbors의 hidden로 전달하는 것과 같습니다. 이 때 trainable matrix $${\theta^{(l)}}$$를 곱한뒤 마지막으로, non linearity를 더해 다음 $$H^{(l+1)}$$을 recursive하게 만듭니다.
         - **Graph Isomorphism Network**
