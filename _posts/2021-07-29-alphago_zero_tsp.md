@@ -65,7 +65,7 @@ Solving NP-hard Problems on Graphs with Extended AlphaGo Zero
             
             - 그래프의 인접행렬 $$A$$에 대해 $$\tilde{A} = A + I_n$$이고, $$D$$는 각 node의 degree를 나타내는 행렬일 때, $$\tilde{D}^{-1/2}\tilde{A}\tilde{D}^{-1/2}$$는 $$A$$를 정규화시킵니다. 그리고 이전의 hidden $$H^{(l)}$$를 곱하는 것은 각 노드의 hidden을 다음 neighbors의 hidden로 전달하는 것과 같습니다. 이 때 trainable matrix $${\theta^{(l)}}$$를 곱한뒤 마지막으로, non linearity를 더해 다음 $$H^{(l+1)}$$을 recursive하게 만듭니다.
         - **Graph Isomorphism Network**
-            - aggregation, readout이 injective function이어야하기 때문에 neighbors와 자신 모두 summation한 뒤 MLP를 통과합니다. 마지막으로 모든 MLP layer를 concatenate한 output을 사용하는데, 이를 나타내면 다음과 같습니다.
+            - aggregation, readout이 injective function이어야하기 때문에 neighbors와 자신 모두 더한 뒤 $$\hat{A}$$를 곱해 MLP를 통과합니다. 마지막으로 모든 MLP layer를 concatenate한 output을 사용하는데, 이를 나타내면 다음과 같습니다.
 
                 $$H^{(l+1)} = \mathrm{MLP}^{(l)}(\tilde{A}H^{(l)}), \ y_v = \mathrm{MLP(CONCAT}(H^{(l)}_v \vert l = 0,1, \cdots,L))$$
 
