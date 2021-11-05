@@ -1,0 +1,40 @@
+title: Seolho kim
+description: Walls turned sideways are bridges
+author: Seolho Kim
+avatar: /assets/img/logo.jpg
+email: kilmya1@naver.com
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+
+paginate: 10
+
+# Uncomment the below line and set the tracking ID for enabling Google Analytics
+# 
+google_analytics: "UA-138161375-1"
+
+# Uncomment the below lines and set the Disqus shortname for enabling Disqus
+# 
+disqus: https-seolhokim-github-io
+
+# Jekyll
+# ======
+exclude:
+  - scripts/
+  - README.md
+  - jekyll-theme-hamilton.gemspec
+
+# Jekyll SEO Tag (Optional)
+# =========================
+logo: /assets/img/logo.jpg
+social:
+  name: Seolho Kim
+  links:
+    - LinkedIn: https://www.linkedin.com/in/%EC%84%A4%ED%98%B8-%EA%B9%80-796603197/
+    - https://github.com/seolhokim
+lang: en
+skin: midnight
+subscribe: false

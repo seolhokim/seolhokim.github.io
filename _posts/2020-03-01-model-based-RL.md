@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "Model based RL 에 대한 설명"
+toc: true
+categories: 
+  - Reinforcement Learning 
+tags: [Reinforcement Learning, Model-based]
+author:
+  - Seolho Kim
+math: true
+---
+
+https://www.slideshare.net/ssuser581a7d/model-based-rl-229459571
+
+다음 링크에 model based RL 에 대한 설명을 한 자료를 만들어보았습니다.
+
+
+1. Model-Based RL 김설호
+2. Contents ● What is Model-based RL? ○ What is Model? ○ Example ○ Comparison of model-free and model-based ○ What are the strengths and weaknesses ● History about Model-based RL and Technic ○ Abstract ○ Neural Network Dynamics for Model-Based Deep Reinforcement Learning with Model-Free Fine-Tuning ○ World Model ○ Model Based Reinforcement Learning for Atari
+3. What is Model-Based RL?
+4. What is Model-based RL? What is a Model? ● Model is something that mimics the behavior of the environment, or more generally, that allows inferences to be made about how the environment will behave.(SuttonRLBook) Fig.1 : RL Objective function and Model Expression
+5. What is Model-based RL? example ● In RTS game, We already know what the consequences of an action. ○ Move units to black screen -> Scout map ○ Attack enemy -> Kill enemy ○ Kill all enemies -> win ○ More minerals -> more units - > easy to win Fig.2 : Example of model
+6. What is Model-based RL? What is a Model(environment)? ● Model ? = mimic real world’s MDP Fig.3 : Illustration of Model Learning Fig.4 : Components of MDP
+7. What is Model-based RL? comparison of model-free and model-based ● RL systems can make decisions in one of two ways. ○ model-free ■ Ignore the model(environment). depend on sampling and simulation. ■ The modeling step is bypassed altogether in favor of learning a control policy directly.(https://bair.berkeley.edu/blog/2019/12/12/mbpo/) ■ -> We don’t need to know the inner working of the system(environment) ○ model-based ■ Build own representation of the reality or the environment agents are in. ■ -> If you know what the consequences of an action, it will save training time. ■ How to call the own representation of the environment. ● Predictive model ● World model ● M model ● learned dynamics function - it’s hard to distinguish about model(agent model? or world model?) - 이 세미나에서는 environment를 묘사한 것을 model, Policy를 최적화하는 것을 Controller라고 설명할 예정
+8. What is Model-based RL? What are the Strengths and Weaknesses? ● Strengths ○ Reduced number of interactions with the real environment ■ -> High Sample efficiency(Important factor to actual industry) ● Learning speed up! ● Weaknesses ○ Cumulative error ■ Final scores are lower than model-free Algorithm(in SimPLe) ● -> cumulative error will occur in extrapolated environment during controller’s new policy. ● Hard to Approximate real world ○ failed to produce useful information(in SImPLe) ■ Effective model learning method is needed. ● If training is separated at all, model doesn’t care controller during model training.
+9. History about Model-based RL and Technic
+10. History about Model-based RL and Technic Abstract ● 서로 완전히 계승한 논문은 아니지만 이 논문의 흐름을 따라 이전의 문제점들 을 해결해 가는 점들을 볼 수 있음 Model Base Model Free hybrid SimPLe World Model Model의 성능을 비약적 개선, 실제 Environment를 배제하 고, Model 만을 가지고도 학 습할 수 있도록함. Iterative하게 Model을 어떻 게 학습시킬 것인가에 대해 좀더 실용적인 알고리즘 제 시(Not using pretrained model, train together)
+11. History about Model-based RL and Technic Neural Network Dynamics for Model-Based Deep Reinforcement Learning with Model-Free Fine-Tuning(2017) ● Abstract ○ 1. Model Predictive Control(MPC)과 Neural Network의 결합 -> Model을 Neural Network로 구성 ■ 이전에는 Gaussian Process, Baysian Neural Network을 사용하였으나 low-dimension에만 적용 가능하였거나 성 능이 좋지 않은 한계가 있었음 ○ 2. Model Based Controller를 사용해, 좋은 Trajectory를 발생시킴 ○ 3. Model Based Controller가 발생시킨 trajectories를 가지고, model free controller를 behavior cloning 시킴 실제 환경 Model Free Controller Model Based Controller Model 1 2 3
+12. History about Model-based RL and Technic Neural Network Dynamics for Model-Based Deep Reinforcement Learning with Model-Free Fine-Tuning(2017) ● Detail ○ 1. Model Predictive Control(MPC)와 Neural Network의 결합 -> Model을 Neural Network로 근사 ■ 1.1. Random Policy로 trajectories 생성 ■ 1.2. next state와 state의 차이를 current state와 action을 통해 예측 ■ 1.3. 이것을 mean square error를 minimizing하여 Model training 1
+13. History about Model-based RL and Technic Neural Network Dynamics for Model-Based Deep Reinforcement Learning with Model-Free Fine-Tuning(2017) ● Detail ○ 2. Model Based Controller를 사용해, 좋은 Trajectory를 발생시 킴 ■ 2.1. Shooting! ● K candidate action sequences are randomly generated, the corresponding state sequences are predicted using the learned dynamics model, the rewards for all sequences are calculated, and the candidate action sequence with the highest expected cumulative reward is chosen. ■ 2.2 이 trajectories를 가지고, 다시 Model을 학습시키고, Detail 3 chapter에서 model free controller를 학습 시킬 것 임 2
+14. History about Model-based RL and Technic Neural Network Dynamics for Model-Based Deep Reinforcement Learning with Model-Free Fine-Tuning(2017) ● Detail ○ 3. Model Based Controller가 발생시킨 trajectories를 가지고, model free controller를 behavior cloning 시킴 ■ 3.1 model-free controller의 action과 trajectories에서의 action들의 차이를 줄임 ● l2 distance를 최소화
+15. History about Model-based RL and Technic Neural Network Dynamics for Model-Based Deep Reinforcement Learning with Model-Free Fine-Tuning(2017) ● Detail ○ 그렇다면 얼마나 긴 state sequence H를 예측해야 하는게 좋을까? ■ 가장 긴게 좋지 않을까? X ■ 짧아도 X. 적당한 길이가 좋다고 함. ○ model based controller의 candidates action sequences K는? ■ 첫 Initialization만 좋고 수렴할때까지의 성능개선이 좋지않음. ● Result ○ 결국 이런 process가 길고 비효율적이다는 것은 그만큼의 loss ○ Model-based -> Model-free로 넘어가는 과정이 결국 비효율임 ○ Model을 Neural Network로 해결하는 과도기적 단계였음 ○ 이를 다음 논문에서 해결함
+16. History about Model-based RL and Technic World Model(2018) ● Abstract : ○ 앞에서의 Model-based Controller 없이 매우작은 controller 하나만으로 학습을 함 ■ Large World Model ■ Small Controller ○ Dream! ■ 실제 Environment와 소통하지 않고, World Model과 소통해 학습하는 것을 이미지 트레이 닝에 비유하면서 Dream이라고도 표현하는데 재밌습니다.(꼭보세요) ■ 이게 실제 environment에서 학습한 controller보다 좋은 성능을 냈다고 합니다.(편차가 엄 청 커서 평균으로 비교하긴 어렵지만) ■ 결국 Model이 approximation이므로, 이 불완전함을 이용해 controller가 cheating하는 모 습도 보여줍니다. 실제 환경 World Model Controller
+17. History about Model-based RL and Technic World Model(2018) ● Detail : ○ Large World Model ■ Vision model(V model) ■ Memory RNN(M model) ○ Small Controller Model ■ Controller(C model)
+18. History about Model-based RL and Technic World Model(2018) ● Detail : ○ Vision model ■ Variational AutoEncoder ● Image를 Compressed representation을 만듬으로써 high dimensional image를 low dimension에 중요정보만을 embedding합니다.
+19. History about Model-based RL and Technic World Model(2018) ● Detail : ○ Memory RNN ■ RNN ● future prediction에 사용되는 layer로, 이미지가 순차적으로 들어오므로, 그 것을 효과적으 로 representation을 할 수 있다 고 생각함. ○ 참고로 여기선 1 frame만 씁니다.
+20. History about Model-based RL and Technic World Model(2018) ● Detail : ○ Memory RNN ■ MDN ● 많은 복잡한 Environment는 Stochastic함을 내재하고 있음. 이를 표현하기 위해 RNN을 통 과한 vector에 대해 probability 를 output으로 내는 Mixture Density Network를 RNN뒤에 붙임.
+21. History about Model-based RL and Technic World Model(2018) ● Detail : ○ Controller ■ Controller는 최대한 파라미터를 적게 만드는 것이 Credit Assignment Problem을 적게 만들 수 있는 방법이 라고 판단하고, 수천개의 파라미터만 으로 선형적인 모델을 만들었음. ■ 심지어 training algorithm도 Neural Network가 아닌, 수천개의 파라미터 가 있을 때, 최적을 잘 찾아내는 Covariance Matrix Adaptation Evolution Strategy를 사용함.
+22. History about Model-based RL and Technic World Model(2018) ● Detail : ○ 학습과정 ■ 중요한 것은 Controller가 World Model만을 사용한다는 점. ■ z,h를 둘다 받는다는 점. ■ V 모델만 써도 웬만큼은 성능이 나옴
+23. History about Model-based RL and Technic World Model(2018) ● Result ○ 그렇다면, 실제 World Model은 controller가 학습될수록 World model이 잘 모르는 환경이 나올텐데 어떻게 해결할까? ■ 마지막 Section에 Iterative하게 model과 controller를 번갈아가며 학습시키는 방법 이 나옴 ○ VAE만을 쓰는 것이 결국 한계를 만들었다고 함 ■ 쓸모없는 것을 열심히 encoding하거나 필요한 것들을 버림. ● VAE를 학습할때 같이하면 되나, 이럴거면 Controller와 Model을 분리한 장점 이 사라짐 ○ World Model에서 Curiousity를 적용해 Exploration에도 활용할 수 있을 것이란 기대 ○ Temperature를 사용해 Dream진행 후의 결과
+24. History about Model-based RL and Technic Model Based Reinforcement Learning for Atari(2019) ● Abstract ○ Model을 불완전한 상태에서부터 학습을 진행함에 의의, remove recursive layer ● Technical Trick ○ pixel embedding, discrete latent, clipping softmax 실제 환경 World Model Controller 1 Controller 2 1 Iteration
+25. Result ● All the problem came from Model’s incompleteness ○ How can we improve it? ● Iterative learning vs Model first ○ Iterative가 최근에 나왔다고 더좋은 방법은 아님 저기서도 초반 model을 학습시키기위해 random trajectories를 발생시킴 ○ environment에 대해 덜 학습된 model을 배우는 controller의 cumulative error ○ TD3에서 처럼(Q가 더 학습되는 technical trick) model을 training 가능할 것으로 봄
