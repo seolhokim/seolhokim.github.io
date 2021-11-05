@@ -109,3 +109,6 @@ Controller가 실제 environment의 raw high dimensional data를 정제한 M mod
 VAE를 쓰는 standalone하게 쓰는 것도 한계가 있었습니다. 중요한 information을 잘 캐치하지 못하거나, 불필요한 타일 패턴같은 것은 잘 잡아내기도 하였습니다. 이를 해결하기 위해 Controller와 함께 학습하게 되면, 좋을 수 있는데, 이는 그렇다면 또다시 M model과 Controller가 결합됨으로써, 이전의 학습과 비슷하게 되어져버립니다.(여기서는 effectively reuse가 어려워진다고 말합니다.)
 
 여기까지 기술적인 부분과 Experiments에 대해 모두 살펴보았고, 좀더 이해가 필요한 부분은 Appendix에 실어놓은 친절한 논문입니다…(Variational AutoEncoder, RNN, Evolution Strategies에 대해 설명해져 있습니다.)
+
+## References
+- [World Models](https://arxiv.org/abs/1803.10122)

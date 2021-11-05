@@ -10,8 +10,6 @@ author:
 math: true
 ---
 
-이전에 너무 정리를 더럽게해서 이번엔 조금 열심히해보려고한다.
-
 ## Abstract
 
 NLP든 많은 문제에서 복잡한 input을 받지만, feedback은 성공 실패의 binary값을 받게되어, 행동에 대해 굉장히 명확하지 않은 rewards를 받게 되는 문제들이 있다.
@@ -60,4 +58,7 @@ $$\mathcal{A}^{+} \equiv \{a \in \mathcal{A}(x) | R(a |x,y) = 1 \}$$
 
 $$ O_{IML} = \sum_{x \in \mathcal{D}} \frac {1}{|\mathcal{A}^{+}(x)|} \sum_{a^{+} \in \mathcal{A}(x)} \log{\pi (a^{+}|x)}  $$
 
-너무당연하다. 
+자명하다. 
+
+## References
+- [learning to Generalize from sparse and underspecified rewards](https://arxiv.org/abs/1902.07198)

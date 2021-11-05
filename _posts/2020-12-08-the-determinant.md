@@ -11,9 +11,9 @@ math: true
 ---
 ## The determinant
 
-1. **What to learn**
-    - what is the **determinant**?
-2. **Description**
+## What to learn
+- what is the **determinant**?
+## Description
     - 2d **determinant** make us estimate transformed area of region.
         - example
             1. 
@@ -46,7 +46,7 @@ math: true
 
     $$det\left ( \begin{bmatrix}a & b &c\\ d & e &f \\ g&h&i\end{bmatrix} \right ) = a \cdot det\left ( \begin{bmatrix}e & f\\ h & i\end{bmatrix} \right ) - b\cdot det\left ( \begin{bmatrix}d & f\\ g & i\end{bmatrix} \right )  + c\cdot det\left ( \begin{bmatrix}d & e\\ g & h\end{bmatrix} \right )$$
 
-1. **Next Step**
-    - Inverse matrices, column space and null space
-2. **References**
-    - [https://www.youtube.com/watch?v=rHLEWRxRGiM&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=5](https://www.youtube.com/watch?v=Ip3X9LOh2dk&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=6)
+## Next Step
+- Inverse matrices, column space and null space
+## References
+- [https://www.youtube.com/watch?v=rHLEWRxRGiM&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=5](https://www.youtube.com/watch?v=Ip3X9LOh2dk&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=6)

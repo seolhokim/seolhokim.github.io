@@ -60,3 +60,5 @@ trajectories를 sharing하는 것이 gradients를 sharing하는 것보다, 기�
 
 Ape-X의 generality를 테스트하기 위해 continuous한 환경에서의 실험도 빠지지 않았는데, off policy algorithm인 DDPG의 multi-step algorithm을 그대로 적용할수 있음을 보이면서 메인 아이디어가 끝이 납니다.
 
+## References
+- [DISTRIBUTED PRIORITIZED EXPERIENCE REPLAY](https://arxiv.org/pdf/1803.00933.pdf)

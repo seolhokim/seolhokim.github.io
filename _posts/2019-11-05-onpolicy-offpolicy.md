@@ -19,6 +19,6 @@ On policy는 behavior policy와 target policy가 같습니다. 즉 현재 행동
 Off policy는 behavior policy와 target policy가 다릅니다. 현재 행동하는 policies와 update할 policy가 달라도 된다는 뜻입니다. 이는 target policy와 behavior policy에 의한 distribution차이를 Importance Sampling(IS)을 이용해 해결하거나 target policy의 action selection을 주로 max의 연산으로 deterministic하게 취함으로써 해결합니다. 어떻게 action selection을 통해 distribution 차이를 극복하냐가 예전에 가졌던 의문이었는데, 생각해보면 간단했습니다. approximated action value function $$ \hat{Q} $$ 가 있을때, 한 state $$s_t$$에서의 $$\hat{Q}(s,a)$$의 더 정확한 값은 $$r(s,a)+\max_{a'}\hat{Q}(s',a')$$ 이기 때문에 업데이트 할 수 있는 것 입니다. 이는 target policy의 action을 제한시켰기 때문에, local optimal에 빠지지 않기 위해 exploration strategy가 필요합니다. 그중 가장 간단하게는 epsilon-greedy를 사용하지만, 이는 비효율적이기 때문에, 또 다른 많은 exploration 전략이 존재합니다.
 
 
-### 참조문헌
+## References
 
- Richard S. Sutton and Andrew G. Barto. Reinforcement learning: An introduction. Second edition, MIT Press, Cambridge, MA, 2018.
+- Richard S. Sutton and Andrew G. Barto. Reinforcement learning: An introduction. Second edition, MIT Press, Cambridge, MA, 2018.

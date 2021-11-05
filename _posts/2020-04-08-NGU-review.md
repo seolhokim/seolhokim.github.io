@@ -110,11 +110,8 @@ L은 scaling을 위해 존재하고 5로 잡아서 사용했습니다.
 * Distributed training
   * 최근에는 distributed training structure들의 좋은 성능을 보았기 때문에, 여기서도 그 구조를 착안하였습니다.
 
-## 4. Experiments
-생략
-
-## 5. Conclusion
-생략
+## References
+- [Never Give Up : Learning Directed Exploration Strategies](https://arxiv.org/abs/2002.06038)
     
   
 

@@ -83,3 +83,5 @@ $$ V(s_t) = \mathbb{E}_{a_t~\pi}[Q(s_t,a_t) - log \pi(a_t|s_t)] (3)$$
 
 또한 중요한 점은, policy를 새로운 Q function에 대한 exponential의 KL divergence를 통해 구하게 된다. 
 
+## References
+- [Soft Actor-Critic: Off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor](https://arxiv.org/abs/1801.01290)

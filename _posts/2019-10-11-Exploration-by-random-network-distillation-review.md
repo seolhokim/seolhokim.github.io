@@ -60,3 +60,6 @@ math: true
 
     - 또한 intrinsic reward의 크기를 어떻게 조절할까에 대해 고민해보아야 하는데, 이를 intrinsic reward의 running estimation의 표준편차로 나눠서 조절합니다.
     - target network또한 parameter가 계속 고정되어있기 때문에, target network에도 observation을 잘 normalization하여 넣어주어야 합니다. 그리하여 observation은 running mean으로 빼주고, running std로 나눈 뒤 -5~5로 clipping합니다. 이는 predictor와 target network, policy network에도 동일하게 적용됩니다.
+
+## References
+- [Exploration by Random Network Distillation](https://arxiv.org/abs/1810.12894)

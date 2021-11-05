@@ -71,3 +71,5 @@ L= 5로 잡고, alpha_t는 life-long novelty
 
 NGU는 N개의 다른 intrinsic reward scale을 가지고 있고, total reward는 r_{j,t} = r^e_t + \beta_j_jr^i_t가 됩니다. 결과적으로 NGU는 N개의 Q^*_{r_j}를 optimize하는 것에 중점을 두었습니다. 
 
+## References
+- [Agent57: Outperforming the Atari Human Benchmark](https://arxiv.org/abs/2003.13350)

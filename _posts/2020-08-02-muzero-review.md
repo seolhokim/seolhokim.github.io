@@ -56,3 +56,5 @@ Model은 각 내부 스텝마다 representation function, dynamics function, pre
 
 ![MuZero](/assets/img/muzero_2.PNG)
 
+## References
+- [Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model](https://arxiv.org/abs/1911.08265)

@@ -101,6 +101,6 @@ $$ min_{\theta_P, \theta_I, \theta_F} [-\lambda \mathbb{E}_{\pi(s_t;\theta_P)}[\
 
 현재의 state $$ s_t $$를 가지고 policy $$ \pi $$ 는 action $$ a_t $$ 를 인퍼런스하게 되고, 이를 통해 $$ s_{t+1} $$ 를 얻게된다. 이를 가지고 ICM에 넣게 되는데, $$ a_t , \phi(s_t) $$ 를 통해 다음 encoded state $$ \phi(s_{t+1}) $$ 를 얻은 것과, $$ \phi(s_t), \phi(s_{t+1})$$ 를 통해 $$ \hat {a_t} $$ 를 인퍼런스하는 훈련을 한 inverse model의 네트워크를 통해 loss를 구한다. 정리하면 ICM엔 3개의 모델이 있는데 state encoding 모델, forward model, inverse model이다. 이를 통해 $$ r^i_t $$ 를 구하게 되고, (그러면 inverse model은 왜쓰냐 할 수 있겠지만, inverse model은 말했듯이, action에 영향을 주는 state만 정확하게 mapping 할 수 있도록 돕는다. 그리고 그 predicted action은 loss로만 쓰이고 버려진다. )
 
-이로써 이론적인 모든 설명이 끝났다. experiments는 나는 내가 구현할 때, 파라미터나 기본적인 세팅에 대해 궁금할 때 주로 보는데, 위를 이해 했다면 뒤는 충분히 스스로 이해할 수 있다.
 
-
+## References
+- [Curiosity-driven Exploration by Self-supervised Prediction](https://arxiv.org/abs/1705.05363)

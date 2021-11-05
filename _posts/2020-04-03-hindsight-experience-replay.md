@@ -85,10 +85,8 @@ HER의 기본 알고리즘은 episode를 replay buffer에 저장하기 전에, o
 * 전체중에서 random state를 뽑습니다.
 ![hindsight](/assets/img/hindsight-4.PNG)
 
-
-
-여기까지 왔을 때, 느꼈던 점은 그렇다면 "goals은 어떻게 설정할 것인가?" 였는데, 여기서는 3d의 objective를 잡는것으로 설정했습니다. 이래서 robotics environment에서 experiments를 진행한 이유가 느껴졌습니다. 많은 상황에선 이런식으로 goal을 잡지 못하는 경우도 많을 것으로 판단이 되어 적용범위가 적다고 판단했습니다. 위의 실험결과에서도 나왔지만, k는 4나 8 정도가 적당했고, 그러면 goal을 total 몇개를 만들어 하는지가 의문인 상태입니다.
-
+## References
+- [Hindsight Experience Replay](https://arxiv.org/abs/1707.01495)
 
 
 

@@ -88,7 +88,8 @@ GFS는 하나의 GFS master와 GFS chunckserver, GFS client로 이루어져있�
 
 Hadoop은 GFS를 대체하기 위해 자바로 구현된 오픈소스로, 초기에는 GFS와 큰 차이점이 없으나 Hadoop 2.0으로 version up되면서 더 큰 인기를 끌게 되었다. Yarn의 도입으로, Hadoop 1.0에서의 Job tracker의 역할을 Resouce Manager와 Application Master로 분리시키며 병목현상을 해결하였고, NameNode의 다중화를 통해 SPOF(Single Point of Failure)의 위험을 없앴다. 동작 방식은 Client의 명령에 대해 Resource Manager에게 전달이 되고, 자원 할당을 위해 scheduler에게 넘어간다. scheduler는 slaves중의 container 하나를 Application Master로 임명하고, 임명된 Application Master는 Resource Manager와 통신하여 Container를 요청하고, Node Manager에게 제공해 Container를 실행시킨다. Application Master는 실행 상태등에 대해 통신을 받으며 작업이 종료되면 Application Master는 등록을 해제하게 된다.
 
-### 5. 참고문헌
+### References
+
 [1] Borko Furht, Armando Escalante, HANDBOOK OF CLOUDCOMPUTING, Boca Raton, FL: Springer, 2010, pp. 90-100.
 
 [2] K. S. Kim, et al. 클라우드 컴퓨팅 설계 및 구현, 서울시 강북구, 인수동: 홍릉과학출판사, 2012, pp. 70-76.

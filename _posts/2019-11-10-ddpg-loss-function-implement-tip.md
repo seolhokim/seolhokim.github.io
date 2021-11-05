@@ -23,7 +23,7 @@ update되게 된다. Q는 value function으로 상승하는 값을 향해 policy
 - mean(Q(state,mu(state))) 를 쓰면 되는 것이다.
 
 
-## reference
+## References
 
 - (Deterministic Policy Gradient Algorithms)[http://proceedings.mlr.press/v32/silver14.pdf]
 - (Continuous control with deep reinforcement learning)[https://arxiv.org/abs/1509.02971]

@@ -31,4 +31,6 @@ Off-policy multi-step Q-learning에 대해 원하는 step(lambda)만큼의 outpu
 
 결국 network architecture도 다음과 같이 짜야해서 조금 귀찮음을 느꼈지만, 충분히 reasonable했고, 설명도 적절했다고 생각합니다.
 
+## References
+- [Off-policy Multi-Step Q-learning](https://openreview.net/forum?id=r1lczkHKPr)
 

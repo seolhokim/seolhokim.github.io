@@ -42,10 +42,6 @@ $$ max_{\pi}L(\pi) + \eta E_{s,a~\pi}[D_{KL}(P\Vert P_{\phi})[s,a]] (2)$$
 agent가 가본 곳은 뒤의 텀이 작을 것이다. 왜냐면 이미 transition이 비슷하게 학습되었기 때문에 KL-divergence가 작다. 하지만 덜 갔던 곳(unfamiliar places)은 KL divergence가 높을 것이다. 그래서 이 KL divergence가 높은 곳을 갈 수 있도록 term을 추가해준 것이다.
 
 
-~~(잘못 이해함)를 보면 optimal $$P$$ (transition probability) 에 현재 dataset of transition tuple D(replay memory같은)에서의 transition probability
-$$ P_{\phi} $$ 를 KL-divergency의 loss를 주어서 같은 분포를 만드려고 한다. 이 loss term이 위에서의 surprise about experience를 잡기위해 나왔다. 그래서 reward term 도~~
-
-
 
 $$ r'(s,a,s') = r(s,a,s') + \eta( \log{P(s'\vert s,a)} - \log{P_{\phi}(s'\vert s,a)}) (3)$$
 
@@ -115,3 +111,5 @@ $$ r'(s,a,s') = r(s,a,s') + \eta( \log{P_{\phi_{t}}(s'\vert s,a)} - \log{P_{\phi
  (8)은 Baysian은 아니지만, (8)도 (9)와 비슷한 정보를 가지고 있음을 알 수 있다.
 
 
+## References
+- [Surprise-based intrinsic motivation for deep reinforcement learning](https://arxiv.org/abs/1703.01732)

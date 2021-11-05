@@ -10,11 +10,12 @@ author:
 math: true
 ---
 ## Linear transformations and matrices
-1. **What to learn**
-    - What is the **Linear Transformation**
-2. **Description**
-    - **Transformation**
-        - Take some input vector to output vector
+
+## What to learn
+- What is the **Linear Transformation**
+## Description
+- **Transformation**
+  - Take some input vector to output vector
             - = input vector moving over output vector
         - We will treat Only **Linear Transformation** In Linear Algebra
             - Special case of Transformation
@@ -44,7 +45,7 @@ math: true
                         This way, we can get same result.
 
                 - If matrix is compounded of Linearly dependent columns, then it makes all vectors move to the vectors' span.
-3. **Next Step**
-    - Matrix multiplication as composition
-4. **References**
-    - [https://www.youtube.com/watch?v=kYB8IZa5AuE&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=3](https://www.youtube.com/watch?v=kYB8IZa5AuE&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=3)
+## Next Step
+- Matrix multiplication as composition
+## References
+- [https://www.youtube.com/watch?v=kYB8IZa5AuE&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=3](https://www.youtube.com/watch?v=kYB8IZa5AuE&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=3)

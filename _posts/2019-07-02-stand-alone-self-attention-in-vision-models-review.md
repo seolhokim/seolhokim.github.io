@@ -82,6 +82,5 @@ distance based weight parametrization of convolutions은 그들이 edge dectecto
 stem은 공간적인 value features를 가지고 있는 attention layer로 이루어져있고 그뒤엔 maxpooling이 있다. 간단하게, attention receptive field는 maxpooling window와 어울린다.
 
 
-
-
-
+## References
+- [Stand-Alone Self-Attention in Vision Models](https://arxiv.org/abs/1906.05909)

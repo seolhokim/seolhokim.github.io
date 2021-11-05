@@ -57,4 +57,5 @@ lower q network는 두 가지로 만들어 사용했습니다. 첫째로 LSTM을
 
 다 설명해놓고 그냥 inner layer의 loss를 그냥 합해서 upper layer와 mse를 loss로 삼는 Add SDQN을 설명합니다.
 
-
+## References
+- [Discrete Sequential Prediction of Continuous Actions for Deep RL](https://arxiv.org/abs/1705.05035)

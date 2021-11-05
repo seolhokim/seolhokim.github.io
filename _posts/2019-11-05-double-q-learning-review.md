@@ -10,8 +10,6 @@ author:
 math: true
 ---
 
-TD3 보기전에 Double Q-learning 에 대해 Introduction에서 많이 언급되어서 보려고 한다.
-
 ## Abstract
 
 Q-learning은 action value(action state value, Q-value)를 overestimate한다는 것이 잘 알려져있다. 하지만 그런 overestimation이 실전에서
@@ -92,4 +90,5 @@ $$ Y_{t}^{DoubleDQN} \equiv R_{t+1} + \lambda Q(S_{t+1}, argmax_a Q(s_{t+1},a;\t
 - Double DQN을 제안했다.(without additional network)
 - Double DQN이 효과적임을 보였다.(여기선 SOTA)
 
-
+## References
+- [Deep Reinforcement Learning with Double Q-learning](https://arxiv.org/abs/1509.06461)

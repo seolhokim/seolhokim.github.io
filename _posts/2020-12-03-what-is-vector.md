@@ -11,10 +11,10 @@ math: true
 ---
 
 ## What is the vector?
-1. **What to learn** 
+## What to learn
     - What is the vector?
     - How to sum(multiply) vectors
-2. **Description**
+## Description
     - Vector is the main components of Linear Algebra
     - What exactly vector is?
         - three distinct ideas
@@ -38,8 +38,8 @@ math: true
             - Think vector A and scala B
                 - if B is positive, then squeeze or expand A by B
                 - if B is negative then A is flipped based on starting point and squeezed or expanded
-3. **Next Step**
-    - Linear combinations, span and bases
+## Next Step
+- Linear combinations, span and bases
 
-4. **References**
-    1. [https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)
+## References
+1. [https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab](https://www.youtube.com/watch?v=fNk_zzaMoSs&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab)

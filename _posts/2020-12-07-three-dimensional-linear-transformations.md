@@ -11,9 +11,9 @@ math: true
 ---
 ## Three-dimensional linear transformations
 
-1. **What to learn**
+## What to learn 
     - How to do Three dimensional Matrix multiplication
-2. **Description**
+## Description
     - We already know multipling 2d matrix.
     - Three-dimensional linear transformation applies the same principle.
     - basis vector
@@ -41,7 +41,7 @@ math: true
 
         $$\begin{bmatrix}aj+bm+cp & ak+bn+cq & al+bo+cr\\ dj+em+fp & dk+en+fq & dl+eo+fr\\ gj+hm+ip & gk+hn+iq & gl+ho+ir\end{bmatrix}$$
 
-3. **Next Step**
-    - The determinant
-4. **References**
-    - [https://www.youtube.com/watch?v=rHLEWRxRGiM&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=5](https://www.youtube.com/watch?v=rHLEWRxRGiM&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=5)
+## Next Step
+- The determinant
+## References
+- [https://www.youtube.com/watch?v=rHLEWRxRGiM&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=5](https://www.youtube.com/watch?v=rHLEWRxRGiM&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=5)

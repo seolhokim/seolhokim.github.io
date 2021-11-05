@@ -114,4 +114,6 @@ Neural Net 연산은 gradient 연산을 통해 계속 parameter가 변화하게 
 ## 6. Summary
 이 논문에서 AE-DQN을 살펴보았고, 일단 skip했지만, Zork라는 text base game에서의 실험을 진행하였습니다. action space가 계속 감소하면서 exploration이 효과적으로 진행되었고, linear contextual bandits을 사용해 수렴에 대한 보장을 증명하였습니다.
 
+## References
+- [Learn What Not to Learn : Action Elimination with Deep Reinforcement Learning](https://arxiv.org/abs/1809.02121)
 
