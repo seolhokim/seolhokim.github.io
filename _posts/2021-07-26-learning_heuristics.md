@@ -12,8 +12,10 @@ math: true
 Learning Heuristics for the TSP by Policy Gradient
 
 이전의 [NCO](https://seolhokim.github.io/deeplearning/2021/07/26/nco/)를 읽고 오시면 도움이 됩니다.
+
 ## Abstract
 - 이 논문은 Combinatorial Optimization Problem을 해결하는데 ML이 heuristic algorithm과 결합하여 좋은 성능을 낼 수 있음을 보입니다. 이 때, encoder와 decoder 모두 LSTM을 제거한 점이 눈에 띕니다.
+
 ## Introduction
 ## Reinforcement Learning Perspective for the TSP
 ## Neural Architecture for TSP
