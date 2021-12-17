@@ -107,6 +107,7 @@ AlphaGo Zero는 그림의 세 번째 Sampling을 network prediction만을 이용
   - 각 action마다 node를 0이나 1로(파란색, 빨간색) 색칠합니다. 그리고 그 노드를 제거하면서 얼마나 많은 인접한 색색의 노드가 제거되었는지를 저장합니다. $$A_s = \{ (x,c) \vert x \in V, c \in \{1,2\} \}$$는 nodes에 색칠할 수 있는 set을 나타내고, $$(x,c)$$는 node를 color c로 색칠하는 것을 의미합니다. $$L = \mathbb{N}^2$$는 각 adjacent nodes가 각 색에 의해 몇 회 색칠됐는지를 나타냅니다. $$R(s,(x,c))$$는 $$(3-c)\mathrm{-th}$$에 대해 c가 1이면 2, c가 2이면 1의 $$d(x)$$값입니다.(색칠된 색의 반대 dimension을 고른 값)
 - **Maximum Clique**
   - 비슷하므로 생략합니다.
+
 2. **Ideas for CombOpt Zero**
   - **Combinatorial Optimization vs. Go**
     - AlphaGo Zero를 MDP formulation에 적용할 때 두가지 바둑과는 다른 점이 있습니다. 첫째로, 바둑은 고정된 input size를 가지나, combinatorial problem은 대체로 dynamic합니다. 그렇기 때문에 GNN을 통해 이를 해결합니다. 둘째로, 결과가 단순화되지 않습니다. 바둑은 승리하거나 비기거나 지는 경우로 나뉘는데  combinatorial problem은 그렇지 않습니다. 바둑처럼 $$[-1,1]$$의 범위에서 큰 value를 가질수록 이길확률이 크다는 것을 따라서 만들 수 있지만, graph size가 커질수록, trajectory length가 길어지게되고, cumulative reward가 높다면, (3)의 첫 번째 term이 dominent해지게 되므로 탐색이 제대로 이루어지지 않습니다. 여기서는 normalization technic을 사용하여 이를 해결합니다.
