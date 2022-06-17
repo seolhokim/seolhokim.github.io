@@ -5,10 +5,10 @@ permalink: /projects/
 ---
 
 ### Reinforcement Learning
-- [InverseRL-Pytorch](https://github.com/seolhokim/InverseRL-Pytorch) ⭐ x 14
-- [Mujoco-Pytorch](https://github.com/seolhokim/Mujoco-Pytorch)⭐ x 10
-- [DistributedRL-Pytorch-Ray](https://github.com/seolhokim/DistributedRL-Pytorch-Ray)⭐ x 7
-- [Transportation-Routes-Optimization-by-RL](https://github.com/seolhokim/Transportation-Routes-Optimization-by-RL)⭐ x 6
+- [InverseRL-Pytorch](https://github.com/seolhokim/InverseRL-Pytorch) ⭐ x 22
+- [Mujoco-Pytorch](https://github.com/seolhokim/Mujoco-Pytorch)⭐ x 20
+- [DistributedRL-Pytorch-Ray](https://github.com/seolhokim/DistributedRL-Pytorch-Ray)⭐ x 16
+- [Transportation-Routes-Optimization-by-RL](https://github.com/seolhokim/Transportation-Routes-Optimization-by-RL)⭐ x 8
 - [Deep-Multi-Agent-Reinforcement-Learning](https://github.com/seolhokim/Deep-Multi-Agent-Reinforcement-Learning)⭐ x 6
 
 ## Work Experiences
