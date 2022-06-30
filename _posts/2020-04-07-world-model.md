@@ -113,4 +113,5 @@ VAE를 쓰는 standalone하게 쓰는 것도 한계가 있었습니다. 중요�
 ## References
 - [World Models](https://arxiv.org/abs/1803.10122)
 
-[arxiv](https://arxiv.org/trackback/1803.10122)
+[arxiv](https://arxiv.org/tb/1803.10122)
+https://arxiv.org/tb/0704.0002
