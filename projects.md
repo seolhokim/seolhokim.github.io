@@ -5,11 +5,12 @@ permalink: /projects/
 ---
 
 ### Reinforcement Learning
-- [InverseRL-Pytorch](https://github.com/seolhokim/InverseRL-Pytorch) ⭐ x 22
-- [Mujoco-Pytorch](https://github.com/seolhokim/Mujoco-Pytorch)⭐ x 20
-- [DistributedRL-Pytorch-Ray](https://github.com/seolhokim/DistributedRL-Pytorch-Ray)⭐ x 16
-- [Transportation-Routes-Optimization-by-RL](https://github.com/seolhokim/Transportation-Routes-Optimization-by-RL)⭐ x 8
-- [Deep-Multi-Agent-Reinforcement-Learning](https://github.com/seolhokim/Deep-Multi-Agent-Reinforcement-Learning)⭐ x 6
+- [SimpleDreamer](https://github.com/kc-ml2/SimpleDreamer)
+- [InverseRL-Pytorch](https://github.com/seolhokim/InverseRL-Pytorch)
+- [Mujoco-Pytorch](https://github.com/seolhokim/Mujoco-Pytorch)
+- [DistributedRL-Pytorch-Ray](https://github.com/seolhokim/DistributedRL-Pytorch-Ray)
+- [Transportation-Routes-Optimization-by-RL](https://github.com/seolhokim/Transportation-Routes-Optimization-by-RL)
+- [Deep-Multi-Agent-Reinforcement-Learning](https://github.com/seolhokim/Deep-Multi-Agent-Reinforcement-Learning)
 
 ## Work Experiences
 * Deep Reinforcement Learning Researcher at Seoul National University Hospital, Seoul
