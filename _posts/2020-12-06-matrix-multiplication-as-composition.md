@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "4. Matrix multiplication as composition"
+description: "3Blue1Brown 선형대수 시리즈 4편 정리. 두 matrix의 곱을 f(g(x))처럼 오른쪽부터 적용하는 변환의 합성으로 해석하고, basis vector가 옮겨지는 위치로 2x2 matrix 곱 공식을 유도하는 과정을 정리한 선형대수 노트."
 toc: true
 categories: 
   - Mathematics
 tags: [Linear Algebra]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Matrix multiplication as composition

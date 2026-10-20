@@ -2,12 +2,12 @@
 layout: post
 title:  "Learning to Solve Combinatorial Optimization
 Problems on Real-World Graphs in Linear Time 논문 리뷰 및 설명"
+description: "Learning to Solve Combinatorial Optimization Problems on Real-World Graphs in Linear Time 논문 리뷰. line graph, GAT encoder, attention decoder로 MST 등을 푸는 방법 설명."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Combinatorial Optimization, Graph Neural Network, MonteCarlo Tree Search]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 Learning to Solve Combinatorial Optimization

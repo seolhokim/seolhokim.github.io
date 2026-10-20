@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Exploration by Random network Distillation 논문 리뷰"
+description: "Exploration by Random Network Distillation 논문 리뷰. 고정된 target network와 predictor network의 오차를 exploration bonus로 쓰는 RND의 아이디어와 prediction error의 네 가지 원인을 정리한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Exploration]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 1. **Abstract**

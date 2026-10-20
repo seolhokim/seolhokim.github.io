@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "12. Cramer's rule"
+description: "3Blue1Brown 선형대수 시리즈 12강 Cramer's rule 정리. 정규직교 변환에서 내적이 보존되는 성질과 평행사변형 넓이가 det(A)배로 변한다는 점을 이용해, 연립방정식의 해 x, y를 두 행렬식의 비로 구하는 과정을 기하학적으로 설명한 글."
 toc: true
 categories: 
   - Mathematics
 tags: [Linear Algebra]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Cramer's rule, explained geometrically

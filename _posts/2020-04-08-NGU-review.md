@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Never Give Up : Learning Directed Exploration Strategies 논문 리뷰"
+description: "Never Give Up : Learning Directed Exploration Strategies 논문 리뷰. episodic novelty와 life-long novelty로 intrinsic reward를 계산하는 방식과 UVFA 기반 agent 구조를 정리한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Distributed RL, Exploration]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Solving NP-hard Problems on Graphs with Extended AlphaGo Zero 논문 리뷰 및 설명"
+description: "Solving NP-hard Problems on Graphs with Extended AlphaGo Zero 논문 리뷰. AlphaGo Zero의 MCTS, graph 문제의 MDP 정의, reward normalization을 쓰는 CombOpt Zero의 학습을 설명한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Combinatorial Optimization, MonteCarlo Tree Search, Graph Neural Network]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 Solving NP-hard Problems on Graphs with Extended AlphaGo Zero

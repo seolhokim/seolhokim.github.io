@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Soft Actor-Critic: off-Policy Maximum Entropy Deep Reinforcement Learning with a Stochastic Actor 논문 리뷰 및 설명"
+description: "Soft Actor-Critic 논문 리뷰. model-free RL의 sample complexity 문제, maximum entropy framework와 SAC의 세 가지 핵심 요소, entropy가 포함된 soft value function 식을 정리한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

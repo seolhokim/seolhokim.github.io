@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Surprise-based intrinsic motivation for deep reinforcement learning 논문리뷰"
+description: "Surprise-based intrinsic motivation for deep reinforcement learning 논문 리뷰. transition 모델의 KL divergence로 정의한 surprise를 intrinsic reward로 쓰는 두 가지 근사식을 정리한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Exploration]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

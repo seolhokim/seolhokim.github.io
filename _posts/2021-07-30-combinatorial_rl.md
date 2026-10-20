@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Reinforcement Learning for Combinatorial Optimization"
+description: "강화학습으로 Combinatorial Optimization을 푸는 논문 리뷰들을 encoder 구조에 따라 정리한 목차 글. Pointer Network, Self-attention, Graph Neural Network로 나누어 블로그 내 리뷰 링크를 모았다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Combinatorial Optimization]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 Reinforcement Learning for Combinatorial Optimization

@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "windows 10 pytorch 설치 및 troubleshooting"
+description: "windows 10에서 conda로 pytorch를 설치하며 겪은 문제 해결 기록. peterjc123 채널 설치 시 발생한 DLL load failed 에러, GPU가 없는 환경에서의 pytorch-cpu 설치, 낮은 버전을 업데이트하는 방법을 정리한다."
 toc: true
 categories: 
   - Deep Learning
 tags: [Deep Learning, Pytorch]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

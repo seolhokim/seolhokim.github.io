@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Improving Playtesting Coverage via Curiousity Driven Reinforcement Learning Agents 논문 리뷰 및 설명"
+description: "Improving Playtesting Coverage via Curiousity Driven Reinforcement Learning Agents 논문 리뷰. count-based curiousity reward와 DPPO로 게임 맵 coverage를 높이는 방법을 정리한 글."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Exploration]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Abstract

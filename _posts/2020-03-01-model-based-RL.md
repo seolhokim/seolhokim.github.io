@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Model based RL 에 대한 설명"
+description: "Model based RL 세미나 자료(slideshare) 공유 글. model의 정의, model-free와 model-based의 비교와 장단점을 정리하고, MPC와 Neural Network의 결합부터 World Model, SimPLe까지 세 논문의 흐름을 설명한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Model-based]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

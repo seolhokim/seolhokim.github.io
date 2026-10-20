@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "10. Cross product"
+description: "3Blue1Brown 선형대수 시리즈 10편 정리. cross product를 두 vector가 만드는 평행사변형 넓이와 right hand rule 방향을 갖는 새 vector로 정의하고, 2차원은 determinant로, 3차원은 성분 공식으로 계산하는 방법을 정리한 노트."
 toc: true
 categories: 
   - Mathematics
 tags: [Linear Algebra]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Cross product

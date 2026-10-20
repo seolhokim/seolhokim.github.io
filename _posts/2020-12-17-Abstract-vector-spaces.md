@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "15. Abstract vector spaces"
+description: "3Blue1Brown 선형대수 시리즈 15강 Abstract vector spaces 정리. 다항식 같은 함수도 기저를 달리한 벡터로 볼 수 있다는 예시와, 덧셈과 스칼라 곱에 관한 8가지 벡터 공리를 만족하면 무엇이든 벡터로 다룰 수 있음을 설명한 글."
 toc: true
 categories: 
   - Mathematics
 tags: [Linear Algebra]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Abstract vector spaces

@@ -1,5 +1,6 @@
-title: Seolho kim
-description: 
+title: Seolho Kim
+description: "강화학습(RL)·딥러닝 논문을 한국어로 리뷰하고 설명하는 김설호(Seolho Kim)의 기술 블로그. 탐험·오프폴리시·모델 기반 RL·조합최적화 논문 리뷰 80여 편과 선형대수 개념 정리, 구현 팁을 담았다."
+url: "https://seolhokim.github.io"
 author: Seolho Kim
 avatar: /assets/img/logo.jpg
 email: kilmya1@naver.com
@@ -12,13 +13,19 @@ plugins:
 
 paginate: 10
 
-# Uncomment the below line and set the tracking ID for enabling Google Analytics
-# 
+# Google Analytics
+# NOTE: UA-138161375-1 is a Universal Analytics property. UA stopped collecting data on 2023-07-01.
+# Replace with a GA4 measurement ID (G-XXXXXXXXXX) to resume measurement.
 google_analytics: "UA-138161375-1"
 
-# Uncomment the below lines and set the Disqus shortname for enabling Disqus
-# 
+# Disqus
 disqus: https-seolhokim-github-io
+
+# Webmaster verification — uncomment and fill in after registering each console.
+# webmaster_verifications:          # rendered by jekyll-seo-tag
+#   google: ""                      # Google Search Console (HTML tag method)
+#   bing: ""                        # Bing Webmaster Tools
+# naver_site_verification: ""       # Naver Search Advisor, rendered by _includes/custom-head.html
 
 # Jekyll
 # ======
@@ -26,6 +33,20 @@ exclude:
   - scripts/
   - README.md
   - jekyll-theme-hamilton.gemspec
+  - screenshot.png
+  - screenshot-midnight.png
+  - screenshot-sunrise.png
+  - .claude/
+  - _seo/
+
+# Front matter defaults
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      lang: ko                      # posts are written in Korean -> <html lang="ko"> and og:locale
+      image: /assets/img/logo.jpg   # fallback og:image / JSON-LD image for posts without their own
 
 # Jekyll SEO Tag (Optional)
 # =========================
@@ -33,8 +54,8 @@ logo: /assets/img/logo.jpg
 social:
   name: Seolho Kim
   links:
-    - LinkedIn: https://www.linkedin.com/in/%EC%84%A4%ED%98%B8-%EA%B9%80-796603197/
     - https://github.com/seolhokim
+    - https://www.linkedin.com/in/%EC%84%A4%ED%98%B8-%EA%B9%80-796603197/
 lang: en
 skin: midnight
 subscribe: false

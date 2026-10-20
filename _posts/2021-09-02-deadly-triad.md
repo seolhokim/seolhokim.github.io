@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Deep Reinforcement Learning and Deadly Triad 논문 리뷰 및 설명"
+description: "Deep Reinforcement Learning and Deadly Triad 논문 리뷰. function approximation, bootstrapping, off-policy의 결합으로 value가 diverge하는 예제와 DQN 실험의 여섯 가지 가설을 설명한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Temporal Difference Learning]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 Deep Reinforcement Learning and Deadly Triad

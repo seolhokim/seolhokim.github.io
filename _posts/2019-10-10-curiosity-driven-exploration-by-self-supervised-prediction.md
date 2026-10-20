@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Curiosity-driven Exploration by Self-supervised Prediction 논문리뷰"
+description: "Curiosity-driven Exploration by Self-supervised Prediction 논문 리뷰. prediction error를 intrinsic reward로 쓰는 ICM의 inverse model과 forward model 구조, loss 수식을 정리한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Exploration]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

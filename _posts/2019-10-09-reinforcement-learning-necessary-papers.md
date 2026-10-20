@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "강화 학습 보면 좋을 논문 목록"
+description: "OpenAI Spinning Up의 key papers를 기준으로 정리한 강화학습 논문 목록. Model-Free RL, Exploration, Model-Based RL, Meta-RL, Safety 등 13개 분류로 105편을 나열하고 읽은 논문은 취소선으로 표시한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 강화 학습 필수 논문 목록을 openai에서 뽑아봤다.

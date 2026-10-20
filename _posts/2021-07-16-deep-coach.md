@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Deep Reinforcement Learning from Policy-Dependent Human Feedback 논문 리뷰 및 설명"
+description: "Deep COACH 논문 리뷰 및 설명. 사람의 feedback을 advantage로 쓰는 COACH에 eligibility trace, auto-encoder pre-training, entropy regularization을 더해 학습하는 알고리즘을 정리한 글."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, UnSupervised Learning, Human-in-the-loop]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Abstract

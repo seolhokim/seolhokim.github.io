@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "9. Dot products and duality"
+description: "3Blue1Brown 선형대수 시리즈 9편 정리. 투영 길이의 대칭성으로 v·w=w·v가 성립하는 이유, dot product 계산이 1차원으로의 projection 변환과 같은 이유, 1x2 matrix와 2d vector의 duality를 정리한 선형대수 노트."
 toc: true
 categories: 
   - Mathematics
 tags: [Linear Algebra]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Dot products and duality

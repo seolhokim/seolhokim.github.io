@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Why the Gradient is the direction of steepest ascent?"
+description: "gradient가 steepest ascent 방향인 이유를 설명한 글. 방향 도함수를 gradient와 단위 벡터 v의 내적으로 나타내고, 그 값이 cosθ에 비례하므로 v가 gradient와 같은 방향일 때 함수 값의 변화가 가장 커짐을 짧은 수식으로 보인다."
 toc: true
 categories: 
   - Mathematics
 tags: [Linear Algebra]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Background

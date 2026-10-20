@@ -30,6 +30,10 @@ layout: default
 
   </header>
 
+  {%- if page.description %}
+  <p class="post-lead" itemprop="description">{{ page.description | escape }}</p>
+  {%- endif %}
+
   <div class="post-content e-content" itemprop="articleBody">
     {{ content }}
   </div>

@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "ddpg loss function 구현 팁"
+description: "DDPG actor loss function 구현 팁. policy를 Q의 gradient 방향으로 update하는 deterministic policy gradient 식을 풀어 설명하고, mean(Q(state, mu(state)))로 계산하면 되는 이유를 정리한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 actor 의 loss는 policy parameter 를 $$ \theta $$ 라 하였을 때, greedy 한 방법은, 모든 step에서 maximization을 해야하는데,

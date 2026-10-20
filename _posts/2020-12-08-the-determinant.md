@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "6. The determinant"
+description: "3Blue1Brown 선형대수 시리즈 6편 정리. determinant를 변환 후 면적·부피의 변화 비율로 해석하는 예시, 음수 determinant와 orientation 반전, right hand rule, ad-bc 공식과 3x3 전개식을 정리한 노트."
 toc: true
 categories: 
   - Mathematics
 tags: [Linear Algebra]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## The determinant

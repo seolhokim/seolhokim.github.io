@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "1. What is the vector"
+description: "3Blue1Brown 선형대수 시리즈 1편 정리. 물리학, 컴퓨터과학, 수학에서 vector를 보는 세 관점, 원점에서 출발하는 화살표로서의 vector, vector 덧셈과 스칼라 곱의 기하적 의미를 정리한 선형대수 개념 노트."
 toc: true
 categories: 
   - Mathematics
 tags: [Linear Algebra]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Sample Efficient Actor-Critic with Experience Replay(ACER) 논문 리뷰 및 설명"
+description: "Sample Efficient Actor-Critic with Experience Replay(ACER) 논문 리뷰. Retrace Q 추정, truncated importance sampling의 bias correction 유도, trust region update를 설명한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

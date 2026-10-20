@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Intrinsic Motivation and automatic curricula via asymmetric self-play 논문 리뷰 및 설명"
+description: "Intrinsic Motivation and automatic curricula via asymmetric self-play 논문 리뷰. Alice가 task를 내고 Bob이 푸는 self-play 구조, 두 agent의 intrinsic reward 설정과 알고리즘을 정리한 글."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Abstract

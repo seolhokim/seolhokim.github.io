@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Distributed Prioritized Experience Replay 논문 리뷰 및 설명"
+description: "Distributed Prioritized Experience Replay(Ape-X) 논문 리뷰. actor와 learner를 분리하고 actor가 priority를 계산해 centralized memory로 보내는 구조, Ape-X DQN과 DPG 적용을 설명한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Distributed RL]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

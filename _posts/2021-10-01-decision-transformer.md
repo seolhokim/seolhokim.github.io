@@ -1,12 +1,12 @@
 --- 
 layout: post
 title: "Decision Transformer : Reinforcement Learning via Sequence Modeling 논문 리뷰 및 설명" 
+description: "Decision Transformer 논문 리뷰. TD learning 대신 sequence modeling으로 offline RL을 푸는 아이디어, return-to-go를 포함한 trajectory 표현, architecture와 학습 방법을 설명한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 comments: true
 ---

@@ -1,1 +1,10 @@
 // Placeholder to allow customizing styles.
+
+// Lead paragraph under the post title: renders page.description so the meta description
+// and the visible first paragraph are the same text (AEO/GEO: answer-first, extractable).
+.post-lead {
+  font-size: 1.05em;
+  line-height: 1.6;
+  margin: 0 0 1.5em;
+  opacity: 0.9;
+}

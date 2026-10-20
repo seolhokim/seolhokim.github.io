@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "learning to Generalize from sparse and underspecified rewards 논문리뷰"
+description: "learning to Generalize from sparse and underspecified rewards 논문 리뷰. underspecified reward 문제 정의, KL divergence 기반 mode covering과 mode seeking, IML 수식을 정리한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

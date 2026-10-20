@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Hindsight Experience Replay 논문 리뷰"
+description: "Hindsight Experience Replay(HER) 논문 리뷰. sparse reward 문제를 UVFA 기반 multi-goal과 다른 goal로 episode를 재저장하는 방식으로 푸는 핵심 아이디어, goal 선택 전략, reward shaping 실험을 정리한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Exploration]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

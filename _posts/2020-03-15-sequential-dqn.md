@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Discrete Sequential Prediction of Continuous Actions for Deep RL 리뷰 및 설명"
+description: "Discrete Sequential Prediction of Continuous Actions for Deep RL 논문 리뷰. N차원 action을 1차원 action sequence로 바꾸는 MDP 변환과 upper, lower layer Q network의 loss를 설명한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Action Space]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Discrete Sequential Prediction of Continuous Actions for Deep RL

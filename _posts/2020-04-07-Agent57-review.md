@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Agent57: Outperforming the Atari Human Benchmark 논문 리뷰"
+description: "Agent57: Outperforming the Atari Human Benchmark 논문 리뷰. long-term credit assignment와 exploration 문제, 토대가 된 NGU의 intrinsic reward, meta-controller 도입을 정리한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Distributed RL, Exploration]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

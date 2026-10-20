@@ -2,6 +2,7 @@
 layout: page
 title: Projects
 permalink: /projects/
+description: "Seolho Kim이 공개한 강화학습 프로젝트(SimpleDreamer, InverseRL-Pytorch, Mujoco-Pytorch 등)와 연구·업무 경력을 정리한 페이지."
 ---
 
 ### Reinforcement Learning

@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Convexity of network and corresponding parameter update"
+description: "Convexity of network and corresponding parameter update 개념 정리. convex한 MSE, CEE loss로 non-convex한 network parameter를 업데이트하는 것이 타당한지와 optimizer의 역할을 짚는다."
 toc: true
 categories: 
   - Mathematics
 tags: [Linear Algebra]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 가끔 까먹는 이런 라이트한 주제도 다뤄보면 좋을것같아 개인 노션에 정리하던 것들을 가끔 풀어볼 예정이다.

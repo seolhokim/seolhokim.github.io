@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "7. Inverse matrices, column space and null space"
+description: "3Blue1Brown 선형대수 시리즈 7편 정리. 연립방정식을 Ax=v로 보고 determinant가 0인지에 따라 inverse matrix의 존재를 따지는 방법, rank, column space, null space(kernel)의 의미를 정리한 선형대수 노트."
 toc: true
 categories: 
   - Mathematics
 tags: [Linear Algebra]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Inverse matrices, column space and null space

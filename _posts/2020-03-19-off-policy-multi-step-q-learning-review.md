@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Off-policy Multi-Step Q-learning 간단 논문 리뷰 및 설명"
+description: "Off-policy Multi-Step Q-learning 논문 간단 리뷰. 원하는 step 수만큼의 output을 두어 multi-step Q-learning을 하는 방법을 objective, Q^Tr, Q^Sh 수식과 network architecture 그림으로 정리한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Value-based]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 Off-policy multi-step Q-learning에 대해 원하는 step(lambda)만큼의 output을 가져 multi-step q-learning을 할 수 있는 방법이 있네요 :) 물론 world model을 통해 multi-step q learning이 가능한 방법도 있구요

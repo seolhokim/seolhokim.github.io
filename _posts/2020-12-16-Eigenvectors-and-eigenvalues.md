@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "14. Eigenvectors and eigenvalues"
+description: "3Blue1Brown 선형대수 시리즈 14강 Eigenvectors and eigenvalues 정리. 변환 후에도 자신의 span에 남는 고유벡터와 고유값의 의미, det(A-λI)=0으로 고유값을 구하는 과정, 고유기저와 대각행렬을 이용한 거듭제곱 계산을 설명한 글."
 toc: true
 categories: 
   - Mathematics
 tags: [Linear Algebra]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Eigenvectors and eigenvalues

@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "On Policy와 Off Policy의 차이"
+description: "On Policy와 Off Policy의 차이 정리. behavior policy와 target policy의 관계, on policy의 data dependent한 한계, off policy의 Importance Sampling과 max 연산을 설명한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

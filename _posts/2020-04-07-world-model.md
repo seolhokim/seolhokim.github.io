@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "World model 논문 리뷰"
+description: "World Models 논문 리뷰. Vision model(VAE), Memory RNN(MDN-RNN), 작은 Controller로 나뉜 구조, Car Racing과 VizDoom 실험, dream 안 학습의 cheating 문제와 iterative training을 설명한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Model-based]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

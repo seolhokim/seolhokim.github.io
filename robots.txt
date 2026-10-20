@@ -1,0 +1,50 @@
+---
+layout: null
+permalink: /robots.txt
+---
+# seolhokim.github.io — crawler policy
+# Everything is public. Search engines and AI crawlers (training, search index, live fetch) are all allowed
+# so that the site can be indexed and cited. Review the list quarterly: https://github.com/leopard627/fire-your-seo-agency
+
+User-agent: *
+Allow: /
+
+# Google / Bing / Naver
+User-agent: Googlebot
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Bingbot
+Allow: /
+User-agent: Yeti
+Allow: /
+
+# OpenAI (training / search index / live fetch)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+
+# Perplexity
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+
+# Others
+User-agent: CCBot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: {{ site.url }}/sitemap.xml

@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "11. Cross products in the light of linear transformations"
+description: "3Blue1Brown 선형대수 시리즈 11강 Cross products in the light of linear transformations 정리. 행렬식을 x의 함수 f(x)로 두고 이를 벡터 p와의 내적으로 표현해 외적의 각 성분을 유도하는 과정을 설명한 글."
 toc: true
 categories: 
   - Mathematics
 tags: [Linear Algebra]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Cross products in the light of linear transformations

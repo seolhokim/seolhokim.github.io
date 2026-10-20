@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Attention, Learn to Solve Routing Problems! 논문 리뷰 및 설명"
+description: "Attention, Learn to Solve Routing Problems! 논문 리뷰. transformer encoder와 context node 기반 decoder의 attention 수식, greedy rollout baseline REINFORCE 학습을 설명한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Combinatorial Optimization, Attention]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 Attention, Learn to Solve Routing Problems!

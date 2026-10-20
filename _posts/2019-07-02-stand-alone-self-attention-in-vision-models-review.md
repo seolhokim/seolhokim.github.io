@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Stand-Alone Self-Attention in Vision Models 논문 리뷰"
+description: "Stand-Alone Self-Attention in Vision Models 논문 리뷰. local self-attention 수식과 relative positional embedding, ResNet의 convolution을 attention으로 바꾸는 방법을 정리한다."
 toc: true
 categories: 
   - Deep Learning
 tags: [Deep Learning]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

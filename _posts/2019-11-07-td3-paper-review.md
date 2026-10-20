@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Addressing Function Approximation Error in Actor-Critic Method (TD3) 논문 리뷰 및 설명"
+description: "Addressing Function Approximation Error in Actor-Critic Method(TD3) 논문 리뷰. overestimation bias 유도, Clipped Double Q-learning, delayed policy update를 설명한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

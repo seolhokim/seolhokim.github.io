@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "2. Linear combinations, span and basis"
+description: "3Blue1Brown 선형대수 시리즈 2편 정리. basis와 linear combination의 정의, 2차원에서 만들어지는 plane·line·zero 세 가지 span, linearly dependent와 independent의 구분을 설명한 노트."
 toc: true
 categories: 
   - Mathematics
 tags: [Linear Algebra]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Linear combinations, span and basis

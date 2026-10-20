@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Deep Reinforcement Learning with Double Q-learning (Double Dqn) 논문 리뷰"
+description: "Deep Reinforcement Learning with Double Q-learning(Double DQN) 논문 리뷰. Q-learning의 overestimation 원인과 selection, evaluation을 분리한 Double DQN의 target 수식을 정리한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "3. Linear transformations and matrices"
+description: "3Blue1Brown 선형대수 시리즈 3편 정리. 직선과 원점이 유지되는 linear transformation의 정의, 두 basis vector의 이동만으로 2d 변환을 matrix로 표현하는 방법, [5,7]^T가 [29,17]^T로 옮겨지는 계산 예시를 정리한 노트."
 toc: true
 categories: 
   - Mathematics
 tags: [Linear Algebra]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Linear transformations and matrices

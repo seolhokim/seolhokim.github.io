@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "distribution system의 구성요소 알아보기"
+description: "분산 처리 시스템의 구성요소 정리. NoSQL의 Key-Value, Document, BigTable DB(Redis, MongoDB, Cassandra)와 MapReduce 병렬 처리, GFS와 Hadoop 2.0 분산 파일 시스템의 구조를 설명한다."
 toc: true
 categories: 
   - Bigdata
 tags: [Bigdata, Distribution System]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

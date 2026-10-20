@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Learning Heuristics for the TSP by Policy Gradient 논문 리뷰 및 설명"
+description: "Learning Heuristics for the TSP by Policy Gradient 논문 리뷰. LSTM 없는 attention encoder, 최근 3개 action으로 query를 만드는 decoder, critic baseline REINFORCE 학습을 설명한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Combinatorial Optimization, Attention]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 Learning Heuristics for the TSP by Policy Gradient

@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Learn What Not to Learn : Action Elimination with Deep Reinforcement Learning 리뷰 및 설명"
+description: "Learn What Not to Learn : Action Elimination with Deep Reinforcement Learning 논문 리뷰. elimination signal로 invalid action을 제거하는 AE-DQN과 contextual bandit을 정리한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Action Space]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 

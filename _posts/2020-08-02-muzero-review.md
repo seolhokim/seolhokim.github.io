@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Mastering Atari, Go, Chess and Shogi by Planning with a Learned Model (MuZero)논문 리뷰 및 설명"
+description: "MuZero 논문 리뷰. representation, dynamics, prediction function으로 이루어진 learned model을 MCTS와 결합하는 핵심 아이디어, prior work, policy·value·reward loss 구성을 설명한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Model-based, MonteCarlo Tree Search]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 한줄요약 : 이전까지의 Model-based는 이래서 별로고 저래서 안됐고 하는게 항상 새로운 SOTA로 변화할 때마다, 이전의 문제들을 객관적으로 바라보고 reasonable하게 해결하는게 놀랍다고 느꼈다.

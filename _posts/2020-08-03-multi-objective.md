@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "A Generalized Algorithm for Multi-Objective Reinforcement Learning and Policy Adaptation 논문 리뷰 및 설명"
+description: "A Generalized Algorithm for Multi-Objective Reinforcement Learning and Policy Adaptation 논문 리뷰. MOMDP와 CCS, envelope Q-learning의 loss, policy adaption을 정리한다."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Multi-Objective]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 한줄 리뷰 : background가 많이 필요한 논문이지만, 큰 틀은 Hindsight Experience Replay를 벗어나지 않기때문에 이를 이해하고 있으면 생각보다 쉬울 수 있습니다. 표기에 벡터등에 대한 bold 표기를 ~~귀찮아서~~ 안했으므로 논문과 대조해서 보셔야합니다.

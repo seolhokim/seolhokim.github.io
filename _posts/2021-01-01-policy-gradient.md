@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Policy Gradient Methods for Reinforcement Learning with Function Approximation 논문 리뷰"
+description: "Policy Gradient Methods for Reinforcement Learning with Function Approximation 논문 리뷰. policy gradient 식의 두 가지 유도와 compatible approximation 조건, 수렴 증명을 정리한 글."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Policy-based]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ## Background 

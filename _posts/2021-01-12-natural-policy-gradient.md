@@ -1,12 +1,12 @@
 ---
 layout: post
 title:  "Natural Policy Gradient 논문 리뷰"
+description: "Natural Policy Gradient 논문 리뷰. policy gradient가 non-covariant한 이유, 리만 공간의 metric tensor로 steepest 방향을 유도하는 과정, Fisher information matrix로 얻는 업데이트 식을 정리한 글."
 toc: true
 categories: 
   - Reinforcement Learning 
 tags: [Reinforcement Learning, Policy-based]
-author:
-  - Seolho Kim
+author: Seolho Kim
 math: true
 ---
 ##1. **Description**

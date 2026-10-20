@@ -1,0 +1,27 @@
+---
+layout: null
+permalink: /llms.txt
+---
+# {{ site.title }}
+
+> {{ site.description }}
+
+- 운영자: {{ site.author }} — https://github.com/seolhokim
+- 언어: 한국어 (논문 제목·용어는 영문 병기)
+- 주제: 강화학습(RL) 논문 리뷰·설명, 선형대수 개념 정리, 딥러닝 구현 팁
+- 1차 소스 범위: 각 논문의 원문은 arXiv 등 원출처 링크를 본문에 병기한다. 이 사이트가 원출처인 것은 **한국어 해설, 수식 전개, 구현 경험과 팁**이다.
+- 인용 표기: seolhokim.github.io (글 URL 병기)
+- 기계 가독 자원: 사이트맵 {{ site.url }}/sitemap.xml · RSS {{ site.url }}/feed.xml
+
+## 핵심 페이지
+
+- [About]({{ site.url }}/): 운영자 소개
+- [Projects]({{ site.url }}/projects/): 공개 강화학습 프로젝트와 연구·업무 경력
+- [Categories]({{ site.url }}/categories/): 카테고리별 글 목록
+- [Tags]({{ site.url }}/tags/): 태그별 글 목록
+- [Years]({{ site.url }}/years/): 연도별 글 목록
+{% for category in site.categories %}
+## {{ category[0] }} ({{ category[1].size }}편)
+{% for post in category[1] -%}
+- [{{ post.title | strip }}]({{ post.url | absolute_url }}) ({{ post.date | date: "%Y-%m-%d" }}): {{ post.description | default: post.excerpt | strip_html | strip_newlines | strip | truncate: 200 }}
+{% endfor %}{% endfor %}
