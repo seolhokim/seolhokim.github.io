@@ -13,10 +13,8 @@ plugins:
 
 paginate: 10
 
-# Google Analytics
-# NOTE: UA-138161375-1 is a Universal Analytics property. UA stopped collecting data on 2023-07-01.
-# Replace with a GA4 measurement ID (G-XXXXXXXXXX) to resume measurement.
-google_analytics: "UA-138161375-1"
+# Google Analytics (GA4 measurement ID; the old UA-138161375-1 property stopped collecting on 2023-07-01)
+google_analytics: "G-ZYNZMXWNJV"
 
 # Disqus
 disqus: https-seolhokim-github-io
